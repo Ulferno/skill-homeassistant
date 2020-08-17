@@ -75,18 +75,19 @@ class HomeAssistantSkill(FallbackSkill):
         self.register_intent_file('toggle.intent', self.handle_toggle_intent)
         self.register_intent_file('sensor.intent', self.handle_sensor_intent)
         self.register_intent_file('set.light.brightness.intent',
-            self.handle_light_set_intent)
+                                  self.handle_light_set_intent)
         self.register_intent_file('increase.light.brightness.intent',
-            self.handle_light_increase_intent)
+                                  self.handle_light_increase_intent)
         self.register_intent_file('decrease.light.brightness.intent',
-            self.handle_light_decrease_intent)
+                                  self.handle_light_decrease_intent)
         self.register_intent_file('automation.intent', self.handle_automation_intent)
         self.register_intent_file('tracker.intent', self.handle_tracker_intent)
         self.register_intent_file('set.climate.intent',
-            self.handle_set_thermostat_intent)
+                                  self.handle_set_thermostat_intent)
 
         # Phases for turn of all intent
-        with open((dirname(realpath(__file__))+"/vocab/"+self.language+"/turn.all.json"),encoding='utf8') as f:
+        with open((dirname(realpath(__file__))+"/vocab/"+self.language+"/turn.all.json"),
+                  encoding='utf8') as f:
             self.turn_all = json.load(f)
 
         # Needs higher priority than general fallback skills
@@ -181,8 +182,8 @@ class HomeAssistantSkill(FallbackSkill):
         self._handle_sensor(message)
 
     def handle_light_set_intent(self, message):
-        self.log.debug("Set light intensity on: "+message.data.get("entity") \
-            +"to"+message.data.get("brightnessvalue")+"percent")
+        self.log.debug("Set light intensity on: "+message.data.get("entity")
+                       + "to"+message.data.get("brightnessvalue")+"percent")
         message.data["Entity"] = message.data.get("entity")
         message.data["Brightnessvalue"] = message.data.get("brightnessvalue")
         self._handle_light_set(message)
@@ -230,14 +231,13 @@ class HomeAssistantSkill(FallbackSkill):
                     ha_entity = {'dev_name': entity}
                     ha_data = {'entity_id': 'all'}
 
-                    self.ha.execute_service(domain, "turn_%s" % action,
-                                                ha_data)
-                    self.speak_dialog('homeassistant.device.%s'% action,
-                                        data=ha_entity)
+                    self.ha.execute_service(domain, "turn_%s" % action, ha_data)
+                    self.speak_dialog('homeassistant.device.%s' % action, data=ha_entity)
                     return
-        except:
-           self.log.debug("Not turn on/off all intent")
-        
+        # TODO: need to figure out, if this indeed throws a KeyError
+        except KeyError:
+            self.log.debug("Not turn on/off all intent")
+
         # Hande single entity
         ha_entity = self._find_entity(
             entity,
@@ -255,10 +255,10 @@ class HomeAssistantSkill(FallbackSkill):
             return
 
         self.log.debug("Entity State: %s" % ha_entity['state'])
-        
-        #Handle groups
+
+        # Handle groups
         self.log.debug(ha_entity)
-        if 'ids'in ha_entity.keys():
+        if 'ids' in ha_entity.keys():
             for ent in ha_entity['ids']:
                 ha_ent = self._find_entity(
                     ent,
@@ -275,13 +275,10 @@ class HomeAssistantSkill(FallbackSkill):
                     continue
                 ha_data = {'entity_id': ent}
                 if action == "toggle":
-                   self.ha.execute_service("homeassistant", "toggle",
-                                        ha_data)
-                else: 
-                    self.ha.execute_service("homeassistant", "turn_%s" % action,
-                                    ha_data)
-            self.speak_dialog('homeassistant.device.%s' % action,
-                                data=ha_entity)
+                    self.ha.execute_service("homeassistant", "toggle", ha_data)
+                else:
+                    self.ha.execute_service("homeassistant", "turn_%s" % action, ha_data)
+            self.speak_dialog('homeassistant.device.%s' % action, data=ha_entity)
         else:
             ha_data = {'entity_id': ha_entity['id']}
 
@@ -298,11 +295,10 @@ class HomeAssistantSkill(FallbackSkill):
                     action = 'on'
                 else:
                     action = 'off'
-                self.speak_dialog('homeassistant.device.%s' % action,
-                                data=ha_entity)
+                self.speak_dialog('homeassistant.device.%s' % action, data=ha_entity)
             elif action in ["on", "off"]:
                 self.speak_dialog('homeassistant.device.%s' % action,
-                                data=ha_entity)
+                                  data=ha_entity)
                 self.ha.execute_service("homeassistant", "turn_%s" % action,
                                         ha_data)
             else:
@@ -354,7 +350,7 @@ class HomeAssistantSkill(FallbackSkill):
         ha_entity = self._find_entity(entity, ['group', 'light'])
         if not ha_entity or not self._check_availability(ha_entity):
             return
-        
+
         ha_data = {'entity_id': ha_entity['id']}
         # IDEA: set context for 'turn it off again' or similar
         # self.set_context('Entity', ha_entity['dev_name'])
@@ -380,7 +376,7 @@ class HomeAssistantSkill(FallbackSkill):
                                             ha_data)
                     ha_data['dev_name'] = ha_entity['dev_name']
                     # Convert back to percentage foe mycroft reply
-                    ha_data['brightness']=round((ha_data['brightness'] / 255 * 100),-1)
+                    ha_data['brightness'] = round((ha_data['brightness'] / 255 * 100), -1)
                     self.speak_dialog('homeassistant.brightness.decreased',
                                       data=ha_data)
         elif action == "up":
@@ -404,7 +400,7 @@ class HomeAssistantSkill(FallbackSkill):
                                             "turn_on",
                                             ha_data)
                     ha_data['dev_name'] = ha_entity['dev_name']
-                    ha_data['brightness']=round((ha_data['brightness'] / 255 * 100),-1)
+                    ha_data['brightness'] = round((ha_data['brightness'] / 255 * 100), -1)
                     self.speak_dialog('homeassistant.brightness.increased',
                                       data=ha_data)
         else:

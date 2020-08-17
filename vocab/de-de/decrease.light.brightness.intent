@@ -1,3 +1,3 @@
-decrease (the|) (brightness|intensity) of {{entity}}
-(dim|lower) (the|) {{entity}}
-make (the|) {{entity}} (dimmer|darken)
+reduziere (die|) (helligkeit|intensität) von {entity}
+(dimme|dim) (die|) {entity}
+(mach|mache) (die|) {entity} (dunkler|weniger hell)

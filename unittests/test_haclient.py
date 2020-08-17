@@ -53,63 +53,10 @@ class TestHaClient(TestCase):
             self.assertTrue(ssl, True)
             self.assertTrue(mock_request.return_value.status_code, 200)
 
-    def test_broke_entity(self):
-        portnum = 8123
-        ssl = False
-        ha = HomeAssistantClient(host='167.99.144.205', password='password', portnum=portnum, ssl=ssl)
-        self.assertRaises(TypeError, ha)
-
-    def test_light_nossl(self):
-        portnum = 8123
-        ssl = False
-        ha = HomeAssistantClient(host='167.99.144.205', password='password', portnum=portnum, ssl=ssl)
-        component = ha.find_component('light')
-        entity = (ha.find_entity('kitchen', 'light'))
-        if entity['best_score'] >= 50:
-            print(entity['best_score'])
-            print(entity)
-            self.assertTrue(True)
-        light_attr = ha.find_entity_attr(entity['id'])
-
-        self.assertEqual(component, True)
-        self.assertEqual(light_attr['name'], 'Kitchen Lights')
-        self.assertEqual(entity['dev_name'], 'Kitchen Lights')
-        self.assertEqual(ha.ssl, False)
-        self.assertEqual(portnum, 8123)
-        convo = ha.engage_conversation('turn off kitchen light')
-        self.assertEqual(convo, {'extra_data': None, 'speech': 'Turned Kitchen Lights off'})
-        ha_data = {'entity_id': entity['id']}
-        if light_attr['state'] == 'on':
-            r = ha.execute_service("homeassistant", "turn_off",
-                                   ha_data)
-            if r.status_code == 200:
-                entity = ha.find_entity(light_attr['name'], 'light')
-                if entity['state'] == 'off':
-                    self.assertTrue(True)
-                    self.assertEqual(entity,
-                                     {'id': 'light.kitchen_lights', 'dev_name': 'Kitchen Lights', 'state': 'off',
-                                      'best_score': 100})
-                    self.assertEqual(light_attr['unit_measure'], 53)
-                if entity['best_score'] >= 50:
-                    self.assertTrue(True)
-        else:
-            r = ha.execute_service("homeassistant", "turn_on",
-                                   ha_data)
-            if r.status_code == 200:
-                if entity['state'] == 'on':
-                    self.assertTrue(True)
-                    self.assertEqual(light_attr['state'], 'on')
-                    self.assertEqual(entity,
-                                     {'id': 'light.kitchen_lights', 'dev_name': 'Kitchen Lights', 'state': 'on',
-                                      'best_score': 100})
-                    self.assertEqual(light_attr['unit_measure'], 53)
-
-
-
 
     @mock.patch('ha_client.HomeAssistantClient.find_entity')
     def test_toggle_lights(self, mock_get):
-        ha = HomeAssistantClient(host='192.168.0.1', password='password', portnum=8123, ssl=True)
+        ha = HomeAssistantClient(host='192.168.0.1', token='token', portnum=8123, ssl=True)
         ha.find_entity = mock.MagicMock()
         entity = ha.find_entity(kitchen_light['dev_name'], 'light')
         mock_get.entity = {

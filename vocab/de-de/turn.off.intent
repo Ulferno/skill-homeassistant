@@ -1,12 +1,5 @@
-{Entity} auschalten
-(Der|Des|Dem|Den|Die|Das) {Entity} auschalten
-Kannst du {Entity} bitte auschalten?  
-Kannst du (Der|Des|Dem|Den|Die|Das) {Entity} bitte auschalten?
-Kannst du {Entity} ausschalten bitte?
-Kannst du (Der|Des|Dem|Den|Die|Das) {Entity} ausschalten bitte?
-Ich möchte {Entity} auschalten
-Ich möchte (Der|Des|Dem|Den|Die|Das) {Entity} auschalten
-Ich möchte gerne {Entity} auschalten
-Ich möchte gerne (Der|Des|Dem|Den|Die|Das) {Entity} auschalten
-Ich möchte {Entity} jetzt auschalten
-Ich möchte (Der|Des|Dem|Den|Die|Das) {Entity} jetzt auschalten
+(den|die|das|) {entity} ausschalten
+kannst du (den|die|das|) {entity} (bitte|) ausschalten  
+Kannst du (den|die|das|) {entity} ausschalten (bitte|)
+ich möchte (gerne|) (den|die|das|) (jetzt|) {entity} (bitte|) ausschalten
+schalte {entity} aus
