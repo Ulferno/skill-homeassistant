@@ -10,6 +10,7 @@ Currently the following entity types are supported: `light`, `switch`, `scene`, 
 * "Turn on the office light"
 * "Turn off bedroom lights"
 * "Turn on on the AC"
+* "Read bedroom temperature"
 
 ## Credits 
 @BongoEADGC6
