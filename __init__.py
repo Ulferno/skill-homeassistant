@@ -86,11 +86,6 @@ class HomeAssistantSkill(FallbackSkill):
         self.register_intent_file('set.climate.intent',
                                   self.handle_set_thermostat_intent)
 
-        # Phases for turn of all intent
-        with open((dirname(realpath(__file__))+"/vocab/"+self.language+"/turn.all.json"),
-                  encoding='utf8') as f:
-            self.turn_all = json.load(f)
-
         # Needs higher priority than general fallback skills
         self.register_fallback(self.handle_fallback, 2)
         # Check and then monitor for credential changes
@@ -228,15 +223,20 @@ class HomeAssistantSkill(FallbackSkill):
 
         # Handle turn on/off all intent
         try:
-            for domain in dict(self.turn_all.items()):
-                tmp = (list(dict(self.turn_all).get(domain)))
-                if entity in tmp:
-                    ha_entity = {'dev_name': entity}
-                    ha_data = {'entity_id': 'all'}
+            if self.voc_match(entity,"all_lights"):
+                domain = "light"
+            elif self.voc_match(entity,"all_switches"):
+                domain = "switch"
+            else:
+                domain = None
 
-                    self.ha.execute_service(domain, "turn_%s" % action, ha_data)
-                    self.speak_dialog('homeassistant.device.%s' % action, data=ha_entity)
-                    return
+            if not domain is None:
+                ha_entity = {'dev_name': entity}
+                ha_data = {'entity_id': 'all'}
+
+                self.ha.execute_service(domain, "turn_%s" % action, ha_data)
+                self.speak_dialog('homeassistant.device.%s' % action, data=ha_entity)
+                return
         # TODO: need to figure out, if this indeed throws a KeyError
         except KeyError:
             self.log.debug("Not turn on/off all intent")
