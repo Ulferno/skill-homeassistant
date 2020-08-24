@@ -11,12 +11,12 @@ input_boolean:
   mycroft_vk_bool:
     name: "Mycroft bool"
     initial: off
-	
+
 input_number:
   mycroft_vk_num:
     min: 0
     max: 255
-	
+
 binary_sensor:
   - platform: template
     sensors:
@@ -27,7 +27,7 @@ binary_sensor:
         attribute_templates:
           latitude: 48.864716
           longitude: 2.349014
-		  
+
 sensor:
 	- platform: template
     sensors:
@@ -35,7 +35,7 @@ sensor:
         friendly_name: "Mycroft sensor"
         unit_of_measurement: '°C'
         value_template: 12.00
-		
+
 switch:
  - platform: template
     switches:
