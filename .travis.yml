@@ -2,17 +2,18 @@ language: python
 before_install:
   - sudo apt-get update
   - sudo apt-get -y install git
-#  - pip install --upgrade pip
-#  - pip install --upgrade wheel
-#  - pip install pycodestyle
-#  - pip install pytest-cov
-#  - pip install python-coveralls
-#  - pip install homeassistant
-  - ls -d
+  - pip install --upgrade pip
+  - pip install --upgrade wheel
+  - pip install pycodestyle
+  - pip install pytest-cov
+  - pip install python-coveralls
+  - pip install homeassistant
 
 python:
   - "3.6"
 script:
-# - pycodestyle --max-line-length=100 __init__.py
+ - pycodestyle --max-line-length=100 __init__.py
+ - pycodestyle --max-line-length=100 ha_client.py
+ - hass --config ./test/configuration.yaml
 after_success:
-#  codecov
+  codecov
