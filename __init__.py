@@ -223,14 +223,14 @@ class HomeAssistantSkill(FallbackSkill):
 
         # Handle turn on/off all intent
         try:
-            if self.voc_match(entity,"all_lights"):
+            if self.voc_match(entity, "all_lights"):
                 domain = "light"
-            elif self.voc_match(entity,"all_switches"):
+            elif self.voc_match(entity, "all_switches"):
                 domain = "switch"
             else:
                 domain = None
 
-            if not domain is None:
+            if domain is not None:
                 ha_entity = {'dev_name': entity}
                 ha_data = {'entity_id': 'all'}
 
@@ -350,7 +350,6 @@ class HomeAssistantSkill(FallbackSkill):
         self.ha.execute_service("shopping_list", "add_item", ha_data)
         self.speak_dialog("homeassistant.shopping.list")
         return
-
 
     def _handle_light_adjust(self, message):
         entity = message.data["Entity"]
