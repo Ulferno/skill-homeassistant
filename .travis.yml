@@ -7,8 +7,8 @@ before_install:
 #  - pip install pycodestyle
 #  - pip install pytest-cov
 #  - pip install python-coveralls
-  - pip install homeassistant
-  - ls ~/.homeassistant
+#  - pip install homeassistant
+  - ls -d
 
 python:
   - "3.6"
