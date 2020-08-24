@@ -1,13 +1,12 @@
 language: python
 before_install:
-  - pip install –upgrade pip
-  - pip install –upgrade wheel
+  - sudo apt-get update
+  - sudo apt-get -y upgrade
+  - sudo apt-get -y install git
   - pip install pycodestyle
   - pip install pytest-cov
   - pip install python-coveralls
   - pip install homeassistant==0.103.6
-  - sudo apt-get update
-  - sudo apt-get -y install git
 
 python:
   - "3.6"
