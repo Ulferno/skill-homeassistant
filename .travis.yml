@@ -1,5 +1,7 @@
 language: python
 before_install:
+  - pip install –upgrade pip
+  - pip install –upgrade wheel
   - pip install pycodestyle
   - pip install pytest-cov
   - pip install python-coveralls
@@ -11,6 +13,6 @@ python:
   - "3.6"
 script:
  - pycodestyle --max-line-length=100 __init__.py
- - whoaim
+ - whoami
 after_success:
   codecov
