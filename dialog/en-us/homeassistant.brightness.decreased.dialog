@@ -1,2 +1,2 @@
-Dimmed {{dev_name}} to {{brightness}} percent.
-Dimmed {{dev_name}}.
+Dimmed {dev_name} to {brightness} percent.
+Dimmed {dev_name}.
