@@ -3,10 +3,14 @@ before_install:
   - pip install pycodestyle
   - pip install pytest-cov
   - pip install python-coveralls
+  - pip install homeassistant==0.114.3
+  - sudo apt-get update
+  - sudo apt-get -y install git
+
 python:
   - "3.6"
 script:
  - pycodestyle --max-line-length=100 __init__.py
- - pytest --rootdir=unittests --cov unittests/
+ - whoaim
 after_success:
   codecov
