@@ -3,12 +3,10 @@ from fuzzywuzzy import fuzz
 import json
 from requests.exceptions import Timeout, RequestException
 
-
 __author__ = 'btotharye'
 
 # Timeout time for HA requests
 TIMEOUT = 10
-
 
 class HomeAssistantClient(object):
 
@@ -96,8 +94,6 @@ class HomeAssistantClient(object):
                 except KeyError:
                     pass
             return best_entity
-
-
 
     def find_entity_attr(self, entity):
         """checking the entity attributes to be used in the response dialog.
