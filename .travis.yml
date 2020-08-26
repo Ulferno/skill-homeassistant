@@ -27,6 +27,6 @@ script:
   - pycodestyle --max-line-length=100 __init__.py
   - pycodestyle --max-line-length=100 ha_client.py
   - echo "VKtest"
-  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/skills; ls -a;ls -d; cd /opt/mycroft/; source /opt/mycroft/.venv/bin/activate; ./dev_setup.sh --allow-root; /opt/mycroft/bin/mycroft-skill-testrunner vktest clear --allow-root; /opt/mycroft/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai --allow-root; sleep 2m;"
+  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/skills; ls -a;ls -d; cd /opt/mycroft/; source /opt/mycroft/.venv/bin/activate; /opt/mycroft/bin/mycroft-skill-testrunner vktest clear --allow-root; /opt/mycroft/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai --allow-root; sleep 2m;"
 after_success:
   - codecov
