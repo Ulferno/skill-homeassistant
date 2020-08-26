@@ -1,7 +1,7 @@
 # <img src='home-assistant.png' card_color='#000000' width='50' height='50' style='vertical-align:bottom'/> Home Assistant
 Awaken your home - Control Home Assistant
 
-## About 
+## About
 [Home Assistant](https://www.home-assistant.io/) skill include [Voight Kampff tests](https://mycroft-ai.gitbook.io/docs/skill-development/voight-kampff).
 To achieve a same development envinroment is needed to add a specific "dummy/testing" componens to your running HA instalation.
 When test is run, then skill behave is tested along side with comunication between Mycroft <> HA and also HA actions to each utterance.

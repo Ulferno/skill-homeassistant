@@ -11,7 +11,27 @@ python:
   - "3.6"
 script:
  - ls -d -1 "$PWD/"*.*
+ - ls -d -1 "/home/travis/build/"*.*
+ - ls -d -1 "/home/travis/build/Tony763/"*.*
+ - mkdir -p /home/travis/mycroft/skills/homeassistant.mycroftai
+ - mkdir -p /home/travis/mycroft/config
+ - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /home/travis/mycroft/skills/homeassistant.mycroftai/
  - pycodestyle --max-line-length=100 __init__.py
  - pycodestyle --max-line-length=100 ha_client.py
+ - docker pull homeassistant/home-assistant:114.3
+ - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/mycroft/skills/homeassistant.mycroftai/test -v /etc/localtime:/etc/localtime:ro --net=host homeassistant/home-assistant:114.3
+ - docker pull mycroftai/docker-mycroft
+ - docker run -d \
+-v config_dir_on_host:/home/travis/mycroft/config \
+-v skills_dir_on_host:/home/travis/mycroft/skills \
+--device /dev/snd \
+-e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
+-v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
+-v ~/.config/pulse/cookie:/root/.config/pulse/cookie \
+-p 8181:8181 \
+--name mycroft mycroftai/docker-mycroft
+ - sleep 10m
+ - docker exec mycroft /bin/bash -c "mycroft-skill-testrunner vktest  clear, mycroft-skill-testrunner vktest -t homeassistant.mycroftai; exit"
+ - sleep 5m
 after_success:
   codecov
