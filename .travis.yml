@@ -6,22 +6,26 @@ before_install:
   - pip install pycodestyle
   - pip install pytest-cov
   - pip install python-coveralls
-python:
-  - "3.6"
-script:
+install:
  - ls -d -1 "$PWD/"*.*
  - ls -d -1 "/home/travis/build/"
  - ls -d -1 "/home/travis/build/Tony763/"
  - mkdir -p /home/travis/mycroft/skills/homeassistant.mycroftai
  - mkdir -p /home/travis/mycroft/config
  - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /home/travis/mycroft/skills/homeassistant.mycroftai/
- - pycodestyle --max-line-length=100 __init__.py
- - pycodestyle --max-line-length=100 ha_client.py
  - docker pull homeassistant/home-assistant:0.114.3
  - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/mycroft/skills/homeassistant.mycroftai/test -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
  - docker pull mycroftai/docker-mycroft
  - docker run -d -v config_dir_on_host:/home/travis/mycroft/config -v skills_dir_on_host:/home/travis/mycroft/skills --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -p 8181:8181 --name mycroft mycroftai/docker-mycroft
+ - "Wait for start of HA and Mycroft in background"
  - travis_wait 12 sleep 10m
- - docker exec mycroft /bin/bash -c "cd /opt/mycroft/; source /opt/mycroft/.venv/bin/activate; mycroft-skill-testrunner vktest  clear, mycroft-skill-testrunner vktest -t homeassistant.mycroftai; exit"
+python:
+  - "3.6"
+script:
+ - echo "Coding style check"
+ - pycodestyle --max-line-length=100 __init__.py
+ - pycodestyle --max-line-length=100 ha_client.py
+ - echo "VKtest"
+ - docker exec mycroft /bin/bash -c "cd /opt/mycroft/;ls -d -1 *; ls -d -1 ./bin/;  source /opt/mycroft/.venv/bin/activate; /opt/mycroft/bin/mycroft-skill-testrunner vktest  clear, /opt/mycroft/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai; exit"
 after_success:
   codecov
