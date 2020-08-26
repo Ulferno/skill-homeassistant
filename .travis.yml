@@ -16,7 +16,7 @@ install:
   - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/mycroft/skills/homeassistant.mycroftai/test -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - docker pull mycroftai/docker-mycroft
-  - docker run -d -v config_dir_on_host:/home/travis/mycroft/config -v skills_dir_on_host:/home/travis/mycroft/skills --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -p 8181:8181 --name mycroft mycroftai/docker-mycroft
+  - docker run -d -v config_dir_on_host:/home/travis/mycroft/config/ -v skills_dir_on_host:/home/travis/mycroft/skills/ --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -p 8181:8181 --name mycroft mycroftai/docker-mycroft
   - echo "Wait for start of HA and Mycroft in background"
 python:
   - "3.6"
@@ -25,6 +25,6 @@ script:
   - pycodestyle --max-line-length=100 __init__.py
   - pycodestyle --max-line-length=100 ha_client.py
   - echo "VKtest"
-  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/;ls; cd skills; ls; source /opt/mycroft/.venv/bin/activate; /opt/mycroft/bin/mycroft-skill-testrunner vktest  clear, /opt/mycroft/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai; exit"
+  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/skills; ls -a;ls -d; source /opt/mycroft/.venv/bin/activate; /opt/mycroft/bin/mycroft-skill-testrunner vktest  clear, /opt/mycroft/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai; exit"
 after_success:
   - codecov
