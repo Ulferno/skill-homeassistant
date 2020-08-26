@@ -10,7 +10,7 @@ install:
   - ls -d -1 "$PWD/"*.*
   - mkdir -p /home/travis/mycroft/skills/homeassistant.mycroftai
   - mkdir -p /home/travis/mycroft/config
-  - ln -s /home/travis/build/*/*/ /home/travis/mycroft/skills/homeassistant.mycroftai/
+  - ln -s /home/travis/build/Tony763/mycroft-homeassistant/ /home/travis/mycroft/skills/homeassistant.mycroftai/
   - cd /home/travis/mycroft/skills/homeassistant.mycroftai/
   - ls -d -1 "$PWD/"*.*
   - docker pull homeassistant/home-assistant:0.114.3
