@@ -20,6 +20,8 @@ install:
   - docker exec mycroft /bin/bash -c "mkdir /opt/mycroft/skills/homeassistant.mycroftai"
   - docker cp /home/travis/mycroft/skills/homeassistant.mycroftai mycroft:/opt/mycroft/skills/
   - docker cp /home/travis/mycroft/skills/homeassistant.mycroftai/test/dev_setup.sh mycroft:/opt/mycroft/
+  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/; chmod +x dev_setup.sh;"
+  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/skills; ls -a;ls -d; cd /opt/mycroft/; source /opt/mycroft/.venv/bin/activate; ./dev_setup.sh --allow-root -t;"
   - echo "Wait for start of HA and Mycroft in background"
 python:
   - "3.6"
@@ -28,6 +30,6 @@ script:
   - pycodestyle --max-line-length=100 __init__.py
   - pycodestyle --max-line-length=100 ha_client.py
   - echo "VKtest"
-  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/skills; ls -a;ls -d; cd /opt/mycroft/; source /opt/mycroft/.venv/bin/activate; ./dev_setup.sh --allow-root -t; /opt/mycroft/bin/mycroft-skill-testrunner vktest clear; /opt/mycroft/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai; sleep 2m;"
+  - docker exec mycroft /bin/bash -c "source /opt/mycroft/.venv/bin/activate; /opt/mycroft/bin/mycroft-skill-testrunner vktest clear; /opt/mycroft/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai; sleep 2m;"
 after_success:
   - codecov
