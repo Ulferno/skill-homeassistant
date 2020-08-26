@@ -8,11 +8,9 @@ before_install:
   - pip install python-coveralls
 install:
   - ls -d -1 "$PWD/"*.*
-  - ls -d -1 "/home/travis/build/*"
-  - ls -d -1 "/home/travis/build/Tony763/*"
   - mkdir -p /home/travis/mycroft/skills/homeassistant.mycroftai
   - mkdir -p /home/travis/mycroft/config
-  - ln -s /home/travis/build/Tony763/mycroft-homeassistant/* /home/travis/mycroft/skills/homeassistant.mycroftai/
+  - ln -s /home/travis/build/*/*/ /home/travis/mycroft/skills/homeassistant.mycroftai/
   - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/mycroft/skills/homeassistant.mycroftai/test -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - docker pull mycroftai/docker-mycroft
