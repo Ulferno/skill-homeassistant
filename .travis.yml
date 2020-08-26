@@ -18,7 +18,7 @@ install:
  - docker pull mycroftai/docker-mycroft
  - docker run -d -v config_dir_on_host:/home/travis/mycroft/config -v skills_dir_on_host:/home/travis/mycroft/skills --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -p 8181:8181 --name mycroft mycroftai/docker-mycroft
  - "Wait for start of HA and Mycroft in background"
- - travis_wait 12 sleep 10m
+ - travis_wait 12 sleep 5m
 python:
   - "3.6"
 script:
