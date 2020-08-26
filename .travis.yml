@@ -12,7 +12,7 @@ install:
   - mkdir -p /home/travis/mycroft/config
   - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /home/travis/mycroft/skills/homeassistant.mycroftai/
   - cd /home/travis/mycroft/skills/homeassistant.mycroftai/
-  - ls -d -1 "$PWD/"*.*
+  - ls -d
   - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/mycroft/skills/homeassistant.mycroftai/test -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - docker pull mycroftai/docker-mycroft
