@@ -180,7 +180,7 @@ a developer modifying mycroft-core itself, you should run on the
 'master' branch.  It is updated bi-weekly with a stable release.
   Y)es, run on the stable 'master' branch
   N)o, I want to run unstable branches"
-    if [[ $opt_travis == true || get_YN ]] ; then
+    if [[ $opt_travis == false && get_YN ]] ; then
         echo -e "$HIGHLIGHT Y - using 'master' branch $RESET"
         branch=master
         git checkout ${branch}
@@ -426,7 +426,7 @@ function install_venv() {
     # Force version of pip for reproducability, but there is nothing special
     # about this version.  Update whenever a new version is released and
     # verified functional.
-    curl https://bootstrap.pypa.io/get-pip.py | "${VIRTUALENV_ROOT}/bin/python" - 'pip==20.0.2'
+    curl https://bootstrap.pypa.io/get-pip.py | "${VIRTUALENV_ROOT}/bin/python" - 'pip==20.2.2'
     # Function status depending on if pip exists
     [[ -x ${VIRTUALENV_ROOT}/bin/pip ]]
 }

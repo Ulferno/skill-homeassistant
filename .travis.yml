@@ -20,8 +20,8 @@ install:
   - docker exec mycroft /bin/bash -c "mkdir /opt/mycroft/skills/homeassistant.mycroftai"
   - docker cp /home/travis/mycroft/skills/homeassistant.mycroftai mycroft:/opt/mycroft/skills/
   - docker cp /home/travis/mycroft/skills/homeassistant.mycroftai/test/dev_setup.sh mycroft:/opt/mycroft/
-  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/; source /opt/mycroft/.venv/bin/activate; chmod +x dev_setup.sh;"
-  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/skills; ls -a;ls -d; cd /opt/mycroft/; source /opt/mycroft/.venv/bin/activate; ./dev_setup.sh --allow-root -t;"
+  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/; chmod +x dev_setup.sh;"
+  - docker exec mycroft /bin/bash -c "cd /opt/mycroft/skills; ls -a;ls -d; cd /opt/mycroft/; ./dev_setup.sh --allow-root --travis;"
   - echo "Wait for start of HA and Mycroft in background"
 python:
   - "3.6"
