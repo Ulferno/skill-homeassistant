@@ -68,7 +68,7 @@ Options:
 opt_forcemimicbuild=false
 opt_allowroot=false
 opt_skipmimicbuild=false
-opt_python=python3
+opt_python=/opt/python/3.7.1/bin/python
 opt_travis=false
 param=''
 

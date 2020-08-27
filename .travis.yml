@@ -5,6 +5,8 @@ services:
 python:
   - "3.7"
 before_install:
+  - ls /opt/python/
+  - /opt/python/3.6/bin/python --version
   - sudo apt-get update
   - pip install pycodestyle
   - pip install pytest-cov
@@ -25,6 +27,7 @@ install:
   - git pull
   - cp /home/travis/mycroft/skills/homeassistant.mycroftai/test/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
+  - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis
   - echo "Installation finished"
 script:
