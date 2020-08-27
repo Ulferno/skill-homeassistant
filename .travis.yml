@@ -29,8 +29,7 @@ script:
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis -sm
-  - rm -R /opt/mycroft-core/skills/homeassistant.mycroftai/*
-  - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft-core/skills/homeassistant.mycroftai/
+  - cp -R /home/travis/build/Tony763/mycroft-homeassistant /opt/mycroft-core/skills/
   - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft-core/skills/homeassistant.mycroftai/
   - echo "VKtest"
   - cd /opt/mycroft-core/
