@@ -1,0 +1,20 @@
+{
+    "data": {
+        "areas": [
+            {
+                "id": "1295e4e15b214306bceb95e8aa0c83f9",
+                "name": "Ob\u00fdv\u00e1k"
+            },
+            {
+                "id": "61d37735e96d409e9c15bfbddefe80d5",
+                "name": "Kuchyn\u011b"
+            },
+            {
+                "id": "f95d36c03f174928ae36456e1e4acadc",
+                "name": "Lo\u017enice"
+            }
+        ]
+    },
+    "key": "core.area_registry",
+    "version": 1
+}

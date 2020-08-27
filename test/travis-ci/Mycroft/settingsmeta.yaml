@@ -5,7 +5,7 @@ skillMetadata:
     - name: host
       type: text
       label: Host adress or ip number
-      value: ''
+      value: '127.0.0.1'
     - name: token
       type: password
       label: Long-Lived Access Tokens

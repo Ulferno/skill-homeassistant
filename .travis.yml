@@ -19,18 +19,19 @@ script:
   - codecov
   - echo "Prepare for VK test"
   - docker pull homeassistant/home-assistant:0.114.3
-  - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/build/Tony763/mycroft-homeassistant/test -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
+  - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/HA/ -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - cd /opt
   - git clone https://github.com/MycroftAI/mycroft-core.git
   - cd mycroft-core
   - git checkout master
   - git pull
-  - cp /home/travis/build/Tony763/mycroft-homeassistant/test/dev_setup.sh /opt/mycroft-core/
+  - cp /home/travis/build/Tony763/mycroft-homeassistant/test/Mycroft/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis -sm
-  - rm -R /opt/mycroft/skills/homeassistant.mycroftai/
-  - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft/skills/homeassistant.mycroftai/
+  - rm -R /opt/mycroft-core/skills/homeassistant.mycroftai/*
+  - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft-core/skills/homeassistant.mycroftai/
+  - cp /home/travis/build/Tony763/mycroft-homeassistant/test/Mycroft/settingsmeta.yaml /opt/mycroft-core/skills/homeassistant.mycroftai/
   - echo "VKtest"
   - cd /opt/mycroft-core/
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
