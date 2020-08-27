@@ -180,7 +180,7 @@ a developer modifying mycroft-core itself, you should run on the
 'master' branch.  It is updated bi-weekly with a stable release.
   Y)es, run on the stable 'master' branch
   N)o, I want to run unstable branches"
-    if [[ $opt_travis == false && get_YN ]] ; then
+    if [[ $opt_travis == true || get_YN ]] ; then
         echo -e "$HIGHLIGHT Y - using 'master' branch $RESET"
         branch=master
         git checkout ${branch}
