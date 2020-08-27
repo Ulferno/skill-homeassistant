@@ -13,13 +13,8 @@ before_install:
   - pip install python-coveralls
 install:
   - ls -d -1 "$PWD/"*.*
-  - mkdir -p /home/travis/mycroft/skills/homeassistant.mycroftai
-  - mkdir -p /home/travis/mycroft/config
-  - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /home/travis/mycroft/skills/homeassistant.mycroftai/
-  - cd /home/travis/mycroft/skills/homeassistant.mycroftai/
-  - ls -d
   - docker pull homeassistant/home-assistant:0.114.3
-  - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/mycroft/skills/homeassistant.mycroftai/test -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
+  - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/build/Tony763/mycroft-homeassistant/test -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - cd /opt
   - git clone https://github.com/MycroftAI/mycroft-core.git
   - cd mycroft-core
@@ -29,12 +24,18 @@ install:
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis -sm
+  - rm -R /opt/mycroft/skills/homeassistant.mycroftai/
+  - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft/skills/homeassistant.mycroftai/
   - echo "Installation finished"
 script:
   - echo "Coding style check"
+  - cd /home/travis/build/Tony763/mycroft-homeassistant/
   - pycodestyle --max-line-length=100 __init__.py
   - pycodestyle --max-line-length=100 ha_client.py
   - echo "VKtest"
-  - docker exec mycroft /bin/bash -c "source /opt/mycroft/.venv/bin/activate; /opt/mycroft/bin/mycroft-skill-testrunner vktest clear; /opt/mycroft/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai; sleep 2m;"
+  - cd /opt/mycroft-core/
+  - source /opt/mycroft/.venv/bin/activate
+  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
+  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
 after_success:
   - codecov
