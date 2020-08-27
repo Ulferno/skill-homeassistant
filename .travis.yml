@@ -25,7 +25,7 @@ script:
   - cd mycroft-core
   - git checkout master
   - git pull
-  - cp /home/travis/mycroft/skills/homeassistant.mycroftai/test/dev_setup.sh /opt/mycroft-core/
+  - cp /home/travis/build/Tony763/mycroft-homeassistant/test/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis -sm
