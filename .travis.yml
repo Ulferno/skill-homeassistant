@@ -1,6 +1,8 @@
 language: python
 services:
   - docker
+python:
+  - "3.7"
 before_install:
   - sudo apt-get update
   - pip install pycodestyle
@@ -23,8 +25,6 @@ install:
   - docker exec mycroft /bin/bash -c "cd /opt/mycroft/; chmod +x dev_setup.sh;"
   - docker exec mycroft /bin/bash -c "cd /opt/mycroft/skills; ls -a;ls -d; cd /opt/mycroft/; ./dev_setup.sh --allow-root --travis;"
   - echo "Wait for start of HA and Mycroft in background"
-python:
-  - "3.6"
 script:
   - echo "Coding style check"
   - pycodestyle --max-line-length=100 __init__.py
