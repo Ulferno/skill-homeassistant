@@ -6,7 +6,7 @@ python:
   - "3.7"
 before_install:
   - ls /opt/python/
-  - /opt/python/3.6/bin/python --version
+  - /opt/python/3.7.6/bin/python --version
   - sudo apt-get update
   - pip install pycodestyle
   - pip install pytest-cov
