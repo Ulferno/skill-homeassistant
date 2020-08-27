@@ -14,15 +14,16 @@ before_install:
   - cd /opt
   - git clone https://github.com/MycroftAI/mycroft-core.git
   - cd mycroft-core
-  - git checkout master
-  - git pull
   - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis -sm
-  - mkdir /opt/mycroft-core/skills/homeassistant.mycroftai
+  - mkdir -p /opt/mycroft-core/skills/homeassistant.mycroftai
+  - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
   - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft-core/skills/homeassistant.mycroftai
   - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft-core/skills/homeassistant.mycroftai/
+  - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft/skills/homeassistant.mycroftai
+  - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
   - pip install pycodestyle
   - pip install pytest-cov
   - pip install python-coveralls
