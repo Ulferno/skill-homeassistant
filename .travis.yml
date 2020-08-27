@@ -22,15 +22,22 @@ before_install:
   - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
   - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft-core/skills/homeassistant.mycroftai
   - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft-core/skills/homeassistant.mycroftai/
+  - cd /opt/mycroft-core/skills/homeassistant.mycroftai
+  - ls -a
   - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft/skills/homeassistant.mycroftai
   - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
+  - cd /opt/mycroft-core/skills/homeassistant.mycroftai
+  - ls -a
+  - /opt/mycroft-core/bin/mycroft-start
   - pip install pycodestyle
   - pip install pytest-cov
   - pip install python-coveralls
   - pip install coverage
+  - travis_wait 3 sleep 2M
 script:
   - echo "Coding style check"
   - cd $TRAVIS_BUILD_DIR
+  - ls -a
   - ls -d -1 "$PWD/"*.*
   - pycodestyle --max-line-length=100 __init__.py
   - pycodestyle --max-line-length=100 ha_client.py
