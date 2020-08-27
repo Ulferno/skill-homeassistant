@@ -28,7 +28,7 @@ install:
   - cp /home/travis/mycroft/skills/homeassistant.mycroftai/test/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
-  - ./dev_setup.sh --allow-root --travis
+  - ./dev_setup.sh --allow-root --travis -sm
   - echo "Installation finished"
 script:
   - echo "Coding style check"
