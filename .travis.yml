@@ -11,8 +11,13 @@ before_install:
   - pip install pycodestyle
   - pip install pytest-cov
   - pip install python-coveralls
-install:
+script:
   - ls -d -1 "$PWD/"*.*
+  - echo "Coding style check"
+  - pycodestyle --max-line-length=100 __init__.py
+  - pycodestyle --max-line-length=100 ha_client.py
+  - codecov
+  - echo "Prepare for VK test"
   - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/build/Tony763/mycroft-homeassistant/test -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - cd /opt
@@ -26,16 +31,9 @@ install:
   - ./dev_setup.sh --allow-root --travis -sm
   - rm -R /opt/mycroft/skills/homeassistant.mycroftai/
   - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft/skills/homeassistant.mycroftai/
-  - echo "Installation finished"
-script:
-  - echo "Coding style check"
-  - cd /home/travis/build/Tony763/mycroft-homeassistant/
-  - pycodestyle --max-line-length=100 __init__.py
-  - pycodestyle --max-line-length=100 ha_client.py
   - echo "VKtest"
   - cd /opt/mycroft-core/
-  - source /opt/mycroft/.venv/bin/activate
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
 after_success:
-  - codecov
+
