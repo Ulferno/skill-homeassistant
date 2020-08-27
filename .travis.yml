@@ -19,9 +19,9 @@ install:
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/mycroft/skills/homeassistant.mycroftai/test -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - cd /opt
   - git clone https://github.com/MycroftAI/mycroft-core.git
+  - cd mycroft-core
   - git checkout master
   - git pull
-  - cd mycroft-core
   - cp /home/travis/mycroft/skills/homeassistant.mycroftai/test/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
   - ./dev_setup.sh --allow-root --travis
