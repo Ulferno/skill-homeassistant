@@ -21,12 +21,13 @@ before_install:
   - mkdir -p /opt/mycroft-core/skills/homeassistant.mycroftai
   - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
   - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft-core/skills/homeassistant.mycroftai
+  - pip install -r $TRAVIS_BUILD_DIR/requirements.txt
   - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft-core/skills/homeassistant.mycroftai/
-  - cd /opt/mycroft-core/skills/homeassistant.mycroftai
+  - cd /opt/mycroft-core/skills/
   - ls -a
   - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft/skills/homeassistant.mycroftai
   - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
-  - cd /opt/mycroft-core/skills/homeassistant.mycroftai
+  - cd /opt/mycroft-core/skills/
   - ls -a
   - /opt/mycroft-core/bin/mycroft-start debug
   - pip install pycodestyle
