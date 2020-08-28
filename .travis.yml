@@ -33,7 +33,7 @@ before_install:
   - pip install pytest-cov
   - pip install python-coveralls
   - pip install coverage
-  - travis_wait 3 sleep 2M
+  - travis_wait 3 sleep 2m
 script:
   - echo "Coding style check"
   - cd $TRAVIS_BUILD_DIR
