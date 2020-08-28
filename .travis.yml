@@ -13,6 +13,7 @@ before_install:
   - pip install python-coveralls
   - pip install coverage
 script:
+  - route -n|grep "^0.0.0.0"
   - echo "Coding style check"
   - ls -d -1 "$PWD/"*.*
   - pycodestyle --max-line-length=100 __init__.py
