@@ -7,6 +7,8 @@ homeassistant:
   time_zone: America/Los_Angeles
   internal_url: "http://127.0.0.1:8123"
 
+system_health:
+
 input_boolean:
   mycroft_vk_bool:
     name: "Mycroft bool"
@@ -29,7 +31,7 @@ binary_sensor:
           longitude: 2.349014
 
 sensor:
-	- platform: template
+  - platform: template
     sensors:
       mycroft_vk_temp:
         friendly_name: "Mycroft sensor"
@@ -37,7 +39,7 @@ sensor:
         value_template: 12.00
 
 switch:
- - platform: template
+  - platform: template
     switches:
       mycroft_vk_switch:
         friendly_name: "Mycroft switch"
@@ -73,7 +75,7 @@ climate:
     name: "Mycroft climate"
     heater: switch.mycroft_vk_switch
     target_sensor: sensor.mycroft_vk_temp
-	min_temp: 15
+    min_temp: 15
     max_temp: 21
     ac_mode: false
     target_temp: 17
@@ -89,18 +91,4 @@ climate:
 
 shopping_list:
 
-automation:
-  - id: '123456789'
-      alias: Mycroft Tracker Automation
-      trigger:
-      - event: start
-      platform: homeassistant
-      action:
-      - data: {}
-      entity_id: input_boolean.mycroft_vk_bool
-      service: input_boolean.turn_on
-      - data_template:
-          dev_id: mycroft_vk_tracker
-          location_name: "{% if is_state('binary_sensor.mycroft_vk_tracker_sensor', 'on')\
-          \ -%}\n  home\n{%- else -%}\n  not_home\n{%- endif %}\n"
-      service: device_tracker.see
+automation: !include automations.yaml
