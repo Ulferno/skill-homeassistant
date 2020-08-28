@@ -10,7 +10,7 @@ before_install:
   - sudo apt-get update
   - echo "Prepare for VK test"
   - docker pull homeassistant/home-assistant:0.114.3
-  - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:$TRAVIS_BUILD_DIR/test/travis-ci/HA/ -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
+  - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - docker exec home-assistant /bin/bash -c "cd /config/.storage/; ls -a"
   - cd /opt
   - git clone https://github.com/MycroftAI/mycroft-core.git
