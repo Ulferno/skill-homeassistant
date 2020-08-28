@@ -46,6 +46,7 @@ script:
   - cd /opt/mycroft-core/skills/
   - ls -a
   - echo "VKtest"
+  - USE_NETWORK=false
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
 after_success:
