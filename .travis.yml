@@ -18,6 +18,8 @@ before_install:
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
+  - deactivate
+  - source deactivate
   - ./dev_setup.sh --allow-root --travis -sm
   - mkdir -p /opt/mycroft-core/skills/homeassistant.mycroftai
   - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
