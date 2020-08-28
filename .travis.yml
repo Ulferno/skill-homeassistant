@@ -28,7 +28,7 @@ before_install:
   - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
   - cd /opt/mycroft-core/skills/homeassistant.mycroftai
   - ls -a
-  - /opt/mycroft-core/bin/mycroft-start
+  - /opt/mycroft-core/bin/mycroft-start all
   - pip install pycodestyle
   - pip install pytest-cov
   - pip install python-coveralls
