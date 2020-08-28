@@ -21,7 +21,6 @@ script:
   - echo "Prepare for VK test"
   - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
-  - docker exec home-assistant /bin/bash -c "cd /config/.storage/; ls -a"
   - cd /opt
   - deactivate
   - git clone https://github.com/MycroftAI/mycroft-core.git
@@ -34,19 +33,12 @@ script:
   - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft-core/skills/homeassistant.mycroftai
   - source /opt/mycroft-core/.venv/bin/activate
-  - cd /opt/mycroft
-  - pip -V
   - /opt/mycroft-core/bin/mycroft-pip install -r $TRAVIS_BUILD_DIR/requirements.txt
   - /opt/mycroft-core/bin/mycroft-start all
   - travis_wait 5 sleep 4m
-  - ls -a
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
-  - cd /opt/mycroft/skills/
-  - ls -a
   - echo "VKtest"
-  - USE_NETWORK=false
-  - sudo route del default gw 10.20.0.1
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
 after_success:
