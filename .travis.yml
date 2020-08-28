@@ -43,7 +43,7 @@ script:
   - ls -a
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
-  - cd /opt/mycroft-core/skills/
+  - cd /opt/mycroft/skills/
   - ls -a
   - echo "VKtest"
   - USE_NETWORK=false
