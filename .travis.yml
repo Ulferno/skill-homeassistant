@@ -11,6 +11,7 @@ before_install:
   - echo "Prepare for VK test"
   - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:$TRAVIS_BUILD_DIR/test/travis-ci/HA/ -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
+  - docker exec home-assistant /bin/bash -c "tail -f /config/.storage/configuration.yaml"
   - cd /opt
   - git clone https://github.com/MycroftAI/mycroft-core.git
   - cd mycroft-core
@@ -22,7 +23,7 @@ before_install:
   - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft-core/skills/homeassistant.mycroftai
   - cd /opt/mycroft
-  - source .venv/bin/activate
+  - pip -V
   - pip install -r $TRAVIS_BUILD_DIR/requirements.txt
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft-core/skills/homeassistant.mycroftai/
   - cd /opt/mycroft-core/skills/

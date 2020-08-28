@@ -481,6 +481,7 @@ fi
 
 # Start the virtual environment
 source "${VIRTUALENV_ROOT}/bin/activate"
+echo "Virtual env. started."
 cd "$TOP"
 
 # Install pep8 pre-commit hook
