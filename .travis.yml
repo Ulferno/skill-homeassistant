@@ -44,7 +44,6 @@ script:
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
   - cd /opt/mycroft-core/skills/
   - ls -a
-
   - travis_wait 5 sleep 4m
   - echo "VKtest"
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
