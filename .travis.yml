@@ -10,23 +10,24 @@ before_install:
   - sudo apt-get update
   - echo "Prepare for VK test"
   - docker pull homeassistant/home-assistant:0.114.3
-  - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/HA/ -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
+  - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:$TRAVIS_BUILD_DIR/test/travis-ci/HA/ -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - cd /opt
   - git clone https://github.com/MycroftAI/mycroft-core.git
   - cd mycroft-core
-  - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
+  - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis -sm
   - mkdir -p /opt/mycroft-core/skills/homeassistant.mycroftai
   - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
-  - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft-core/skills/homeassistant.mycroftai
+  - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft-core/skills/homeassistant.mycroftai
+  - source /opt/mycroft/.venv/bin/activate
   - pip install -r $TRAVIS_BUILD_DIR/requirements.txt
-  - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft-core/skills/homeassistant.mycroftai/
+  - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft-core/skills/homeassistant.mycroftai/
   - cd /opt/mycroft-core/skills/
   - ls -a
-  - cp -R /home/travis/build/Tony763/mycroft-homeassistant/* /opt/mycroft/skills/homeassistant.mycroftai
-  - cp /home/travis/build/Tony763/mycroft-homeassistant/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
+  - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
+  - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
   - cd /opt/mycroft-core/skills/
   - ls -a
   - /opt/mycroft-core/bin/mycroft-start debug
@@ -34,7 +35,7 @@ before_install:
   - pip install pytest-cov
   - pip install python-coveralls
   - pip install coverage
-  - travis_wait 3 sleep 2m
+  - travis_wait 5 sleep 4m
 script:
   - echo "Coding style check"
   - cd $TRAVIS_BUILD_DIR
