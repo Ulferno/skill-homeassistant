@@ -38,7 +38,7 @@ script:
   - /opt/mycroft-core/bin/mycroft-pip install -r $TRAVIS_BUILD_DIR/requirements.txt
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft-core/skills/homeassistant.mycroftai/
   - cd /opt/mycroft-core/skills/
-- /opt/mycroft-core/bin/mycroft-start all
+  - /opt/mycroft-core/bin/mycroft-start all
   - ls -a
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
