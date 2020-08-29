@@ -1,0 +1,17 @@
+2020-08-29 20:39:02 WARNING (MainThread) [homeassistant.components.generic_thermostat.climate] No previously saved temperature, setting to 17.0
+2020-08-29 20:39:02 ERROR (MainThread) [homeassistant.components.automation.mycroft_tracker_automation] Mycroft Tracker Automation: Error executing script. Service not found for call_service at pos 2: Unable to find service device_tracker/see
+2020-08-29 20:39:02 ERROR (MainThread) [homeassistant.components.automation.mycroft_tracker_automation] While executing automation automation.mycroft_tracker_automation
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/automation/__init__.py", line 430, in async_trigger
+    await self.action_script.async_run(variables, trigger_context)
+  File "/usr/src/homeassistant/homeassistant/helpers/script.py", line 802, in async_run
+    await asyncio.shield(run.async_run())
+  File "/usr/src/homeassistant/homeassistant/helpers/script.py", line 183, in async_run
+    await self._async_step(log_exceptions=False)
+  File "/usr/src/homeassistant/homeassistant/helpers/script.py", line 191, in _async_step
+    await getattr(
+  File "/usr/src/homeassistant/homeassistant/helpers/script.py", line 380, in _async_call_service_step
+    await service_task
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1258, in async_call
+    raise ServiceNotFound(domain, service) from None
+homeassistant.exceptions.ServiceNotFound: Unable to find service device_tracker/see
