@@ -15,7 +15,7 @@ before_install:
   - echo "Prepare for VK test"
   - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
-  - docker exec “home-assistant” /bin/bash -c “cd t/tmp; curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py”
+  - docker exec “home-assistant” /bin/bash -c “cd /tmp; curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py”
   - docker exec “home-assistant” /bin/bash -c “python3 get-pip.py”
   - docker exec “home-assistant” /bin/bash -c “pip3 install homeassistant-cli”
   - docker exec “home-assistant” /bin/bash -c “hass-cli entity”
