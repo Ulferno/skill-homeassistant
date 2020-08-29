@@ -17,7 +17,7 @@ before_install:
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - travis_wait 3 sleep 2m
   - export HASS_SERVER=http://127.0.0.1:8123
-  - export HASS_TOKEN=.eyJpceyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ93MiOiJhMzRhNjEzMmE5NzM0Yzk1YWYyODU4YjdmN2RjNDIyOSIsImlhdCI6MTU5ODU0NTk1NywiZXhwIjoxOTEzOTA1OTU3fQ.LlhzvCv-orEVipH7HGJxvB304MFJjYYyDNjhT3_egH8
+  - export HASS_TOKEN='.eyJpceyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ93MiOiJhMzRhNjEzMmE5NzM0Yzk1YWYyODU4YjdmN2RjNDIyOSIsImlhdCI6MTU5ODU0NTk1NywiZXhwIjoxOTEzOTA1OTU3fQ.LlhzvCv-orEVipH7HGJxvB304MFJjYYyDNjhT3_egH8'
   - pip install homeassistant-cli
   - source <(hass-cli completion bash)
   - hass-cli info
