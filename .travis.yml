@@ -12,13 +12,10 @@ before_install:
   - pip install pytest-cov
   - pip install python-coveralls
   - pip install coverage
-script:
-  - echo "Coding style check"
-  - pycodestyle --max-line-length=100 __init__.py
-  - pycodestyle --max-line-length=100 ha_client.py
   - echo "Prepare for VK test"
   - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
+  - docker exec “pip3 install homeassistant-cli; hass-cli entity”
   - cd /opt
   - deactivate
   - git clone https://github.com/MycroftAI/mycroft-core.git
@@ -37,8 +34,12 @@ script:
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
   - /opt/mycroft-core/bin/mycroft-start all
   - travis_wait 6 sleep 4m
+  - cd $TRAVIS_BUILD_DIR/
+script:
+  - echo "Coding style check"
+  - pycodestyle --max-line-length=100 __init__.py
+  - pycodestyle --max-line-length=100 ha_client.py
   - echo "VKtest"
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -i turn
 after_success:
-
