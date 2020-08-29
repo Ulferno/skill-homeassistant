@@ -39,6 +39,6 @@ script:
   - travis_wait 6 sleep 4m
   - echo "VKtest"
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
-  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
+  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -i turn
 after_success:
 
