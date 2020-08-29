@@ -40,7 +40,7 @@ sensor:
       mycroft_vk_sensor:
         friendly_name: "Mycroft sensor"
         unit_of_measurement: '°C'
-        value_template: 12.00
+        value_template: 122.00
 
 switch:
   - platform: template
