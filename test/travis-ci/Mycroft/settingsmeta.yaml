@@ -5,11 +5,11 @@ skillMetadata:
     - name: host
       type: text
       label: Host adress or ip number
-      value: '127.0.0.1'
+      value: ''
     - name: token
       type: password
       label: Long-Lived Access Tokens
-      value: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmMzI5NmEzYTA0ZDc0NTI3OGUzMDIzN2I5MDlmYmM5MSIsImlhdCI6MTU5ODczMzU5MywiZXhwIjoxOTE0MDkzNTkzfQ.HEGTdkF5tt473J3WktjUIb71x06tZwcZUjp070QzLec'
+      value: ''
     - name: portnum
       type: number
       label: Port number
