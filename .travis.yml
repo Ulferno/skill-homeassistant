@@ -36,7 +36,6 @@ before_install:
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
   - chmod 0444 /opt/mycroft/skills/homeassistant.mycroftai/settingsmeta.yaml
-  - chown hasec.hasec /opt/mycroft/skills/homeassistant.mycroftai/settingsmeta.yaml
   - /opt/mycroft-core/bin/mycroft-start all
   - travis_wait 6 sleep 4m
   - cd $TRAVIS_BUILD_DIR/
