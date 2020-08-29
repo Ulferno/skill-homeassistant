@@ -9,7 +9,7 @@ skillMetadata:
     - name: token
       type: password
       label: Long-Lived Access Tokens
-      value: '.eyJpceyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ93MiOiJhMzRhNjEzMmE5NzM0Yzk1YWYyODU4YjdmN2RjNDIyOSIsImlhdCI6MTU5ODU0NTk1NywiZXhwIjoxOTEzOTA1OTU3fQ.LlhzvCv-orEVipH7HGJxvB304MFJjYYyDNjhT3_egH8'
+      value: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmMzI5NmEzYTA0ZDc0NTI3OGUzMDIzN2I5MDlmYmM5MSIsImlhdCI6MTU5ODczMzU5MywiZXhwIjoxOTE0MDkzNTkzfQ.HEGTdkF5tt473J3WktjUIb71x06tZwcZUjp070QzLec'
     - name: portnum
       type: number
       label: Port number
