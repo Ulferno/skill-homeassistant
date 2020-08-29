@@ -45,5 +45,5 @@ script:
   - pycodestyle --max-line-length=100 ha_client.py
   - echo "VKtest"
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
-  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -i turn
+  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
 after_success:
