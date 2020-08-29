@@ -34,10 +34,13 @@ script:
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft-core/skills/homeassistant.mycroftai
   - source /opt/mycroft-core/.venv/bin/activate
   - /opt/mycroft-core/bin/mycroft-pip install -r $TRAVIS_BUILD_DIR/requirements.txt
-  - /opt/mycroft-core/bin/mycroft-start all
-  - travis_wait 5 sleep 4m
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
+  - cd /opt/mycroft/skills/
+  - git clone https://github.com/JarbasSkills/skill-mock-backend.git
+  - /opt/mycroft-core/bin/mycroft-pip install -r /opt/mycroft/skills/skill-mock-backend/requirements.txt
+  - /opt/mycroft-core/bin/mycroft-start all
+  - travis_wait 5 sleep 4m
   - echo "VKtest"
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
