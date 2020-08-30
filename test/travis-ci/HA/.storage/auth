@@ -41,20 +41,6 @@
                 "user_id": "6493e3af728b453a888d5ce5f35ae389"
             },
             {
-                "access_token_expiration": 315360000.0,
-                "client_icon": null,
-                "client_id": null,
-                "client_name": "mycroft",
-                "created_at": "2020-08-27T16:32:37.044505+00:00",
-                "id": "a34a6132a9734c95af2858b7f7dc4229",
-                "jwt_key": "11c8f14076cd628ab35e0d276037e33558bf457bef27746b2660bea81c4cd5f62dc854b583c834be094c3cdc7a739842ea35505031fd40e4a4db62b679ae5af7",
-                "last_used_at": "2020-08-27T16:32:37.044606+00:00",
-                "last_used_ip": null,
-                "token": "20d65afd35d5b6b682e04666f3446289ae1e5bffa269a1776d13ee5a5ddb7551db43e65e502e2549a345e2a5f636c1946b12a3dd628e3f3d18ba710dbfbc4f0d",
-                "token_type": "long_lived_access_token",
-                "user_id": "6493e3af728b453a888d5ce5f35ae389"
-            },
-            {
                 "access_token_expiration": 1800.0,
                 "client_icon": null,
                 "client_id": "http://127.0.0.1:8123/",
@@ -79,6 +65,34 @@
                 "last_used_at": "2020-08-29T20:39:53.233367+00:00",
                 "last_used_ip": null,
                 "token": "68c62a7894cab52bff67b54657df5cd3b9ddecd4e2f75374f79fac25a206b4aa052a4f54a426f54a7dc678699b22845fa275dae8e1cbc9dc51ae45171e3f740a",
+                "token_type": "long_lived_access_token",
+                "user_id": "6493e3af728b453a888d5ce5f35ae389"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://127.0.0.1:8123/",
+                "client_name": null,
+                "created_at": "2020-08-30T10:57:43.422748+00:00",
+                "id": "ed8d67066edb454a8c0ba3c2a6c066ca",
+                "jwt_key": "0e5701475c0976a38a003d1cb74d98c576a0840a47e6bda4237b64e9c48174b7320c5dfa8ff6b73ab9e439f006dd099c22c3966e7af313e0545b42581eee28b0",
+                "last_used_at": "2020-08-30T10:57:43.422864+00:00",
+                "last_used_ip": "172.17.0.1",
+                "token": "3bc5ea44a2bd73b3b5113e9a6cba3b35a68c3acfb25a90b3ae54fd317c9da24d1de2e537befe6db19aa44ce3e8ba431d0eb81b861fe8dbebc871ee903495c599",
+                "token_type": "normal",
+                "user_id": "6493e3af728b453a888d5ce5f35ae389"
+            },
+            {
+                "access_token_expiration": 315360000.0,
+                "client_icon": null,
+                "client_id": null,
+                "client_name": "mycroft",
+                "created_at": "2020-08-30T10:58:01.803528+00:00",
+                "id": "87af5095ce264d3cba552162c9157355",
+                "jwt_key": "042d93e8501845fef3a62969ea9f32591499770c6bb8eb7454510f1c5f42e61cf80eee33f60ba5afa1fa4eaa5876cb393504dc570208404af2da6b22a9e4675d",
+                "last_used_at": "2020-08-30T10:58:01.803635+00:00",
+                "last_used_ip": null,
+                "token": "b2561a47bbeac334a8e566ce0b4caf629e74bb1adbb5c5b0f784552d8d83d2de765dd82e3d7a3b9c9f697500595fff2b25a4f995c5fe2a4257fc058afa135374",
                 "token_type": "long_lived_access_token",
                 "user_id": "6493e3af728b453a888d5ce5f35ae389"
             }
