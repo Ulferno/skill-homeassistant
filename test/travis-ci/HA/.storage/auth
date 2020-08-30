@@ -95,6 +95,20 @@
                 "token": "b2561a47bbeac334a8e566ce0b4caf629e74bb1adbb5c5b0f784552d8d83d2de765dd82e3d7a3b9c9f697500595fff2b25a4f995c5fe2a4257fc058afa135374",
                 "token_type": "long_lived_access_token",
                 "user_id": "6493e3af728b453a888d5ce5f35ae389"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://127.0.0.1:8123/",
+                "client_name": null,
+                "created_at": "2020-08-30T19:41:44.236849+00:00",
+                "id": "713eb78636134c2f970f6a358d9fef49",
+                "jwt_key": "4b9aaa11af4a829f9f7c106a0cd4f6a8243f63467e7a208f36974298f970f03b26def3612854d12eddb17270d7a33d7b001e482389f0f8be10d31e51f749fb79",
+                "last_used_at": "2020-08-30T19:41:44.237020+00:00",
+                "last_used_ip": "172.17.0.1",
+                "token": "5f8ce8207fa6b7f451546eaf0b4ba6f27aeb0142045a3fcef6c93070c1f0a48dcd0df16c479e99c76ee8efd1e3868cd76146b8c57459677bfe3b9ba93410eb7b",
+                "token_type": "normal",
+                "user_id": "6493e3af728b453a888d5ce5f35ae389"
             }
         ],
         "users": [

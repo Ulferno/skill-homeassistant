@@ -1,0 +1,136 @@
+{
+    "data": [
+        {
+            "last_seen": "2020-08-30T19:42:01.880754+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "t",
+                    "id": "t",
+                    "user_id": "6493e3af728b453a888d5ce5f35ae389"
+                },
+                "context": {
+                    "id": "cc118418eaf811ea809fb7a5d8409c65",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.t",
+                "last_changed": "2020-08-30T19:41:28.471243+00:00",
+                "last_updated": "2020-08-30T19:41:28.471243+00:00",
+                "state": "unknown"
+            }
+        },
+        {
+            "last_seen": "2020-08-30T19:42:01.880754+00:00",
+            "state": {
+                "attributes": {
+                    "editable": false,
+                    "friendly_name": "Mycroft bool"
+                },
+                "context": {
+                    "id": "d83f1b8ceaf811eab5235543a1126bc1",
+                    "parent_id": null,
+                    "user_id": "6493e3af728b453a888d5ce5f35ae389"
+                },
+                "entity_id": "input_boolean.mycroft_vk_bool",
+                "last_changed": "2020-08-30T19:41:48.903132+00:00",
+                "last_updated": "2020-08-30T19:41:48.903132+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2020-08-30T19:42:01.880754+00:00",
+            "state": {
+                "attributes": {
+                    "editable": false,
+                    "initial": 20.0,
+                    "max": 255.0,
+                    "min": 0.0,
+                    "mode": "slider",
+                    "step": 1.0
+                },
+                "context": {
+                    "id": "ccab26e0eaf811eaa2525715928c5243",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "input_number.mycroft_vk_num",
+                "last_changed": "2020-08-30T19:41:29.477929+00:00",
+                "last_updated": "2020-08-30T19:41:29.477929+00:00",
+                "state": "20.0"
+            }
+        },
+        {
+            "last_seen": "2020-08-30T19:42:01.880754+00:00",
+            "state": {
+                "attributes": {
+                    "current": 0,
+                    "friendly_name": "Mycroft Tracker Automation",
+                    "id": "123456789",
+                    "last_triggered": "2020-08-30T19:41:29.829032+00:00",
+                    "mode": "single"
+                },
+                "context": {
+                    "id": "cce0b87beaf811ea84e8091eae9e35d8",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.mycroft_tracker_automation",
+                "last_changed": "2020-08-30T19:41:29.493101+00:00",
+                "last_updated": "2020-08-30T19:41:29.831778+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-08-30T19:42:01.880754+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Mycroft switch"
+                },
+                "context": {
+                    "id": "d83f584aeaf811ea8840bd9f120c61e4",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "switch.mycroft_vk_switch",
+                "last_changed": "2020-08-30T19:41:48.904087+00:00",
+                "last_updated": "2020-08-30T19:41:48.904087+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2020-08-30T19:42:01.880754+00:00",
+            "state": {
+                "attributes": {
+                    "current_temperature": null,
+                    "friendly_name": "Mycroft climate",
+                    "hvac_action": "off",
+                    "hvac_modes": [
+                        "heat",
+                        "off"
+                    ],
+                    "max_temp": 21.0,
+                    "min_temp": 15.0,
+                    "preset_mode": "none",
+                    "preset_modes": [
+                        "none",
+                        "away"
+                    ],
+                    "supported_features": 17,
+                    "temperature": 17.0
+                },
+                "context": {
+                    "id": "ccaf0de0eaf811eaa3c9413d71a42514",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "climate.mycroft_climate",
+                "last_changed": "2020-08-30T19:41:29.503549+00:00",
+                "last_updated": "2020-08-30T19:41:29.503549+00:00",
+                "state": "off"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}
