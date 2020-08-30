@@ -42,6 +42,6 @@ script:
   - pycodestyle --max-line-length=100 ha_client.py
   - echo "VKtest"
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
-  - coverage run -m test.integrationtests.voight_kampff -t homeassistant.mycroftai --stop
+  - python -m test.integrationtests.voight_kampff -t homeassistant.mycroftai --stop
 after_success:
   - bash <(curl -s https://codecov.io/bash)
