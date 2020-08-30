@@ -1,26 +1,13 @@
 homeassistant:
   name: Home
-  latitude: 32.87336
-  longitude: 117.22743
+  latitude: 48.864716
+  longitude: 2.349014
   elevation: 430
   unit_system: metric
   time_zone: America/Los_Angeles
   internal_url: "http://127.0.0.1:8123"
 
 default_config:
-
-system_health:
-
-input_boolean:
-  mycroft_vk_bool:
-    name: "Mycroft bool"
-    initial: off
-
-input_number:
-  mycroft_vk_num:
-    min: 0
-    max: 255
-    initial: 20
 
 binary_sensor:
   - platform: template
@@ -94,5 +81,16 @@ climate:
     precision: 0.1
 
 shopping_list:
+
+input_boolean:
+mycroft_vk_bool:
+  name: "Mycroft bool"
+  initial: off
+
+input_number:
+mycroft_vk_num:
+  min: 0
+  max: 255
+  initial: 20
 
 automation: !include automations.yaml
