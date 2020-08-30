@@ -1,4 +1,4 @@
-# <img src='home-assistant.png' card_color='#000000' width='50' height='50' style='vertical-align:bottom'/> Home Assistant [![Build Status](https://travis-ci.com/gador/mycroft-homeassistant.svg?branch=20.02)](https://travis-ci.com/gador/mycroft-homeassistant) [![codecov](https://codecov.io/gh/gador/mycroft-homeassistant/branch/20.02/graph/badge.svg)](https://codecov.io/gh/gador/mycroft-homeassistant)
+# <img src='home-assistant.png' card_color='#000000' width='50' height='50' style='vertical-align:bottom'/> Home Assistant [![Build Status](https://travis-ci.org/Tony763/mycroft-homeassistant.svg?branch=turn_on_all-group-squash)](https://travis-ci.com/gador/mycroft-homeassistant) [![codecov](https://codecov.io/gh/gador/mycroft-homeassistant/branch/20.02/graph/badge.svg)](https://codecov.io/gh/gador/mycroft-homeassistant)
 Awaken your home - Control Home Assistant
 
 ## About 
