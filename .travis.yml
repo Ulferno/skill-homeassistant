@@ -5,14 +5,11 @@ services:
 python:
   - "3.7"
 before_install:
-  - ls /opt/python/
-  - /opt/python/3.7.6/bin/python --version
   - sudo apt-get update
   - pip install pycodestyle
   - pip install pytest-cov
   - pip install python-coveralls
   - pip install coverage
-  - echo "Prepare for VK test"
   - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - travis_wait 3 sleep 2m
