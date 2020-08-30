@@ -2,7 +2,7 @@
     "data": {
         "entities": [
             {
-                "capabilities": null,
+                "capabilities": {},
                 "config_entry_id": null,
                 "device_class": null,
                 "device_id": null,
@@ -18,7 +18,7 @@
                 "unit_of_measurement": null
             },
             {
-                "capabilities": null,
+                "capabilities": {},
                 "config_entry_id": null,
                 "device_class": null,
                 "device_id": null,
@@ -34,7 +34,7 @@
                 "unit_of_measurement": null
             },
             {
-                "capabilities": null,
+                "capabilities": {},
                 "config_entry_id": null,
                 "device_class": null,
                 "device_id": null,
@@ -50,7 +50,7 @@
                 "unit_of_measurement": null
             },
             {
-                "capabilities": null,
+                "capabilities": {},
                 "config_entry_id": null,
                 "device_class": null,
                 "device_id": null,
@@ -66,7 +66,7 @@
                 "unit_of_measurement": null
             },
             {
-                "capabilities": null,
+                "capabilities": {},
                 "config_entry_id": null,
                 "device_class": null,
                 "device_id": null,
@@ -82,8 +82,8 @@
                 "unit_of_measurement": null
             },
             {
-                "capabilities": null,
-                "config_entry_id": "7ba46b4470464130ace6babe846aa1eb",
+                "capabilities": {},
+                "config_entry_id": "fd95be72106a402dac5d59f4a51ae480",
                 "device_class": null,
                 "device_id": null,
                 "disabled_by": null,

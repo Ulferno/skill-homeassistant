@@ -12,3 +12,4 @@
       location_name: "{% if is_state('binary_sensor.mycroft_vk_tracker_sensor', 'on')\
         \ -%}\n  home\n{%- else -%}\n  not_home\n{%- endif %}\n"
     service: device_tracker.see
+  mode: single
