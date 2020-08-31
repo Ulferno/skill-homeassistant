@@ -33,7 +33,7 @@ switch:
   - platform: template
     switches:
       mycroft_vk_switch:
-        friendly_name: "Mycroft switch"
+        friendly_name: "Mycroft sw"
         value_template: "{{ is_state('input_boolean.mycroft_vk_bool', 'on') }}"
         turn_on:
           service: input_boolean.turn_on
