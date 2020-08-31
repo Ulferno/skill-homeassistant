@@ -43,5 +43,6 @@ script:
   - echo "VKtest"
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - python -m test.integrationtests.voight_kampff -t homeassistant.mycroftai --stop
+  - coverage run --source='.' -m test.integrationtests.voight_kampff -t homeassistant.mycroftai --stop
 after_success:
   - bash <(curl -s https://codecov.io/bash)
