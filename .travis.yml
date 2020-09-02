@@ -10,8 +10,7 @@ before_install:
   - pip install pytest-cov
   - pip install python-coveralls
   - pip install coverage
-  - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
-  - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
+  # Home-assistant instalation
   - docker pull homeassistant/home-assistant:0.111.4
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   - travis_wait 1 sleep 1m
@@ -21,6 +20,9 @@ before_install:
   - source <(hass-cli completion bash)
   - hass-cli info
   - hass-cli state list
+  # Mycroft instalation
+  - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
+  - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
   - cd /opt
   - deactivate
   - git clone https://github.com/MycroftAI/mycroft-core.git
@@ -38,12 +40,13 @@ before_install:
   - travis_wait 6 sleep 4m
   - cd $TRAVIS_BUILD_DIR/
 script:
-  - echo "Coding style check"
+  # Coding style check
   - pycodestyle --max-line-length=100 __init__.py
   - pycodestyle --max-line-length=100 ha_client.py
-  - echo "VKtest"
+  # VKtest
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
+  - cp /opt/mycroft-core/test/integrationtests/voight_kampff/.coverage .
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
