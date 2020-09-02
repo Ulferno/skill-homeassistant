@@ -1,5 +1,6 @@
 - id: '123456789'
   alias: Mycroft Tracker Automation
+  trigger:
   action:
   - data: {}
     entity_id: input_boolean.mycroft_vk_bool
