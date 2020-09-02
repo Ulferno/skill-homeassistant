@@ -48,8 +48,7 @@ script:
   - pycodestyle --max-line-length=100 ha_client.py >> ./log/__ha_client__.log
   # VKtest
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
-  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ./allure_result
-  - ls -a /opt/mycroft-core/test/integrationtests/voight_kampff/
+  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ./allure_results
   # Generate Allure report
   - python3 -m allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure-results --clean -o allure-report
   # Send report somewhere
