@@ -29,32 +29,35 @@ before_install:
   - deactivate
   - git clone https://github.com/MycroftAI/mycroft-core.git
   - cd mycroft-core
+  # Apply de_setup.sh silent mode fix
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis -sm
   - source /opt/mycroft-core/.venv/bin/activate
   - /opt/mycroft-core/bin/mycroft-pip install -r $TRAVIS_BUILD_DIR/requirements.txt
+  # Apply skill test settings
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settings.json /opt/mycroft/skills/homeassistant.mycroftai/
-  - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/run_test_suite.sh /opt/mycroft-core/test/integrationtests/voight_kampff/
-  - /opt/mycroft-core/bin/mycroft-start all
-  # Wait for Mycroft to start
-  - travis_wait 6 sleep 4m
   # Back into build dir
   - cd $TRAVIS_BUILD_DIR/
 script:
   # Coding style check
-  - pycodestyle --max-line-length=100 __init__.py
-  - pycodestyle --max-line-length=100 ha_client.py
+  - mkdir log
+  - pycodestyle --max-line-length=100 __init__.py >> ./log/__init__.log
+  - pycodestyle --max-line-length=100 ha_client.py >> ./log/__ha_client__.log
   # VKtest
-  - ls -a /opt/mycroft-core/test/integrationtests/voight_kampff/
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
-  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
-  - ls -a /opt/mycroft-core/test/integrationtests/voight_kampff/
-  - cp /opt/mycroft-core/test/integrationtests/voight_kampff/.coverage .
-  - pwd
-
+  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ./allure_result $@
+  # Generate Allure report
+  - python3 -m allure generate .test/integrationtests/voight_kampff/allure-results --clean -o allure-report
+  # Send report somewhere
+  - cd /opt
+  - git clone https://github.com/Tony763/Tony763.github.io.git
+  - cd Tony763.github.io
+  - mkdir -p $TRAVIS_COMMIT/
+  - cp -r $TRAVIS_BUILD_DIR/log .
+  - cp -r $TRAVIS_BUILD_DIR/allure_result
+  - git commit -m "Travis CI results for "$TRAVIS_COMMIT
+  - git push
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-  - pwd

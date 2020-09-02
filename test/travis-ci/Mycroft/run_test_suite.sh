@@ -16,7 +16,7 @@ ${SCRIPT_DIR}/../../../start-mycroft.sh all
 # Run the integration test suite.  Results will be formatted for input into
 # the Allure reporting tool.
 echo "Running behave with the arguments \"$@\""
-coverage run --source=='/opt'  -m behave $@
+coverage run --source=='/opt/mycroft/skills/homeassistant.mycroftai/'  -m behave $@
 RESULT=$?
 # Stop all mycroft core services.
 ${SCRIPT_DIR}/../../../stop-mycroft.sh all
