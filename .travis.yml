@@ -50,7 +50,7 @@ script:
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ./allure_result $@
   # Generate Allure report
-  - python3 -m allure generate .test/integrationtests/voight_kampff/allure-results --clean -o allure-report
+  - python3 -m allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure-results --clean -o allure-report
   # Send report somewhere
   - cd /opt
   - git clone https://github.com/Tony763/Tony763.github.io.git
