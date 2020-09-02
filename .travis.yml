@@ -14,47 +14,69 @@ before_install:
   - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
   # Home-assistant instalation
-  - docker pull homeassistant/home-assistant:0.111.4
+  - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   # Wait for HA to start
-  - travis_wait 1 sleep 1m
+  - travis_wait 2 sleep 1m
   - pip install homeassistant-cli
   - export HASS_SERVER=http://127.0.0.1:8123
   - export HASS_TOKEN='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmMzI5NmEzYTA0ZDc0NTI3OGUzMDIzN2I5MDlmYmM5MSIsImlhdCI6MTU5ODczMzU5MywiZXhwIjoxOTE0MDkzNTkzfQ.HEGTdkF5tt473J3WktjUIb71x06tZwcZUjp070QzLec'
   - source <(hass-cli completion bash)
   - hass-cli info
   - hass-cli state list
+  # Allure CLI - report generator instalation
+  - cd /opt
+  - sudo apt install unzip -y
+  - sudo apt install devscripts -y
+  - sudo apt install openjdk-8-jdk -y
+  - sudo apt install fakeroot -y
+  - sudo apt install debhelper -y
+  - sudo apt install cdbs -y
+  - git clone https://github.com/allure-framework/allure-debian.git
+  - cd allure-debian/
+  - ./source-prepare.sh
+  - chmod +x /opt/allure-debian/target/allure/bin/allure
   # Mycroft instalation
   - cd /opt
   - deactivate
   - git clone https://github.com/MycroftAI/mycroft-core.git
   - cd mycroft-core
+  # Apply de_setup.sh silent mode fix
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
   - chmod +x dev_setup.sh
   - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis -sm
   - source /opt/mycroft-core/.venv/bin/activate
+  - pip3 install allure-behave
   - /opt/mycroft-core/bin/mycroft-pip install -r $TRAVIS_BUILD_DIR/requirements.txt
+  # Apply skill test settings
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settings.json /opt/mycroft/skills/homeassistant.mycroftai/
-  - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/run_test_suite.sh /opt/mycroft-core/test/integrationtests/voight_kampff/
+  # Start Mycroft and wait for warm up
   - /opt/mycroft-core/bin/mycroft-start all
-  # Wait for Mycroft to start
-  - travis_wait 6 sleep 4m
+  - travis_wait 4 sleep 3m
+script:
   # Back into build dir
   - cd $TRAVIS_BUILD_DIR/
-script:
   # Coding style check
-  - pycodestyle --max-line-length=100 __init__.py
-  - pycodestyle --max-line-length=100 ha_client.py
+  - mkdir log
+  - pycodestyle --max-line-length=100 __init__.py >> ./log/__init__.log
+  - pycodestyle --max-line-length=100 ha_client.py >> ./log/__ha_client__.log
   # VKtest
-  - ls -a /opt/mycroft-core/test/integrationtests/voight_kampff/
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
-  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
-  - ls -a /opt/mycroft-core/test/integrationtests/voight_kampff/
-  - cp /opt/mycroft-core/test/integrationtests/voight_kampff/.coverage .
-  - pwd
-
+  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ./allure_result
+  # Generate Allure report
+  - /opt/allure-debian/target/allure/bin/allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure_report
+  # Send report somewhere
+#  - cd /opt
+#  - git clone https://tony763-m:@github.com/tony763/tony763.github.io.git --branch=master
+#  - cd Tony763.github.io
+#  - mkdir -p /mycroft-homeassistant/$TRAVIS_COMMIT/
+#  - cp -r $TRAVIS_BUILD_DIR/log ./mycroft-homeassistant/$TRAVIS_COMMIT/
+#  - cp -r $TRAVIS_BUILD_DIR/allure_report ./mycroft-homeassistant/$TRAVIS_COMMIT/
+#  - git config --global user.email "tony763@gmx.com"
+#  - git config --global user.name "Tony763-M"
+#  - git add .
+#  - git commit -m "Travis CI results for "$TRAVIS_COMMIT
+#  - git push
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-  - pwd
