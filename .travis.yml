@@ -57,8 +57,8 @@ script:
   - cd Tony763.github.io
   - mkdir -p $TRAVIS_COMMIT/
   - cp -r $TRAVIS_BUILD_DIR/log .
-  - cp -r $TRAVIS_BUILD_DIR/allure_result .
-  - git add
+  - cp -r $TRAVIS_BUILD_DIR/allure-report .
+  - git add .
   - git commit -m "Travis CI results for "$TRAVIS_COMMIT
   - git push
 after_success:
