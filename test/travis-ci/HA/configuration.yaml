@@ -9,6 +9,17 @@ homeassistant:
 
 default_config:
 
+input_boolean:
+  mycroft_vk_bool:
+    name: "Mycroft bool"
+    initial: off
+
+input_number:
+  mycroft_vk_num:
+    min: 0
+    max: 255
+    initial: 20
+
 binary_sensor:
   - platform: template
     sensors:
@@ -81,16 +92,5 @@ climate:
     precision: 0.1
 
 shopping_list:
-
-input_boolean:
-mycroft_vk_bool:
-  name: "Mycroft bool"
-  initial: off
-
-input_number:
-mycroft_vk_num:
-  min: 0
-  max: 255
-  initial: 20
 
 automation: !include automations.yaml

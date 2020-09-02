@@ -16,6 +16,7 @@ before_install:
   # Home-assistant instalation
   - docker pull homeassistant/home-assistant:0.111.4
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
+  # Wait for HA to start
   - travis_wait 1 sleep 1m
   - pip install homeassistant-cli
   - export HASS_SERVER=http://127.0.0.1:8123
@@ -38,7 +39,9 @@ before_install:
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settings.json /opt/mycroft/skills/homeassistant.mycroftai/
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/run_test_suite.sh /opt/mycroft-core/test/integrationtests/voight_kampff/
   - /opt/mycroft-core/bin/mycroft-start all
+  # Wait for Mycroft to start
   - travis_wait 6 sleep 4m
+  # Back into build dir
   - cd $TRAVIS_BUILD_DIR/
 script:
   # Coding style check
