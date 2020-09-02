@@ -48,9 +48,13 @@ script:
   - pycodestyle --max-line-length=100 __init__.py
   - pycodestyle --max-line-length=100 ha_client.py
   # VKtest
+  - ls -a /opt/mycroft-core/test/integrationtests/voight_kampff/
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai
+  - ls -a /opt/mycroft-core/test/integrationtests/voight_kampff/
   - cp /opt/mycroft-core/test/integrationtests/voight_kampff/.coverage .
+  - pwd
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - pwd
