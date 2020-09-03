@@ -1,3 +1,6 @@
+env:
+  global:
+    secure: iyd0dF6Dgk8ZRZnzEdDuoqfvwWuxEVjwmVUgVL/ci1tdCO977MY72y6F9LAoeRLSdAwihZVTT9bLU+6U9j3PFXffs+QlVTUAgaAhr+gBJq2a2siC+MIrUIrk9Aj4XJPFX6JlOEhLL2TuYapz1ZCgvybcTYJMa/x22sOEUKKSsQbGT4CYdiPGU3yYTBFgS5VYBpe9BWpDlAyz8uwBrNzi3sd8WHVns0O+5ra5jIho/4/bZBZB/ru+6B/CG7IHKlMXIkmWp5K/gI5vXNfqqZzJiHATUwVjBkkXQBUD11sokGg4vittVeyhTIuJRGp6ePuuUvz39qVWMCW5zgcl3wOFiLxiCU7dYjZ9PYnw6M+uKAto9GR9uYoTNMOYcGOtPrusk+py0f5GJgIGXl0A8ncPBcKOw32trbPWMK0eNxuqy7g7+Idxn4Cau7QhoqdEfPzp2om3IS3hobpsw2WTXdtO292WncxTGiiDJ/NKYRFhfD75HOoNGEIjn48fvYH9Y2C9NSHB+yD1aZ8ureYrVsoXvqk23Y/DdWOIs/FXTsv9PwCk6ziYmnUMmdBLib3MMZ68jG4EL3AoW2HajBiQ8oLY4lhNh1zLncQIeio3DptZyYHxx5iLlS55AjNvTxgicvEoxhJbtC1Ev07OzcmtgQ3CuR/ntpF3AXhD7ZvUbIasqoI=
 dist: bionic
 language: python
 services:
@@ -26,17 +29,12 @@ before_install:
   - hass-cli state list
   # Allure CLI - report generator instalation
   - cd /opt
-  - sudo apt install unzip -y
-  - sudo apt install devscripts -y
   - sudo apt install openjdk-8-jdk -y
   - sudo apt install openjdk-8-jre -y
-  - sudo apt install fakeroot -y
-  - sudo apt install debhelper -y
-  - sudo apt install cdbs -y
-  - git clone https://github.com/allure-framework/allure-debian.git
-  - cd allure-debian/
-  - ./source-prepare.sh
-  - chmod +x /opt/allure-debian/target/allure/bin/allure
+  - wget -O allure.tgz https://bintray.com/qameta/maven/download_file?file_path=io%2Fqameta%2Fallure%2Fallure-commandline%2F2.13.5%2Fallure-commandline-2.13.5.tgz
+  - tar zxvf allure.tgz
+  - mv allure-* allure
+  - chmod +x /opt/allure/bin/allure
   # Mycroft instalation
   - cd /opt
   - deactivate
@@ -67,17 +65,20 @@ script:
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ./allure_result
   # Generate Allure report
-  - /opt/allure-debian/target/allure/bin/allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure_report
+  - /opt/allure/bin/allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure_report
   # Send report somewhere
-#  - cd /opt
-#  - git clone https://tony763-m:@github.com/tony763/tony763.github.io.git --branch=master
-#  - cd Tony763.github.io
-#  - mkdir -p /mycroft-homeassistant/$TRAVIS_COMMIT/
-#  - cp -r $TRAVIS_BUILD_DIR/log ./mycroft-homeassistant/$TRAVIS_COMMIT/
-#  - cp -r $TRAVIS_BUILD_DIR/allure_report ./mycroft-homeassistant/$TRAVIS_COMMIT/
-#  - git config --global user.email "tony763@gmx.com"
-#  - git config --global user.name "Tony763-M"
-#  - git add .
-#  - git commit -m "Travis CI results for "$TRAVIS_COMMIT
-#  - git push
+  # Now its only possible to send a report to git when a commit is build, for PR its not possible due to seccure env
+  # Needs something else
+  - cd /opt
+  - git clone https://tony763:$GT@github.com/tony763/tony763.github.io.git --branch=master
+  - cd Tony763.github.io
+  - mkdir -p /mycroft-homeassistant/$TRAVIS_COMMIT/
+  - cp -r $TRAVIS_BUILD_DIR/log ./mycroft-homeassistant/$TRAVIS_COMMIT/
+  - cp -r $TRAVIS_BUILD_DIR/allure_report ./mycroft-homeassistant/$TRAVIS_COMMIT/
+  - git config --global user.email "skala.antonin@gmail.com"
+  - git config --global user.name "Tony763"
+  - git add .
+  - git commit -m "Travis CI results for "$TRAVIS_COMMIT
+  - git push
 after_success:
+
