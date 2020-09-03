@@ -1,3 +1,6 @@
+env:
+  global:
+    secure: iyd0dF6Dgk8ZRZnzEdDuoqfvwWuxEVjwmVUgVL/ci1tdCO977MY72y6F9LAoeRLSdAwihZVTT9bLU+6U9j3PFXffs+QlVTUAgaAhr+gBJq2a2siC+MIrUIrk9Aj4XJPFX6JlOEhLL2TuYapz1ZCgvybcTYJMa/x22sOEUKKSsQbGT4CYdiPGU3yYTBFgS5VYBpe9BWpDlAyz8uwBrNzi3sd8WHVns0O+5ra5jIho/4/bZBZB/ru+6B/CG7IHKlMXIkmWp5K/gI5vXNfqqZzJiHATUwVjBkkXQBUD11sokGg4vittVeyhTIuJRGp6ePuuUvz39qVWMCW5zgcl3wOFiLxiCU7dYjZ9PYnw6M+uKAto9GR9uYoTNMOYcGOtPrusk+py0f5GJgIGXl0A8ncPBcKOw32trbPWMK0eNxuqy7g7+Idxn4Cau7QhoqdEfPzp2om3IS3hobpsw2WTXdtO292WncxTGiiDJ/NKYRFhfD75HOoNGEIjn48fvYH9Y2C9NSHB+yD1aZ8ureYrVsoXvqk23Y/DdWOIs/FXTsv9PwCk6ziYmnUMmdBLib3MMZ68jG4EL3AoW2HajBiQ8oLY4lhNh1zLncQIeio3DptZyYHxx5iLlS55AjNvTxgicvEoxhJbtC1Ev07OzcmtgQ3CuR/ntpF3AXhD7ZvUbIasqoI=
 dist: bionic
 language: python
 services:
@@ -14,16 +17,24 @@ before_install:
   - mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
   - cp -R $TRAVIS_BUILD_DIR/* /opt/mycroft/skills/homeassistant.mycroftai
   # Home-assistant instalation
-  - docker pull homeassistant/home-assistant:0.111.4
+  - docker pull homeassistant/home-assistant:0.114.3
   - docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v $TRAVIS_BUILD_DIR/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
   # Wait for HA to start
-  - travis_wait 1 sleep 1m
+  - travis_wait 2 sleep 1m
   - pip install homeassistant-cli
   - export HASS_SERVER=http://127.0.0.1:8123
   - export HASS_TOKEN='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmMzI5NmEzYTA0ZDc0NTI3OGUzMDIzN2I5MDlmYmM5MSIsImlhdCI6MTU5ODczMzU5MywiZXhwIjoxOTE0MDkzNTkzfQ.HEGTdkF5tt473J3WktjUIb71x06tZwcZUjp070QzLec'
   - source <(hass-cli completion bash)
   - hass-cli info
   - hass-cli state list
+  # Allure CLI - report generator instalation
+  - cd /opt
+  - sudo apt install openjdk-8-jdk -y
+  - sudo apt install openjdk-8-jre -y
+  - wget -O allure.tgz https://bintray.com/qameta/maven/download_file?file_path=io%2Fqameta%2Fallure%2Fallure-commandline%2F2.13.5%2Fallure-commandline-2.13.5.tgz
+  - tar zxvf allure.tgz
+  - mv allure-* allure
+  - chmod +x /opt/allure/bin/allure
   # Mycroft instalation
   - cd /opt
   - deactivate
@@ -35,6 +46,7 @@ before_install:
   - unset VIRTUAL_ENV
   - ./dev_setup.sh --allow-root --travis -sm
   - source /opt/mycroft-core/.venv/bin/activate
+  - pip3 install allure-behave
   - /opt/mycroft-core/bin/mycroft-pip install -r $TRAVIS_BUILD_DIR/requirements.txt
   # Apply skill test settings
   - cp $TRAVIS_BUILD_DIR/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
@@ -42,25 +54,29 @@ before_install:
   # Start Mycroft and wait for warm up
   - /opt/mycroft-core/bin/mycroft-start all
   - travis_wait 4 sleep 3m
+script:
   # Back into build dir
   - cd $TRAVIS_BUILD_DIR/
-script:
   # Coding style check
   - mkdir log
   - pycodestyle --max-line-length=100 __init__.py >> ./log/__init__.log
   - pycodestyle --max-line-length=100 ha_client.py >> ./log/__ha_client__.log
   # VKtest
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
-  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ./allure_results
+  - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ./allure_result
   # Generate Allure report
-  - python3 -m allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure-results --clean -o allure-report
+  - /opt/allure/bin/allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure_report
   # Send report somewhere
+  # Now its only possible to send a report to git when a commit is build, for PR its not possible due to seccure env
+  # Needs something else
   - cd /opt
-  - git clone https://github.com/Tony763/Tony763.github.io.git
-  - cd Tony763.github.io
-  - mkdir -p $TRAVIS_COMMIT/
-  - cp -r $TRAVIS_BUILD_DIR/log .
-  - cp -r $TRAVIS_BUILD_DIR/allure-report .
+  - git config --global user.email "skala.antonin@gmail.com"
+  - git config --global user.name "tony763"
+  - git clone https://tony763:$GT@github.com/tony763/tony763.github.io.git --branch=master
+  - cd tony763.github.io
+  - mkdir -p ./mycroft-homeassistant/$TRAVIS_COMMIT/
+  - cp -r $TRAVIS_BUILD_DIR/log ./mycroft-homeassistant/$TRAVIS_COMMIT/
+  - cp -r $TRAVIS_BUILD_DIR/allure_report ./mycroft-homeassistant/$TRAVIS_COMMIT/
   - git add .
   - git commit -m "Travis CI results for "$TRAVIS_COMMIT
   - git push
