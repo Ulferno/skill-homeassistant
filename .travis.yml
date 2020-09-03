@@ -71,7 +71,7 @@ script:
   # Needs something else
   - cd /opt
   - git clone https://tony763:$GT@github.com/tony763/tony763.github.io.git --branch=master
-  - cd Tony763.github.io
+  - cd tony763.github.io
   - mkdir -p /mycroft-homeassistant/$TRAVIS_COMMIT/
   - cp -r $TRAVIS_BUILD_DIR/log ./mycroft-homeassistant/$TRAVIS_COMMIT/
   - cp -r $TRAVIS_BUILD_DIR/allure_report ./mycroft-homeassistant/$TRAVIS_COMMIT/
