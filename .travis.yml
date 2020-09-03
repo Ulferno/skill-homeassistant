@@ -71,7 +71,7 @@ script:
   # Needs something else
   - cd /opt
   - git config --global user.email "skala.antonin@gmail.com"
-  - git config --global user.name "Tony763"
+  - git config --global user.name "tony763"
   - git clone https://tony763:$GT@github.com/tony763/tony763.github.io.git --branch=master
   - cd tony763.github.io
   - mkdir -p /mycroft-homeassistant/$TRAVIS_COMMIT/
