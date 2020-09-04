@@ -27,7 +27,7 @@ before_install:
   - source <(hass-cli completion bash)
   - hass-cli info
   - hass-cli state list
-  # Allure CLI - report generator instalation
+  # Allure 2 framework - report generator instalation
   - cd /opt
   - sudo apt install openjdk-8-jdk -y
   - sudo apt install openjdk-8-jre -y
@@ -58,16 +58,16 @@ script:
   # Back into build dir
   - cd $TRAVIS_BUILD_DIR/
   # Coding style check
-  - mkdir log
-  - pycodestyle --max-line-length=100 __init__.py >> ./log/__init__.log
-  - pycodestyle --max-line-length=100 ha_client.py >> ./log/__ha_client__.log
+  - mkdir codestyle
+  - pycodestyle --max-line-length=100 __init__.py >> ./codestyle/__init__.log
+  - pycodestyle --max-line-length=100 ha_client.py >> ./codestyle/__ha_client__.log
   # VKtest
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
   - /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ./allure_result
   # Generate Allure report
   - /opt/allure/bin/allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure_report
   # Send report somewhere
-  # Now its only possible to send a report to git when a commit is build, for PR its not possible due to secure env
+  # Now its only possible to send a report to a git when a commit is build, for PR its not possible due to missing secure env
   # Needs something else
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./travis/run_on_non_pull_requests; \
   cd /opt; \
@@ -76,7 +76,8 @@ script:
   git clone https://tony763:$GT@github.com/tony763/tony763.github.io.git --branch=master; \
   cd tony763.github.io; \
   mkdir -p ./mycroft-homeassistant/$TRAVIS_COMMIT/; \
-  cp -r $TRAVIS_BUILD_DIR/log ./mycroft-homeassistant/$TRAVIS_COMMIT/; \
+  cp -r $TRAVIS_BUILD_DIR/codestyle ./mycroft-homeassistant/$TRAVIS_COMMIT/; \
+  cp -r /var/log/mycroft ./mycroft-homeassistant/$TRAVIS_COMMIT/; \
   cp -r $TRAVIS_BUILD_DIR/allure_report ./mycroft-homeassistant/$TRAVIS_COMMIT/; \
   git add .; \
   git commit -m "Travis CI results for "$TRAVIS_COMMIT; \
