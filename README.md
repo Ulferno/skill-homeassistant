@@ -1,18 +1,18 @@
-# <img src='home-assistant.png' card_color='#000000' width='50' height='50' style='vertical-align:bottom'/> Home Assistant
+# <img src='docs/home-assistant.png' card_color='#000000' width='50' height='50' style='vertical-align:bottom'/> Home Assistant
 Awaken your home - Control Home Assistant
 
-## About 
+## About
 [Home Assistant](https://www.home-assistant.io/) lets you control all your smart devices in a single easy to use interface. This skill uses the open source Home Assistant's APIs to control devices and entities. Control your lights, garage door, thermostats and more using your voice!
 
 Currently the following entity types are supported: `light`, `switch`, `scene`, `climate`, `groups` and `input_boolean`
 
-## Examples 
+## Examples
 * "Turn on the office light"
 * "Turn off bedroom lights"
 * "Turn on on the AC"
 * "Read bedroom temperature"
 
-## Credits 
+## Credits
 @BongoEADGC6
 @btotharye
 Mycroft AI (@mycroftai)
@@ -31,13 +31,13 @@ Mycroft AI (@mycroftai)
 ## Configuration
 This skill utilizes the skillsettings.json file which allows you to configure this skill via home.mycroft.ai after a few minutes of having the skill installed you should see something like below in the https://home.mycroft.ai/#/skill location:
 
-<img src='home-settings.png' width='350'/> 
+<img src='docs/home-settings.png' width='350'/>
 
 Fill this out with your appropriate home assistant information and hit save.
 
 You create the Long-Lived Access Token on the user profile page
 
-<img src='long-Lived-access-token.png' width='550'/> 
+<img src='docs/long-Lived-access-token.png' width='550'/>
 
 
 ###  Enabling using the conversation component as Fallback
