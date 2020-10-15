@@ -111,6 +111,15 @@ class HomeAssistantSkill(FallbackSkill):
                               "dev_name": entity})
         return ha_entity
 
+    # Routine for entiti availibility check
+    def _check_availability(self, ha_entity):
+        self.log.debug(ha_entity['state'])
+        if ha_entity['state'] == 'unavailable':
+            self.speak_dialog('homeassistant.error.unavailable', data={
+                            "dev_name": ha_entity['dev_name']})
+            return False
+        return True
+
     # Calls passed method and catches often occurring exceptions
     def _handle_client_exception(self, callback, *args, **kwargs):
         try:
@@ -211,8 +220,11 @@ class HomeAssistantSkill(FallbackSkill):
                 'climate'
             ]
         )
-        if not ha_entity:
+
+        # Exit if entiti not found or is unavailabe
+        if not ha_entity or not self._check_availability(ha_entity):
             return
+
         LOGGER.debug("Entity State: %s" % ha_entity['state'])
         ha_data = {'entity_id': ha_entity['id']}
 
@@ -255,8 +267,10 @@ class HomeAssistantSkill(FallbackSkill):
         LOGGER.debug("Brightness Percent: %s" % brightness_percentage)
 
         ha_entity = self._find_entity(entity, ['group', 'light'])
-        if not ha_entity:
+        # Exit if entiti not found or is unavailabe
+        if not ha_entity or not self._check_availability(ha_entity):
             return
+
         ha_data = {'entity_id': ha_entity['id']}
 
         # IDEA: set context for 'turn it off again' or similar
@@ -296,8 +310,10 @@ class HomeAssistantSkill(FallbackSkill):
         max_brightness = 255
 
         ha_entity = self._find_entity(entity, ['group', 'light'])
-        if not ha_entity:
+        # Exit if entiti not found or is unavailabe
+        if not ha_entity or not self._check_availability(ha_entity):
             return
+
         ha_data = {'entity_id': ha_entity['id']}
         # IDEA: set context for 'turn it off again' or similar
         # self.set_context('Entity', ha_entity['dev_name'])
@@ -364,7 +380,8 @@ class HomeAssistantSkill(FallbackSkill):
             ['automation', 'scene', 'script']
         )
 
-        if not ha_entity:
+        # Exit if entiti not found or is unavailabe
+        if not ha_entity or not self._check_availability(ha_entity):
             return
 
         ha_data = {'entity_id': ha_entity['id']}
@@ -393,7 +410,8 @@ class HomeAssistantSkill(FallbackSkill):
         LOGGER.debug("Entity: %s" % entity)
 
         ha_entity = self._find_entity(entity, ['sensor', 'switch'])
-        if not ha_entity:
+        # Exit if entiti not found or is unavailabe
+        if not ha_entity or not self._check_availability(ha_entity):
             return
 
         entity = ha_entity['id']
@@ -449,7 +467,8 @@ class HomeAssistantSkill(FallbackSkill):
         LOGGER.debug("Entity: %s" % entity)
 
         ha_entity = self._find_entity(entity, ['device_tracker'])
-        if not ha_entity:
+        # Exit if entiti not found or is unavailabe
+        if not ha_entity or not self._check_availability(ha_entity):
             return
 
         # IDEA: set context for 'locate it again' or similar
@@ -471,7 +490,8 @@ class HomeAssistantSkill(FallbackSkill):
         LOGGER.debug("Temperature: %s" % temperature)
 
         ha_entity = self._find_entity(entity, ['climate'])
-        if not ha_entity:
+        # Exit if entiti not found or is unavailabe
+        if not ha_entity or not self._check_availability(ha_entity):
             return
 
         climate_data = {
