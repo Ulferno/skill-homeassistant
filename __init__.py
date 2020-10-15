@@ -70,6 +70,20 @@ class HomeAssistantSkill(FallbackSkill):
         self.load_regex_files(join(dirname(__file__), 'regex', self.lang))
         self.__build_automation_intent()
         self.__build_tracker_intent()
+        self.register_intent_file(
+            'set.climate.intent',
+            self.handle_set_thermostat_intent
+        )
+        self.register_intent_file('turn.on.intent', self.handle_turn_on_intent)
+        self.register_intent_file('turn.off.intent', self.handle_turn_off_intent)
+        self.register_intent_file('toggle.intent', self.handle_toggle_intent)
+        self.register_intent_file('sensor.intent', self.handle_sensor_intent)
+        self.register_intent_file('set.light.brightness.intent',
+            self.handle_light_set_intent)
+        self.register_intent_file('increase.light.brightness.intent',
+            self.handle_light_increase_intent)
+        self.register_intent_file('decrease.light.brightness.intent',
+            self.handle_light_decrease_intent)
         
         # Needs higher priority than general fallback skills
         self.register_fallback(self.handle_fallback, 2)
@@ -142,14 +156,12 @@ class HomeAssistantSkill(FallbackSkill):
         return False
 
     # Intent handlers
-    @intent_handler('turn.on.intent')
     def handle_turn_on_intent(self, message):
         LOGGER.debug("Turn on intent on entity: "+message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "on"
         self._handle_switch(message)
 
-    @intent_handler('turn.off.intent')
     def handle_turn_off_intent(self, message):
         LOGGER.debug(message.data)
         LOGGER.debug("Turn off intent on entity: "+message.data.get("entity"))
@@ -157,20 +169,17 @@ class HomeAssistantSkill(FallbackSkill):
         message.data["Action"] = "off"
         self._handle_switch(message)
 
-    @intent_handler('toggle.intent')
     def handle_toggle_intent(self, message):
         LOGGER.debug("Toggle intent on entity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "toggle"
         self._handle_switch(message)
 
-    @intent_handler('sensor.intent')
     def handle_sensor_intent(self, message):
         LOGGER.debug("Turn on intent on entity: "+message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         self._handle_sensor(message)
 
-    @intent_handler('set.light.brightness.intent')
     def handle_light_set_intent(self, message):
         LOGGER.debug("Change light intensity: "+message.data.get("entity") \
             +"to"+message.data.get("brightnessvalue")+"percent")
@@ -178,14 +187,12 @@ class HomeAssistantSkill(FallbackSkill):
         message.data["Brightnessvalue"] = message.data.get("brightnessvalue")
         self._handle_light_set(message)
 
-    @intent_handler('increase.light.brightness.intent')
     def handle_light_increase_intent(self, message):
         LOGGER.debug("Increase light intensity: "+message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "up"
         self._handle_light_adjust(message)
 
-    @intent_handler('decrease.light.brightness.intent')
     def handle_light_decrease_intent(self, message):
         LOGGER.debug("Decrease light intensity: "+message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
