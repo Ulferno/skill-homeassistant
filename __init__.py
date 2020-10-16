@@ -2,7 +2,7 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import FallbackSkill
 from mycroft.util.format import nice_number
 from mycroft import MycroftSkill, intent_file_handler
-from os.path import dirname, join
+from os.path import dirname, join 
 
 from requests.exceptions import (
     RequestException,
