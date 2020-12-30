@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 Actuellement {dev_name} est à {value} {unit}.
 {dev_name} est à : {value} {unit}.
 {dev_name} est à {value} {unit} actuellement.
 {dev_name} est à {value} {unit}.
+=======
+Actuellement {{dev_name}} est à {{value}} {{unit}}.
+{{dev_name}} est à : {{value}} {{unit}}.
+{{dev_name}} est à {{value}} {{unit}} actuellement. 
+{{dev_name}} est à {{value}} {{unit}}.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

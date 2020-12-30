@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 Omlouvám se, nepovedlo se mi najít "{dev_name}" v Home Assistentu.
 Entita "{dev_name}" nebyla nalezena.
 Omluvte mne, nedokázal jsem nalézt "{dev_name}".
+=======
+Omlouvám se, nepovedlo se mi najít "{{dev_name}}" v Home Assistentu.
+Entita "{{dev_name}}" nebyla nalezena.
+Omluvte mne, nedokázal jsem nalézt "{{dev_name}}".
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

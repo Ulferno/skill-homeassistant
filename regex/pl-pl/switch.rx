@@ -1,0 +1,3 @@
+((włącz|wyłącz|przełącz) )?(?P<Action>) (?P<Entity>.*)
+((włącz|wyłącz|przełącz) )?(?P<Action>) (?P<Entity>wszystkie|każde|jakiekolwiek) (?P<Domain>włączniki|światł(o)?(a)??|(boolean )?)
+((włącz|wyłącz|przełącz) )?(?P<Entity>.*) (?P<Action>)

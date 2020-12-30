@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 {dev_name} tamisé à {brightness} pourcent.
 {dev_name} (tamisé|baissé).
+=======
+{{dev_name}} tamisé à {{brightness}} pourcent.
+{{dev_name}} (tamisé|baissé). 
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

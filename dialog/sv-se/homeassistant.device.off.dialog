@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 stängde av {dev_name}.
 stängde av {dev_name}.
 {dev_name} är nu av.
+=======
+stängde av {{dev_name}}.
+stängde {{dev_name}} av.
+{{dev_name}} är nu av.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

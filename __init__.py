@@ -1,10 +1,9 @@
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import FallbackSkill
 from mycroft.util.format import nice_number
-from mycroft import MycroftSkill, intent_file_handler
-from os.path import dirname, join, realpath
-
-import json
+from mycroft import MycroftSkill, intent_handler
+from os.path import dirname, join
+from sys import exc_info
 
 from requests.exceptions import (
     RequestException,
@@ -36,9 +35,18 @@ class HomeAssistantSkill(FallbackSkill):
         if self.settings is not None and (force or self.ha is None):
             ip = self.settings.get('host')
             token = self.settings.get('token')
-            # Rise error when ip or token is not set
-            if not ip or not token:
-                self.speak_dialog('homeassistant.error.setup')
+
+            # Check if user filled IP, port and Token in configuration
+            if not ip:
+                self.speak_dialog('homeassistant.error.setup', data={
+                              "field": "I.P."})
+                return
+
+            if not token:
+                self.speak_dialog('homeassistant.error.setup', data={
+                              "field": "token"})
+                return
+
             portnumber = self.settings.get('portnum')
             try:
                 portnumber = int(portnumber)
@@ -46,7 +54,10 @@ class HomeAssistantSkill(FallbackSkill):
                 portnumber = 8123
             except ValueError:
                 # String might be some rubbish (like '')
-                portnumber = 0
+                self.speak_dialog('homeassistant.error.setup', data={
+                              "field": "port"})
+                return
+
             self.ha = HomeAssistantClient(
                 ip,
                 token,
@@ -71,20 +82,6 @@ class HomeAssistantSkill(FallbackSkill):
 
     def initialize(self):
         self.language = self.config_core.get('lang')
-        self.register_intent_file('turn.on.intent', self.handle_turn_on_intent)
-        self.register_intent_file('turn.off.intent', self.handle_turn_off_intent)
-        self.register_intent_file('toggle.intent', self.handle_toggle_intent)
-        self.register_intent_file('sensor.intent', self.handle_sensor_intent)
-        self.register_intent_file('set.light.brightness.intent',
-                                  self.handle_light_set_intent)
-        self.register_intent_file('increase.light.brightness.intent',
-                                  self.handle_light_increase_intent)
-        self.register_intent_file('decrease.light.brightness.intent',
-                                  self.handle_light_decrease_intent)
-        self.register_intent_file('automation.intent', self.handle_automation_intent)
-        self.register_intent_file('tracker.intent', self.handle_tracker_intent)
-        self.register_intent_file('set.climate.intent',
-                                  self.handle_set_thermostat_intent)
 
         # Needs higher priority than general fallback skills
         self.register_fallback(self.handle_fallback, 2)
@@ -155,45 +152,52 @@ class HomeAssistantSkill(FallbackSkill):
         return False
 
     # Intent handlers
+    @intent_handler('turn.on.intent')
     def handle_turn_on_intent(self, message):
         self.log.debug("Turn on intent on entity: "+message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "on"
-        self._handle_switch(message)
+        self._handle_turn_actions(message)
 
+    @intent_handler('turn.off.intent')
     def handle_turn_off_intent(self, message):
         self.log.debug(message.data)
         self.log.debug("Turn off intent on entity: "+message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "off"
-        self._handle_switch(message)
+        self._handle_turn_actions(message)
 
+    @intent_handler('toggle.intent')
     def handle_toggle_intent(self, message):
         self.log.debug("Toggle intent on entity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "toggle"
-        self._handle_switch(message)
+        self._handle_turn_actions(message)
 
+    @intent_handler('sensor.intent')
     def handle_sensor_intent(self, message):
-        self.log.debug("Sensor intent on entity: "+message.data.get("entity"))
+        self.log.debug("Turn on intent on entity: "+message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         self._handle_sensor(message)
 
+    @intent_handler('set.light.brightness.intent')
     def handle_light_set_intent(self, message):
-        self.log.debug("Set light intensity on: "+message.data.get("entity")
-                       + "to"+message.data.get("brightnessvalue")+"percent")
+        self.log.debug("Change light intensity: "+message.data.get("entity") \
+            +"to"+message.data.get("brightnessvalue")+"percent")
         message.data["Entity"] = message.data.get("entity")
         message.data["Brightnessvalue"] = message.data.get("brightnessvalue")
         self._handle_light_set(message)
 
+    @intent_handler('increase.light.brightness.intent')
     def handle_light_increase_intent(self, message):
-        self.log.debug("Increase light intensity on: "+message.data.get("entity"))
+        self.log.debug("Increase light intensity: "+message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "up"
         self._handle_light_adjust(message)
 
+    @intent_handler('decrease.light.brightness.intent')
     def handle_light_decrease_intent(self, message):
-        self.log.debug("Decrease light intensity on: "+message.data.get("entity"))
+        self.log.debug("Decrease light intensity: "+message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "down"
         self._handle_light_adjust(message)
@@ -214,7 +218,7 @@ class HomeAssistantSkill(FallbackSkill):
         message.data["Temp"] = message.data.get("temp")
         self._handle_set_thermostat(message)
 
-    def _handle_switch(self, message):
+    def _handle_turn_actions(self, message):
         self.log.debug("Starting Switch Intent")
         entity = message.data["Entity"]
         action = message.data["Action"]
@@ -223,12 +227,27 @@ class HomeAssistantSkill(FallbackSkill):
 
         # Handle turn on/off all intent
         try:
-            if self.voc_match(entity, "all_lights"):
+            if self.voc_match(entity,"all_lights"):
                 domain = "light"
-            elif self.voc_match(entity, "all_switches"):
+            elif self.voc_match(entity,"all_switches"):
                 domain = "switch"
             else:
                 domain = None
+
+            if domain is not None:
+                ha_entity = {'dev_name': entity}
+                ha_data = {'entity_id': 'all'}
+
+                self.ha.execute_service(domain, "turn_%s" % action, ha_data)
+                self.speak_dialog('homeassistant.device.%s' % action, data=ha_entity)
+                return
+        # TODO: need to figure out, if this indeed throws a KeyError
+        except KeyError:
+            self.log.debug("Not turn on/off all intent")
+        except:
+            self.log.debug("Unexpected error in turn all intent:", exc_info()[0])
+
+        # Hande single entity
 
             if domain is not None:
                 ha_entity = {'dev_name': entity}
@@ -343,7 +362,7 @@ class HomeAssistantSkill(FallbackSkill):
 
         return
 
-    @intent_file_handler('add.item.shopping.list.intent')
+    @intent_handler('add.item.shopping.list.intent')
     def handle_shopping_list_intent(self, message):
         entity = message.data["entity"]
         ha_data = {'name': entity}
@@ -527,7 +546,8 @@ class HomeAssistantSkill(FallbackSkill):
                           data={'dev_name': dev_name,
                                 'location': dev_location})
 
-    def _handle_set_thermostat(self, message):
+    @intent_handler('set.climate.intent')
+    def handle_set_thermostat_intent(self, message):
         entity = message.data["entity"]
         self.log.debug("Entity: %s" % entity)
         self.log.debug("This is the message data: %s" % message.data)

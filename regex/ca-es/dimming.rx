@@ -1,0 +1,2 @@
+posa (?:la brillantor de|del )?(?P<Entity>.*) (al) (?P<BrightnessValue>\d*)(?: per cent)? 
+(atenua|il·lumina|incrementa|redueix|atenuar|il·luminar|incrementar|reduir) (?:la brillantor de|del )?(?P<Entity>.*?) (?:a|al)? (?P<BrightnessValue>\d*)?(?: per cent)?

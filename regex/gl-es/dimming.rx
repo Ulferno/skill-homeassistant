@@ -1,0 +1,2 @@
+(establecer) (?:brillo de )?(?P<Entity>.*) (a) (?P<BrightnessValue>\d*)(?: porcento)?
+(escurecer|brillar|aumentar|diminuír) (?:brillo de )?(?P<Entity>.*?) (?:ata)? (?P<BrightnessValue>\d*)?(?: porcento)?

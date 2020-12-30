@@ -1,0 +1,1 @@
+(establecer) o termostato (?P<Entity>.*) a (?P<temp>[0-9]*)

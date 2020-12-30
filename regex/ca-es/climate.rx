@@ -1,0 +1,1 @@
+posa el termòstat (?P<Entity>.*) a (?P<temp>[0-9]*)

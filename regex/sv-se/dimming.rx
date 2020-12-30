@@ -1,0 +1,2 @@
+(sätt) (?:ljusstyrkan på)?(?P<Entity>.*) (till) (?P<BrightnessValue>\d*)(?: procent)?
+(dämpa|ljusa|öka|minska) (?:brightness of )?(?P<Entity>.*?) (?:by)? (?P<BrightnessValue>\d*)?(?: percent)?

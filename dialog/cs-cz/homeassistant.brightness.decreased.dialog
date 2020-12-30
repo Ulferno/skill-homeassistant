@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 {dev_name} ztlumeno na {brightness} procent.
 {dev_name} ztlumeno.
+=======
+{{dev_name}} ztlumeno na {{brightness}} procent.
+{{dev_name}} ztlumeno.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

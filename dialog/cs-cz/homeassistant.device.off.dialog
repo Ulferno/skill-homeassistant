@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 Vypnuto {dev_name}.
 {dev_name} vypnuto.
 {dev_name} je nyní vypnuto.
 {dev_name} bylo vypnuto.
+=======
+Vypnuto {{dev_name}}.
+{{dev_name}} vypnuto.
+{{dev_name}} je nyní vypnuto.
+{{dev_name}} bylo vypnuto.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

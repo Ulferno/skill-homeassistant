@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Intenzita {dev_name} nastavena na {brightness} procent.
+=======
+Intenzita {{dev_name}} nastavena na {{brightness}} procent.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

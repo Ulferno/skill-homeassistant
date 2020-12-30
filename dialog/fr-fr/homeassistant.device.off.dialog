@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 éteint {dev_name}.
 {dev_name} (éteint|éteinte).
 {dev_name} est maintenant éteint.
+=======
+éteint {{dev_name}}.
+(éteint){{dev_name}} .
+{{dev_name}} est maintenant éteint.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

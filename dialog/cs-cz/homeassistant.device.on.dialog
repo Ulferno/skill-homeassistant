@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 Zapnuto {dev_name}.
 {dev_name} bylo zapnuto.
 {dev_name} zapnuto.
 {dev_name} je nyní zapnuto.
+=======
+Zapnuto {{dev_name}}.
+{{dev_name}} bylo zapnuto.
+{{dev_name}} zapnuto.
+{{dev_name}} je nyní zapnuto.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

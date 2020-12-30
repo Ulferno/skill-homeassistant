@@ -1,0 +1,2 @@
+(ustaw) (?:jasność )?(?P<Entity>.*) (na) (?P<BrightnessValue>\d*)(?: procent)?
+(przyciemnij|rozjaśnij|zwiększ|zmniejsz) (?:jasność )?(?P<Entity>.*?) (?:o)? (?P<BrightnessValue>\d*)?(?: procent)?

@@ -1,0 +1,3 @@
+((torna|commuta|inicia|apaga) )?(?P<Action>el botó) (?P<Entity>.*)
+(?P<Action>encén|apaga|conmuta) (?P<Entity>totes|tots) (els|les|l') (?P<Domain>interruptors|lums)
+((encén|commuta) )?(?P<Entity>.*) (?P<Action>encesa|apagada)

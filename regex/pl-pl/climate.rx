@@ -1,0 +1,1 @@
+(ustaw) (?P<Entity>.*) termostat na (?P<temp>[0-9]*)

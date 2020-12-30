@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Na adrese {url} se nenachází home assistant server
+=======
+Na adrese {{url}} se nenachází home assistant server
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

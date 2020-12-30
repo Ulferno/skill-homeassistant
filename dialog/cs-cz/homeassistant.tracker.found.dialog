@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 LPoslední známá poloha {dev_name} je {location}.
 {dev_name} je na {location}.
 {dev_name} byl nalezen na {location}.
+=======
+LPoslední známá poloha {{dev_name}} je {{location}}.
+{{dev_name}} je na {{location}}.
+{{dev_name}} byl nalezen na {{location}}.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

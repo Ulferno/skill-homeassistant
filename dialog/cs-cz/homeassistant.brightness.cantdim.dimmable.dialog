@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Nemůžu změnit jas {dev_name}. Změna jasu není podorovaná.
+=======
+Nemůžu změnit jas {{dev_name}}. Změna jasu není podorovaná.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

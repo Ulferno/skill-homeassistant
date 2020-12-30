@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Nepodařilo se připojit k home assistant serveru na adrese {url}.
+=======
+Nepodařilo se připojit k home assistant serveru na adrese {{url}}.
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

@@ -1,0 +1,3 @@
+(? P <Action> acender|apagar||alternar) (? P <Entity>. *)
+(?P<Action>Acender|Apagar|Alternar) (?P<Entity>todos | cada | algún(?P<Domain>interruptor(es)?|luces(s)?|(boolean )?entrada(s)?)
+(? P <Entity>. *) (? P <Action> Acender | Apagar)

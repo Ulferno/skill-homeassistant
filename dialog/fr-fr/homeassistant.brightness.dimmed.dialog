@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 (règle|met) la luminosité de {dev_name} à {birghtness} pourcent.
+=======
+(règle|met) la luminosité de {{dev_name}} à {{birghtness}} pourcent. 
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a

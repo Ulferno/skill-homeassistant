@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Vyskytla se chyba při připojování k home assistant serveru s chybovým kodem {code} {reason}
+=======
+Vyskytla se chyba při připojování k home assistant serveru s chybovým kodem {{code}} {{reason}}
+>>>>>>> edd3a18bee579dcea651295fb5acc9ac4873717a
