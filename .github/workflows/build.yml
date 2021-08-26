@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Python application
+name: Mycroft Home Assistant skill
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
     branches: [ github-actions ]
 
 jobs:
-  build:
+  job-vm:
 
     runs-on: ubuntu-latest
 
@@ -25,32 +25,41 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
-        #if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install pycodestyle
         pip install pytest-cov
         pip install python-coveralls
         pip install coverage
 
     - name: Lint with flake8
+      # stop the build if there are Python syntax errors or undefined names
+      # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
       run: |
-        # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        flake8 . --count --exit-zero --max-complexity=15 --max-line-length=127 --statistics
 
-    - name: Test with pytest
-      run: |
-        pytest
+    # - name: Test with pytest
+    #   run: |
+    #     pytest
 
-    # codestyle
+    # Codestyle
     - name: codestyle - Create dir for logs
       run: |
         mkdir -p ${{ github.workspace }}/codestyle
-  
+
     - name: codestyle - Check __init__.py
       run: |
-        pycodestyle --max-line-length=127 __init__.py >> ./codestyle/__init__.log
-        
+        pycodestyle --max-line-length=127 __init__.py       # >> ${{ github.workspace }}/codestyle/__init__.log
+
     - name: codestyle - Check ha_client.py
       run: |
-        pycodestyle --max-line-length=127 ha_client.py >> ./codestyle/ha_client.log
+        pycodestyle --max-line-length=127 ha_client.py      # >> ${{ github.workspace }}/codestyle/ha_client.log
+
+     # Copy skill befor HA kicks in
+    - name: skill - Copy skill to mycroft
+      run: |
+        ls -al ${{ github.workspace }}
+        mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
+        cp -R ${{ github.workspace }}/* /opt/mycroft/skills/homeassistant.mycroftai
+
+
