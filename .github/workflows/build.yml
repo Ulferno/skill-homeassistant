@@ -103,7 +103,7 @@ jobs:
         ls /opt
         cp ${{ github.workspace }}/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
         chmod +x /opt/mycroft-core/dev_setup.sh
-        /opt/mycroft-core/dev_setup.sh --allow-root --travis -sm -p ${{ pythonLocation }}/bin/python
+        /opt/mycroft-core/dev_setup.sh --allow-root --travis -sm -p /opt/hostedtoolcache/Python/3.7.11/x64/bin/python
         source /opt/mycroft-core/.venv/bin/activate
         pip install allure-behave
         /opt/mycroft-core/bin/mycroft-pip install -r ${{ github.workspace }}/requirements.txt
@@ -113,3 +113,8 @@ jobs:
     # Wait for MC to start
     - name: MC - wait for start
       run: sleep 4m
+
+
+
+
+# TODO: Variable with path to python?
