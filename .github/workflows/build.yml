@@ -36,7 +36,7 @@ jobs:
         pip install pytest-cov
         pip install python-coveralls
         pip install coverage
-        apt install -y allure
+        sudo apt install -y allure
 
     - name: Lint with flake8
       # stop the build if there are Python syntax errors or undefined names
@@ -124,7 +124,7 @@ jobs:
     # Generate allure reports
     # - name: MC - generate allure reports
     #   run: allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure-results
- 
+
     # Allure
     - name: Get Allure history
       uses: actions/checkout@v2
