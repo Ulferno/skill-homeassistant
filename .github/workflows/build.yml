@@ -92,9 +92,7 @@ jobs:
 
     # Get state info from Home Assistant
     - name: HA - install cli
-      run: |
-        hass-cli state list
-        deactivate
+      run: hass-cli state list
 
     # Install Mycroft
     - name: MC - install Mycroft
@@ -103,11 +101,12 @@ jobs:
         ls /opt
         cp ${{ github.workspace }}/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
         chmod +x /opt/mycroft-core/dev_setup.sh
-        unset VIRTUAL_ENV
         /opt/mycroft-core/dev_setup.sh --allow-root --travis -sm
         source /opt/mycroft-core/.venv/bin/activate
         pip install allure-behave
         /opt/mycroft-core/bin/mycroft-pip install -r ${{ github.workspace }}/requirements.txt
+
+    # unset VIRTUAL_ENV
 
     # Start Mycroft
     - name: MC - pull and start docker image
