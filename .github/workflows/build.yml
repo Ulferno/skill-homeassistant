@@ -14,6 +14,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+        HASS_SERVER: http://127.0.0.1:8123
+        HASS_TOKEN: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmMzI5NmEzYTA0ZDc0NTI3OGUzMDIzN2I5MDlmYmM5MSIsImlhdCI6MTU5ODczMzU5MywiZXhwIjoxOTE0MDkzNTkzfQ.HEGTdkF5tt473J3WktjUIb71x06tZwcZUjp070QzLec
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
@@ -42,18 +46,18 @@ jobs:
     #   run: |
     #     pytest
 
+    - name: list workflow dir
+      run: ls -al ${{ github.workspace }
+
     # Codestyle
     - name: codestyle - Create dir for logs
-      run: |
-        mkdir -p ${{ github.workspace }}/codestyle
+      run: mkdir -p ${{ github.workspace }}/codestyle
 
     - name: codestyle - Check __init__.py
-      run: |
-        pycodestyle --max-line-length=127 __init__.py >> ${{ github.workspace }}/codestyle/__init__.log
+      run: pycodestyle --max-line-length=127 __init__.py >> ${{ github.workspace }}/codestyle/__init__.log
 
     - name: codestyle - Check ha_client.py
-      run: |
-        pycodestyle --max-line-length=127 ha_client.py >> ${{ github.workspace }}/codestyle/ha_client.log
+      run: pycodestyle --max-line-length=127 ha_client.py >> ${{ github.workspace }}/codestyle/ha_client.log
 
     # Copy skill befor HA kicks in
     - name: skill - Copy skill to mycroft
@@ -80,10 +84,7 @@ jobs:
 
     # Set Home Assistant cli tool
     - name: HA - set cli
-      run: |
-        export HASS_SERVER=http://127.0.0.1:8123
-        export HASS_TOKEN='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmMzI5NmEzYTA0ZDc0NTI3OGUzMDIzN2I5MDlmYmM5MSIsImlhdCI6MTU5ODczMzU5MywiZXhwIjoxOTE0MDkzNTkzfQ.HEGTdkF5tt473J3WktjUIb71x06tZwcZUjp070QzLec'
-        source <(hass-cli completion bash)
+      run: source <(hass-cli completion bash)
 
     # Get base info from Home Assistant
     - name: HA - install cli
