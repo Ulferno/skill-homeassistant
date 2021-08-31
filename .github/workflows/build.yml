@@ -36,6 +36,7 @@ jobs:
         pip install pytest-cov
         pip install python-coveralls
         pip install coverage
+        apt install -y allure
 
     - name: Lint with flake8
       # stop the build if there are Python syntax errors or undefined names
@@ -108,13 +109,57 @@ jobs:
         pip install allure-behave
         /opt/mycroft-core/bin/mycroft-pip install -r ${{ github.workspace }}/requirements.txt
 
-    # unset VIRTUAL_ENV
-
     # Wait for MC to start
     - name: MC - wait for start
       run: sleep 4m
 
+    # Clear VKtest
+    - name: MC - Clear VKtest
+      run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
 
+    # Run VKtest
+    - name: MC - run VKtest
+      run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o allure_results
 
+    # Generate allure reports
+    # - name: MC - generate allure reports
+    #   run: allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure-results
+ 
+    # Allure
+    - name: Get Allure history
+      uses: actions/checkout@v2
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+
+    - name: Test marketplace action
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      id: allure-report
+      with:
+        allure_results: allure_results
+        gh_pages: gh-pages
+        allure_report: allure-report
+        allure_history: allure-history
+
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-history
+
+    - name: Post the link to the report
+      if: always()
+      uses: Sibz/github-status-action@v1
+      with:
+        authToken: ${{ secrets.GITHUB_TOKEN }}
+        context: 'Test report'
+        state: 'success'
+        sha: ${{ github.event.pull_request.head.sha }}
+        target_url: tony763.github.io/github-allure-history/${{ github.run_number }}
 
 # TODO: Variable with path to python?
