@@ -21,6 +21,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:
@@ -102,18 +103,13 @@ jobs:
         ls /opt
         cp ${{ github.workspace }}/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
         chmod +x /opt/mycroft-core/dev_setup.sh
-        /opt/mycroft-core/dev_setup.sh --allow-root --travis -sm
+        ls -l ${{ RUNNER_TOOL_CACHE }}/Python/
+        /opt/mycroft-core/dev_setup.sh --allow-root --travis -sm -p ${{ RUNNER_TOOL_CACHE }}/Python/3.7/bin/python
         source /opt/mycroft-core/.venv/bin/activate
         pip install allure-behave
         /opt/mycroft-core/bin/mycroft-pip install -r ${{ github.workspace }}/requirements.txt
 
     # unset VIRTUAL_ENV
-
-    # Start Mycroft
-    - name: MC - pull and start docker image
-      run: |
-        docker pull homeassistant/home-assistant:0.114.3
-        docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v ${{ github.workspace }}/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
 
     # Wait for MC to start
     - name: MC - wait for start
