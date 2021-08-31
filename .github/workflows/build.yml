@@ -150,7 +150,10 @@ jobs:
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure-history
+        PUBLISH_DIR: mycroft-homeassistant/allure-history
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
+        external_repository: Tony763/Tony763.github.io
 
     - name: Post the link to the report
       if: always()
@@ -159,7 +162,7 @@ jobs:
         authToken: ${{ secrets.GITHUB_TOKEN }}
         context: 'Test report'
         state: 'success'
-        sha: ${{ github.event.pull_request.head.sha }}
-        target_url: tony763.github.io/github-allure-history/${{ github.run_number }}
+        sha: ${{github.event.pull_request.head.sha || github.sha}}
+        target_url: tony763.github.io/mycroft-homeassistant/${{ github.run_number }}
 
 # TODO: Variable with path to python?
