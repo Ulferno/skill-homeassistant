@@ -146,7 +146,7 @@ jobs:
 
     - name: Deploy report to Github Pages
       if: always()
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@master
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
         external_repository: Tony763/Tony763.github.io
@@ -161,6 +161,6 @@ jobs:
         context: 'Test report'
         state: 'success'
         sha: ${{github.event.pull_request.head.sha || github.sha}}
-        target_url: tony763.github.io/mycroft-homeassistant/${{ github.run_number }}
+        target_url: https://tony763.github.io/mycroft-homeassistant/${{ github.run_number }}
 
 # TODO: Variable with path to python?
