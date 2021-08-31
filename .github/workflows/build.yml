@@ -47,7 +47,7 @@ jobs:
     #     pytest
 
     - name: list workflow dir
-      run: ls -al ${{ github.workspace }
+      run: ls -al ${{ github.workspace }}
 
     # Codestyle
     - name: codestyle - Create dir for logs
