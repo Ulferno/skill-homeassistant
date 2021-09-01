@@ -147,9 +147,9 @@ jobs:
       id: allure-report
       with:
         allure_results: ${{ github.workspace }}/allure_results
-        gh_pages: gh-pages/
-        allure_report: skill-homeassistant/allure-report
-        allure_history: skill-homeassistant/allure-history
+        gh_pages: gh-pages/skill-homeassistant/
+        allure_report: llure-report
+        allure_history: gh-pages/skill-homeassistant/allure-history
 
     # Debug
     - name: List folders
