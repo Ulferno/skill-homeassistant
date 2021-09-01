@@ -119,11 +119,16 @@ jobs:
 
     # Run VKtest
     - name: MC - run VKtest
-      run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o allure_results
+      run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o /opt/allure_results
 
     # Generate allure reports
-    # - name: MC - generate allure reports
-    #   run: allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure-results
+    #- name: MC - generate allure reports
+    #  run: allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure-results
+
+    # Debug
+    - name: List folders
+      run: ls -l /opt/allure_results
+
 
     # Allure
     - name: Get Allure history
@@ -139,7 +144,7 @@ jobs:
       if: always()
       id: allure-report
       with:
-        allure_results: allure_results
+        allure_results: /opt/allure_results
         gh_pages: gh-pages
         allure_report: allure-report
         allure_history: allure-history
