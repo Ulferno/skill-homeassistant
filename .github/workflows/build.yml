@@ -139,6 +139,10 @@ jobs:
         ref: gh-pages
         path: gh-pages
 
+    # Debug
+    - name: List folders
+      run: ls -l /opt/allure_results
+
     - name: Test marketplace action
       uses: simple-elf/allure-report-action@master
       if: always()
