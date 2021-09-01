@@ -138,6 +138,8 @@ jobs:
       with:
         repository:  Tony763/Tony763.github.io
         path: ./gh-pages
+        ref: skill-homeassistant
+
 
     - name: Test marketplace action
       uses: simple-elf/allure-report-action@master
@@ -145,9 +147,9 @@ jobs:
       id: allure-report
       with:
         allure_results: ${{ github.workspace }}/allure_results
-        gh_pages: gh-pages
-        allure_report: allure-report
-        allure_history: allure-history
+        gh_pages: gh-pages/
+        allure_report: gh-pages/allure-report
+        allure_history: gh-pages/llure-history
 
     # Debug
     - name: List folders
@@ -171,8 +173,7 @@ jobs:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
         external_repository: Tony763/Tony763.github.io
         publish_dir: ${{ github.workspace }}/gh-pages
-        destination_dir: skill-homeassistant
-        publish_branch: master
+        publish_branch: skill-homeassistant
 
     - name: Post the link to the report
       if: always()
@@ -182,6 +183,6 @@ jobs:
         context: 'Test report'
         state: 'success'
         sha: ${{github.event.pull_request.head.sha || github.sha}}
-        target_url: https://tony763.github.io/mycroft-homeassistant/${{ github.run_number }}
+        target_url: https://tony763.github.io/skill-homeassistant/${{ github.run_number }}
 
 # TODO: Variable with path to python?
