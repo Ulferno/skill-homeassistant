@@ -149,13 +149,17 @@ jobs:
         allure_report: allure-report
         allure_history: allure-history
 
+    # Debug
+    - name: List folders
+      run: ls -l ${{ github.workspace }}
+
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
         external_repository: Tony763/Tony763.github.io
-        publish_dir: mycroft-homeassistant/allure-history
+        publish_dir: allure-history
         publish_branch: master
         keep_files: true
 
