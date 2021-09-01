@@ -136,8 +136,8 @@ jobs:
       if: always()
       continue-on-error: true
       with:
-        ref: gh-pages
-        path: gh-pages
+        repository:  Tony763/Tony763.github.io
+        path: ./gh-pages
 
     - name: Test marketplace action
       uses: simple-elf/allure-report-action@master
@@ -146,12 +146,16 @@ jobs:
       with:
         allure_results: ${{ github.workspace }}/allure_results
         gh_pages: gh-pages
-        allure_report: allure-report
-        allure_history: allure-history
+        allure_report: ${{ github.workspace }}/gh-pages/allure-report
+        allure_history: ${{ github.workspace }}/gh-pages/allure-history
 
     # Debug
     - name: List folders
       run: ls -l ${{ github.workspace }}
+
+    # Debug
+    - name: List folders
+      run: ls -l ${{ github.workspace }}/gh-pages
 
     - name: Deploy report to Github Pages
       if: always()
@@ -160,8 +164,8 @@ jobs:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
         external_repository: Tony763/Tony763.github.io
         publish_dir: allure-history
+        destination_dir: skill-homeassistant
         publish_branch: master
-        keep_files: true
 
     - name: Post the link to the report
       if: always()
