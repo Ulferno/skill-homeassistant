@@ -159,13 +159,18 @@ jobs:
       run: ls -l ${{ github.workspace }}/gh-pages
       if: always()
 
+    # Debug
+    - name: List folders
+      run: ls -l ${{ github.workspace }}/gh-pages/allure-report
+      if: always()
+
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
         external_repository: Tony763/Tony763.github.io
-        publish_dir: allure-history
+        publish_dir: ${{ github.workspace }}/gh-pages
         destination_dir: skill-homeassistant
         publish_branch: master
 
