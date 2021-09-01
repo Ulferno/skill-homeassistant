@@ -138,7 +138,7 @@ jobs:
       with:
         repository:  Tony763/Tony763.github.io
         path: ./gh-pages
-        ref: skill-homeassistant
+        ref: master
 
 
     - name: Test marketplace action
@@ -148,8 +148,8 @@ jobs:
       with:
         allure_results: ${{ github.workspace }}/allure_results
         gh_pages: gh-pages/
-        allure_report: gh-pages/allure-report
-        allure_history: gh-pages/llure-history
+        allure_report: gh-pages/skill-homeassistant/allure-report
+        allure_history: gh-pages/skill-homeassistant/allure-history
 
     # Debug
     - name: List folders
@@ -158,12 +158,12 @@ jobs:
 
     # Debug
     - name: List folders
-      run: ls -l ${{ github.workspace }}/gh-pages
+      run: ls -l ${{ github.workspace }}/gh-pages/skill-homeassistant
       if: always()
 
     # Debug
     - name: List folders
-      run: ls -l ${{ github.workspace }}/gh-pages/allure-report
+      run: ls -l ${{ github.workspace }}/gh-pages/skill-homeassistant/allure-report
       if: always()
 
     - name: Deploy report to Github Pages
@@ -172,8 +172,8 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
         external_repository: Tony763/Tony763.github.io
-        publish_dir: ${{ github.workspace }}/gh-pages
-        publish_branch: skill-homeassistant
+        publish_dir: ${{ github.workspace }}/gh-pages/skill-homeassistant/
+        publish_branch: master
 
     - name: Post the link to the report
       if: always()
@@ -183,6 +183,6 @@ jobs:
         context: 'Test report'
         state: 'success'
         sha: ${{github.event.pull_request.head.sha || github.sha}}
-        target_url: https://tony763.github.io/skill-homeassistant/${{ github.run_number }}
+        target_url: https://tony763.github.io/skill-homeassistant/allure-history/${{ github.run_number }}
 
 # TODO: Variable with path to python?
