@@ -172,7 +172,7 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
         external_repository: Tony763/Tony763.github.io
-        publish_dir: ${{ github.workspace }}/gh-pages/skill-homeassistant/
+        publish_dir: ${{ github.workspace }}/gh-pages/skill-homeassistant/allure-history
         publish_branch: master
 
     - name: Post the link to the report
