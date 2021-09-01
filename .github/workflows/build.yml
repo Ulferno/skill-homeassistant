@@ -127,7 +127,7 @@ jobs:
 
     # Debug
     - name: List folders
-      run: ls -l /opt/allure_results
+      run: ls -l ${{ github.workspace }}/allure_results
 
 
     # Allure
@@ -138,10 +138,6 @@ jobs:
       with:
         ref: gh-pages
         path: gh-pages
-
-    # Debug
-    - name: List folders
-      run: ls -l /opt/allure_results
 
     - name: Test marketplace action
       uses: simple-elf/allure-report-action@master
