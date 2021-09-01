@@ -121,10 +121,6 @@ jobs:
     - name: MC - run VKtest
       run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ${{ github.workspace }}/allure_results
 
-    # Generate allure reports
-    #- name: MC - generate allure reports
-    #  run: allure generate /opt/mycroft-core/test/integrationtests/voight_kampff/allure_result --clean -o allure-results
-
     # Debug
     - name: List folders
       run: ls -l ${{ github.workspace }}/allure_results
@@ -139,7 +135,6 @@ jobs:
         repository:  Tony763/Tony763.github.io
         path: ./gh-pages
         ref: master
-
 
     - name: Test marketplace action
       uses: simple-elf/allure-report-action@master
@@ -161,18 +156,13 @@ jobs:
       run: ls -l ${{ github.workspace }}/gh-pages/skill-homeassistant
       if: always()
 
-    # Debug
-    - name: List folders
-      run: ls -l ${{ github.workspace }}/gh-pages/skill-homeassistant/allure-report
-      if: always()
-
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
         external_repository: Tony763/Tony763.github.io
-        publish_dir: ${{ github.workspace }}/gh-pages/skill-homeassistant/allure-history
+        publish_dir: ${{ github.workspace }}/gh-pages
         publish_branch: master
 
     - name: Post the link to the report
