@@ -146,8 +146,8 @@ jobs:
       with:
         allure_results: ${{ github.workspace }}/allure_results
         gh_pages: gh-pages
-        allure_report: ${{ github.workspace }}/gh-pages/allure-report
-        allure_history: ${{ github.workspace }}/gh-pages/allure-history
+        allure_report: allure-report
+        allure_history: allure-history
 
     # Debug
     - name: List folders
