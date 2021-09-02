@@ -63,7 +63,7 @@ jobs:
     # Start Home Assistant
     - name: HA - pull and start docker image
       run: |
-        docker pull homeassistant/home-assistant:0.114.3
+        docker pull homeassistant/home-assistant:2021.9
         docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v ${{ github.workspace }}/test/ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
 
     # Install Mycroft
