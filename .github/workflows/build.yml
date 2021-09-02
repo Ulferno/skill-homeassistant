@@ -45,37 +45,30 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         flake8 . --count --exit-zero --max-complexity=15 --max-line-length=127 --statistics
 
-    # - name: Test with pytest
-    #   run: |
-    #     pytest
-
-    - name: list workflow dir
-      run: ls -al ${{ github.workspace }}
-
     # Codestyle
-    - name: codestyle - Create dir for logs
-      run: mkdir -p ${{ github.workspace }}/codestyle
+    - name: Codestyle - Create dir for logs
+      run: mkdir -p ${{ github.workspace }}/codestyle/${{ github.run_number }}
 
-    - name: codestyle - Check __init__.py
-      run: pycodestyle --max-line-length=127 __init__.py >> ${{ github.workspace }}/codestyle/__init__.log
+    - name: Codestyle - Check __init__.py
+      run: pycodestyle --max-line-length=127 __init__.py >> ${{ github.workspace }}/codestyle/${{ github.run_number }}/__init__.log
 
-    - name: codestyle - Check ha_client.py
-      run: pycodestyle --max-line-length=127 ha_client.py >> ${{ github.workspace }}/codestyle/ha_client.log
+    - name: Codestyle - Check ha_client.py
+      run: pycodestyle --max-line-length=127 ha_client.py >> ${{ github.workspace }}/codestyle/${{ github.run_number }}/ha_client.log
 
     # Copy skill befor HA kicks in
-    - name: skill - Copy skill to mycroft
+    - name: Mycroft - Copy skill to mycroft
       run: |
         mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
         cp -R ${{ github.workspace }}/* /opt/mycroft/skills/homeassistant.mycroftai
         ls -al /opt/mycroft/skills/homeassistant.mycroftai
-        cp ${{ github.workspace }}/test/travis-ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
-        cp ${{ github.workspace }}/test/travis-ci/Mycroft/settings.json /opt/mycroft/skills/homeassistant.mycroftai/
+        cp ${{ github.workspace }}/test/ci/Mycroft/settingsmeta.yaml /opt/mycroft/skills/homeassistant.mycroftai/
+        cp ${{ github.workspace }}/test/ci/Mycroft/settings.json /opt/mycroft/skills/homeassistant.mycroftai/
 
     # Start Home Assistant
     - name: HA - pull and start docker image
       run: |
         docker pull homeassistant/home-assistant:0.114.3
-        docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v ${{ github.workspace }}/test/travis-ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
+        docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v ${{ github.workspace }}/test/ci/HA/:/config -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:0.114.3
 
     # Wait for Home Assistant to start
     - name: HA - wait for start
@@ -90,44 +83,39 @@ jobs:
       run: source <(hass-cli completion bash)
 
     # Get base info from Home Assistant
-    - name: HA - install cli
+    - name: HA - show base info
       run: hass-cli info
 
     # Get state info from Home Assistant
-    - name: HA - install cli
+    - name: HA - show states
       run: hass-cli state list
 
     # Install Mycroft
-    - name: MC - install Mycroft
+    - name: Mycroft - install Mycroft
       run: |
         git clone https://github.com/MycroftAI/mycroft-core.git /opt/mycroft-core
         ls /opt
-        cp ${{ github.workspace }}/test/travis-ci/Mycroft/dev_setup.sh /opt/mycroft-core/
+        cp ${{ github.workspace }}/test/ci/Mycroft/dev_setup.sh /opt/mycroft-core/
         chmod +x /opt/mycroft-core/dev_setup.sh
-        /opt/mycroft-core/dev_setup.sh --allow-root --travis -sm -p /opt/hostedtoolcache/Python/3.7.11/x64/bin/python
+        /opt/mycroft-core/dev_setup.sh --allow-root -ci -sm -p /opt/hostedtoolcache/Python/3.7.11/x64/bin/python
         source /opt/mycroft-core/.venv/bin/activate
         pip install allure-behave
         /opt/mycroft-core/bin/mycroft-pip install -r ${{ github.workspace }}/requirements.txt
 
     # Wait for MC to start
-    - name: MC - wait for start
+    - name: Mycroft - Wait for start
       run: sleep 4m
 
     # Clear VKtest
-    - name: MC - Clear VKtest
+    - name: Mycroft - Clear VKtest
       run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
 
     # Run VKtest
-    - name: MC - run VKtest
+    - name: Mycroft - Run VKtest
       run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ${{ github.workspace }}/allure_results
 
-    # Debug
-    - name: List folders
-      run: ls -l ${{ github.workspace }}/allure_results
-
-
-    # Allure
-    - name: Get Allure history
+    # GH get history
+    - name: Github Pages - Pull Allure history
       uses: actions/checkout@v2
       if: always()
       continue-on-error: true
@@ -136,27 +124,23 @@ jobs:
         path: ./gh-pages
         ref: master
 
-    - name: Test marketplace action
+    # GH generate VKreport
+    - name: Allure - generate report
       uses: simple-elf/allure-report-action@master
-      if: always()
       id: allure-report
       with:
         allure_results: ${{ github.workspace }}/allure_results
         gh_pages: gh-pages/skill-homeassistant/
-        allure_report: llure-report
+        allure_report: allure-report
         allure_history: gh-pages/skill-homeassistant/allure-history
 
-    # Debug
-    - name: List folders
-      run: ls -l ${{ github.workspace }}
+    # GH get codesytyle results
+    - name: Codestyle - Check ha_client.py
       if: always()
+      run: cp -r ${{ github.workspace }}/codestyle ${{ github.workspace }}/gh-pages/skill-homeassistant/
 
-    # Debug
-    - name: List folders
-      run: ls -l ${{ github.workspace }}/gh-pages/skill-homeassistant
-      if: always()
-
-    - name: Deploy report to Github Pages
+    # GH publish results
+    - name: Github Pages - publish results
       if: always()
       uses: peaceiris/actions-gh-pages@v3
       with:
@@ -165,14 +149,15 @@ jobs:
         publish_dir: ${{ github.workspace }}/gh-pages
         publish_branch: master
 
-    - name: Post the link to the report
+    # GH publish link as status
+    - name: State - publish link to GH
       if: always()
       uses: Sibz/github-status-action@v1
       with:
         authToken: ${{ secrets.GITHUB_TOKEN }}
-        context: 'Test report'
+        context: 'VK Test report generated'
         state: 'success'
         sha: ${{github.event.pull_request.head.sha || github.sha}}
-        target_url: https://tony763.github.io/skill-homeassistant/allure-history/${{ github.run_number }}
+        target_url: https://tony763.github.io/skill-homeassistant/allure-history/${{ github.run_number }}/
 
 # TODO: Variable with path to python?

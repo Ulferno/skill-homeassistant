@@ -60,7 +60,7 @@ Options:
     -p arg, --python arg    Sets the python version to use
     -r, --allow-root        Allow to be run as root (e.g. sudo)
     -sm                     Skip mimic build
-    -t, --travis            Travis CI settings
+    -ci                     CI settings
 '
 }
 
@@ -69,7 +69,7 @@ opt_forcemimicbuild=false
 opt_allowroot=false
 opt_skipmimicbuild=false
 opt_python=/opt/python/3.7.6/bin/python
-opt_travis=false
+opt_ci=false
 param=''
 
 for var in "$@" ; do
@@ -111,8 +111,8 @@ for var in "$@" ; do
     if [[ $var == '-p' || $var == '--python' ]] ; then
         param='python'
     fi
-    if [[ $var == '-t' || $var == '--travis' ]] ; then
-        opt_travis=true
+    if [[ $var == '-ci' ]] ; then
+        opt_ci=true
     fi
 done
 
@@ -180,7 +180,7 @@ a developer modifying mycroft-core itself, you should run on the
 'master' branch.  It is updated bi-weekly with a stable release.
   Y)es, run on the stable 'master' branch
   N)o, I want to run unstable branches"
-    if [[ $opt_travis == true || get_YN ]] ; then
+    if [[ $opt_ci == true || get_YN ]] ; then
         echo -e "$HIGHLIGHT Y - using 'master' branch $RESET"
         branch=master
         git checkout ${branch}
@@ -197,7 +197,7 @@ whenever launching Mycroft?  This is highly recommended, especially for
 those running against the 'master' branch.
   Y)es, automatically check for updates
   N)o, I will be responsible for keeping Mycroft updated."
-    if [[ $opt_travis == false && get_YN ]] ; then
+    if [[ $opt_ci == false && get_YN ]] ; then
         echo -e "$HIGHLIGHT Y - update automatically $RESET"
         autoupdate=true
     else
@@ -206,7 +206,7 @@ those running against the 'master' branch.
     fi
 
     #  Pull down mimic source?  Most will be happy with just the package
-    if [[ $opt_forcemimicbuild == false && $opt_skipmimicbuild == false && $opt_travis == false ]] ; then
+    if [[ $opt_forcemimicbuild == false && $opt_skipmimicbuild == false && $opt_ci == false ]] ; then
         sleep 0.5
         echo '
 Mycroft uses its Mimic technology to speak to you.  Mimic can run both
@@ -233,7 +233,7 @@ locally?'
 There are several Mycroft helper commands in the bin folder.  These
 can be added to your system PATH, making it simpler to use Mycroft.
 Would you like this to be added to your PATH in the .profile?'
-    if [[ $opt_travis == false && get_YN ]] ; then
+    if [[ $opt_ci == false && get_YN ]] ; then
         echo -e "$HIGHLIGHT Y - Adding Mycroft commands to your PATH $RESET"
 
         if [[ ! -f ~/.profile_mycroft ]] ; then
@@ -280,7 +280,7 @@ fi" > ~/.profile_mycroft
 (Developer) Do you want to automatically check code-style when submitting code.
 If unsure answer yes.
 '
-    if [[ $opt_travis == false && get_YN ]] ; then
+    if [[ $opt_ci == false && get_YN ]] ; then
         echo 'Will install PEP8 pre-commit hook...'
         INSTALL_PRECOMMIT_HOOK=true
     fi
