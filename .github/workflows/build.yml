@@ -96,7 +96,7 @@ jobs:
 
     # Wait for MC to start
     - name: Mycroft - Wait for start
-      run: sleep 2m
+      run: sleep 4m
 
     # Clear VKtest
     - name: Mycroft - Clear VKtest
@@ -107,7 +107,7 @@ jobs:
       run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ${{ github.workspace }}/allure_results
 
     # GH get history
-    - name: Github Pages - Pull Allure history
+    - name: Github Pages - Pull GH history
       uses: actions/checkout@v2
       if: always()
       continue-on-error: true
@@ -127,7 +127,7 @@ jobs:
         allure_history: gh-pages/skill-homeassistant/allure-history
 
     # GH get codesytyle results
-    - name: Codestyle - Check ha_client.py
+    - name: Codestyle - Store results
       if: always()
       run: cp -r ${{ github.workspace }}/codestyle ${{ github.workspace }}/gh-pages/skill-homeassistant/
 
