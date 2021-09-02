@@ -24,7 +24,7 @@ binary_sensor:
   - platform: template
     sensors:
       mycroft_vk_tracker_sensor:
-        friendly_name: "Mycroft tracker sensor"
+        friendly_name: "Mycroft location"
         value_template: true
         device_class: 'presence'
         attribute_templates:
