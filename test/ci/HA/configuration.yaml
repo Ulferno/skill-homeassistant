@@ -25,8 +25,7 @@ binary_sensor:
     sensors:
       mycroft_vk_tracker_sensor:
         friendly_name: "Mycroft tracker sensor"
-        value_template: >-
-          {{ is_state('input_boolean.mycroft_vk_bool','on') }}
+        value_template: true
         device_class: 'presence'
         attribute_templates:
           latitude: 48.864716
