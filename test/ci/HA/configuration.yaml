@@ -9,6 +9,13 @@ homeassistant:
 
 default_config:
 
+virtual:
+
+device_tracker:
+  - platform: virtual
+    devices:
+      - mark_one
+
 input_boolean:
   mycroft_vk_bool:
     name: "Mycroft bool"
