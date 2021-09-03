@@ -95,8 +95,8 @@ jobs:
       run: hass-cli state list
 
     # Wait for MC to start
-    - name: Mycroft - Wait for start
-      run: sleep 4m
+    #- name: Mycroft - Wait for start
+    #  run: sleep 4m
 
     # Clear VKtest
     - name: Mycroft - Clear VKtest
