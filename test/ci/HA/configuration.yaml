@@ -14,7 +14,7 @@ virtual:
 device_tracker:
   - platform: virtual
     devices:
-      - mark_1
+      - "mark one"
 
 input_boolean:
   mycroft_vk_bool:
