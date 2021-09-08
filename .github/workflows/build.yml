@@ -10,115 +10,98 @@ on:
     branches: [ github-actions ]
 
 jobs:
-  pycodestyle:
-    name: pycodestyle
+  # pycodestyle:
+  #   name: pycodestyle
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v1
+  #   steps:
+  #     - uses: actions/checkout@v1
 
-      - uses: ricardochaves/python-lint@v1.4.0
-        if: always()
-        with:
-          # python-root-list: ""
-          use-pylint: true
-          use-pycodestyle: false
-          use-flake8: false
-          use-black: false
-          use-mypy: false
-          use-isort: false
-          extra-pylint-options: ""
-          extra-pycodestyle-options: ""
-          extra-flake8-options: ""
-          extra-black-options: ""
-          extra-mypy-options: ""
-          extra-isort-options: ""
+  #     - uses: ricardochaves/python-lint@v1.4.0
+  #       if: always()
+  #       with:
+  #         # python-root-list: ""
+  #         use-pylint: true
+  #         use-pycodestyle: false
+  #         use-flake8: false
+  #         use-black: false
+  #         use-mypy: false
+  #         use-isort: false
+  #         extra-pylint-options: ""
+  #         extra-pycodestyle-options: ""
+  #         extra-flake8-options: ""
+  #         extra-black-options: ""
+  #         extra-mypy-options: ""
+  #         extra-isort-options: ""
 
-      - uses: ricardochaves/python-lint@v1.4.0
-        if: always()
-        with:
-          # python-root-list: ""
-          use-pylint: false
-          use-pycodestyle: true
-          use-flake8: false
-          use-black: false
-          use-mypy: false
-          use-isort: false
-          extra-pylint-options: ""
-          extra-pycodestyle-options: ""
-          extra-flake8-options: ""
-          extra-black-options: ""
-          extra-mypy-options: ""
-          extra-isort-options: ""
+  #     - uses: ricardochaves/python-lint@v1.4.0
+  #       if: always()
+  #       with:
+  #         # python-root-list: ""
+  #         use-pylint: false
+  #         use-pycodestyle: true
+  #         use-flake8: false
+  #         use-black: false
+  #         use-mypy: false
+  #         use-isort: false
+  #         extra-pylint-options: ""
+  #         extra-pycodestyle-options: ""
+  #         extra-flake8-options: ""
+  #         extra-black-options: ""
+  #         extra-mypy-options: ""
+  #         extra-isort-options: ""
 
-      - uses: ricardochaves/python-lint@v1.4.0
-        if: always()
-        with:
-          # python-root-list: ""
-          use-pylint: false
-          use-pycodestyle: false
-          use-flake8: true
-          use-black: false
-          use-mypy: false
-          use-isort: false
-          extra-pylint-options: ""
-          extra-pycodestyle-options: ""
-          extra-flake8-options: ""
-          extra-black-options: ""
-          extra-mypy-options: ""
-          extra-isort-options: ""
+  #     - uses: ricardochaves/python-lint@v1.4.0
+  #       if: always()
+  #       with:
+  #         # python-root-list: ""
+  #         use-pylint: false
+  #         use-pycodestyle: false
+  #         use-flake8: true
+  #         use-black: false
+  #         use-mypy: false
+  #         use-isort: false
+  #         extra-pylint-options: ""
+  #         extra-pycodestyle-options: ""
+  #         extra-flake8-options: ""
+  #         extra-black-options: ""
+  #         extra-mypy-options: ""
+  #         extra-isort-options: ""
 
-      - uses: ricardochaves/python-lint@v1.4.0
-        if: always()
-        with:
-          # python-root-list: ""
-          use-pylint: false
-          use-pycodestyle: false
-          use-flake8: false
-          use-black: true
-          use-mypy: false
-          use-isort: false
-          extra-pylint-options: ""
-          extra-pycodestyle-options: ""
-          extra-flake8-options: ""
-          extra-black-options: ""
-          extra-mypy-options: ""
-          extra-isort-options: ""
+  #     - uses: ricardochaves/python-lint@v1.4.0
+  #       if: always()
+  #       with:
+  #         # python-root-list: ""
+  #         use-pylint: false
+  #         use-pycodestyle: false
+  #         use-flake8: false
+  #         use-black: false
+  #         use-mypy: true
+  #         use-isort: false
+  #         extra-pylint-options: ""
+  #         extra-pycodestyle-options: ""
+  #         extra-flake8-options: ""
+  #         extra-black-options: ""
+  #         extra-mypy-options: ""
+  #         extra-isort-options: ""
 
-      - uses: ricardochaves/python-lint@v1.4.0
-        if: always()
-        with:
-          # python-root-list: ""
-          use-pylint: false
-          use-pycodestyle: false
-          use-flake8: false
-          use-black: false
-          use-mypy: true
-          use-isort: false
-          extra-pylint-options: ""
-          extra-pycodestyle-options: ""
-          extra-flake8-options: ""
-          extra-black-options: ""
-          extra-mypy-options: ""
-          extra-isort-options: ""
-
-      - uses: ricardochaves/python-lint@v1.4.0
-        if: always()
-        with:
-          # python-root-list: ""
-          use-pylint: false
-          use-pycodestyle: false
-          use-flake8: false
-          use-black: false
-          use-mypy: false
-          use-isort: true
-          extra-pylint-options: ""
-          extra-pycodestyle-options: ""
-          extra-flake8-options: ""
-          extra-black-options: ""
-          extra-mypy-options: ""
-          extra-isort-options: ""
+  #     - uses: ricardochaves/python-lint@v1.4.0
+  #       if: always()
+  #       with:
+  #         # python-root-list: ""
+  #         use-pylint: false
+  #         use-pycodestyle: false
+  #         use-flake8: false
+  #         use-black: false
+  #         use-mypy: false
+  #         use-isort: true
+  #         extra-pylint-options: ""
+  #         extra-pycodestyle-options: ""
+  #         extra-flake8-options: ""
+  #         extra-black-options: ""
+  #         extra-mypy-options: ""
+  #         extra-isort-options: ""
 
 
   job-vm:
@@ -141,26 +124,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        pip install pycodestyle
-
-    - name: Lint with flake8
-      # stop the build if there are Python syntax errors or undefined names
-      # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-      run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=15 --max-line-length=127 --statistics
-
-    # Codestyle
-    - name: Codestyle - Create dir for logs
-      run: mkdir -p ${{ github.workspace }}/codestyle/${{ github.run_number }}
-
-    - name: Codestyle - Check __init__.py
-      run: pycodestyle --max-line-length=127 __init__.py >> ${{ github.workspace }}/codestyle/${{ github.run_number }}/__init__.log
-
-    - name: Codestyle - Check ha_client.py
-      run: pycodestyle --max-line-length=127 ha_client.py >> ${{ github.workspace }}/codestyle/${{ github.run_number }}/ha_client.log
 
     # Copy skill befor HA kicks in
     - name: Mycroft - Copy skill to mycroft
@@ -237,11 +201,6 @@ jobs:
         allure_report: allure-report
         allure_history: gh-pages/skill-homeassistant/allure-history
 
-    # GH get codesytyle results
-    - name: Codestyle - Store results
-      if: always()
-      run: cp -r ${{ github.workspace }}/codestyle ${{ github.workspace }}/gh-pages/skill-homeassistant/
-
     # GH publish results
     - name: Github Pages - publish results
       if: always()
@@ -259,8 +218,97 @@ jobs:
       with:
         authToken: ${{ secrets.GITHUB_TOKEN }}
         context: 'VK Test report generated'
-        state: 'success'
+        state: steps.allure-report.outcome    #'success'
         sha: ${{github.event.pull_request.head.sha || github.sha}}
         target_url: https://tony763.github.io/skill-homeassistant/allure-history/${{ github.run_number }}/
+
+    - name: Github Pages - publish results
+      if: always()
+      uses: ricardochaves/python-lint@v1.4.0
+      id: pylint
+      with:
+        # python-root-list: ""
+        use-pylint: true
+        use-pycodestyle: false
+        use-flake8: false
+        use-black: false
+        use-mypy: false
+        use-isort: false
+        extra-pylint-options: ""
+
+    # GH publish link as status
+    - name: State - pylint
+      if: always()
+      uses: Sibz/github-status-action@v1
+      with:
+        authToken: ${{ secrets.GITHUB_TOKEN }}
+        context: 'pylint'
+        state: steps.pylint.outcome
+        sha: ${{github.event.pull_request.head.sha || github.sha}}
+
+    - uses: ricardochaves/python-lint@v1.4.0
+      if: always()
+      with:
+        # python-root-list: ""
+        use-pylint: false
+        use-pycodestyle: true
+        use-flake8: false
+        use-black: false
+        use-mypy: false
+        use-isort: false
+        extra-pycodestyle-options: ""
+
+
+    - uses: ricardochaves/python-lint@v1.4.0
+      if: always()
+      with:
+        # python-root-list: ""
+        use-pylint: false
+        use-pycodestyle: false
+        use-flake8: true
+        use-black: false
+        use-mypy: false
+        use-isort: false
+        extra-pylint-options: ""
+        extra-pycodestyle-options: ""
+        extra-flake8-options: ""
+        extra-black-options: ""
+        extra-mypy-options: ""
+        extra-isort-options: ""
+
+    - uses: ricardochaves/python-lint@v1.4.0
+      if: always()
+      with:
+        # python-root-list: ""
+        use-pylint: false
+        use-pycodestyle: false
+        use-flake8: false
+        use-black: false
+        use-mypy: true
+        use-isort: false
+        extra-pylint-options: ""
+        extra-pycodestyle-options: ""
+        extra-flake8-options: ""
+        extra-black-options: ""
+        extra-mypy-options: ""
+        extra-isort-options: ""
+
+    - uses: ricardochaves/python-lint@v1.4.0
+      if: always()
+      with:
+        # python-root-list: ""
+        use-pylint: false
+        use-pycodestyle: false
+        use-flake8: false
+        use-black: false
+        use-mypy: false
+        use-isort: true
+        extra-pylint-options: ""
+        extra-pycodestyle-options: ""
+        extra-flake8-options: ""
+        extra-black-options: ""
+        extra-mypy-options: ""
+        extra-isort-options: ""
+
 
 # TODO: Variable with path to python?
