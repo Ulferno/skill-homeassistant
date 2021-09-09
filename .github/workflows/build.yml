@@ -211,6 +211,12 @@ jobs:
         publish_dir: ${{ github.workspace }}/gh-pages
         publish_branch: master
 
+    - name: debug
+      if: always()
+      run: |
+        echo ${{ job.steps.allure-report.outcome }}
+        echo ${{ steps.allure-report.outcome }}
+
     # GH publish link as status
     - name: State - publish link to GH
       if: always()
