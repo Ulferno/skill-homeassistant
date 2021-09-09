@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Mycroft Home Assistant skill
+name: Overal test run
 
 on:
   push:
@@ -10,100 +10,6 @@ on:
     branches: [ github-actions ]
 
 jobs:
-  # pycodestyle:
-  #   name: pycodestyle
-
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - uses: actions/checkout@v1
-
-  #     - uses: ricardochaves/python-lint@v1.4.0
-  #       if: always()
-  #       with:
-  #         # python-root-list: ""
-  #         use-pylint: true
-  #         use-pycodestyle: false
-  #         use-flake8: false
-  #         use-black: false
-  #         use-mypy: false
-  #         use-isort: false
-  #         extra-pylint-options: ""
-  #         extra-pycodestyle-options: ""
-  #         extra-flake8-options: ""
-  #         extra-black-options: ""
-  #         extra-mypy-options: ""
-  #         extra-isort-options: ""
-
-  #     - uses: ricardochaves/python-lint@v1.4.0
-  #       if: always()
-  #       with:
-  #         # python-root-list: ""
-  #         use-pylint: false
-  #         use-pycodestyle: true
-  #         use-flake8: false
-  #         use-black: false
-  #         use-mypy: false
-  #         use-isort: false
-  #         extra-pylint-options: ""
-  #         extra-pycodestyle-options: ""
-  #         extra-flake8-options: ""
-  #         extra-black-options: ""
-  #         extra-mypy-options: ""
-  #         extra-isort-options: ""
-
-  #     - uses: ricardochaves/python-lint@v1.4.0
-  #       if: always()
-  #       with:
-  #         # python-root-list: ""
-  #         use-pylint: false
-  #         use-pycodestyle: false
-  #         use-flake8: true
-  #         use-black: false
-  #         use-mypy: false
-  #         use-isort: false
-  #         extra-pylint-options: ""
-  #         extra-pycodestyle-options: ""
-  #         extra-flake8-options: ""
-  #         extra-black-options: ""
-  #         extra-mypy-options: ""
-  #         extra-isort-options: ""
-
-  #     - uses: ricardochaves/python-lint@v1.4.0
-  #       if: always()
-  #       with:
-  #         # python-root-list: ""
-  #         use-pylint: false
-  #         use-pycodestyle: false
-  #         use-flake8: false
-  #         use-black: false
-  #         use-mypy: true
-  #         use-isort: false
-  #         extra-pylint-options: ""
-  #         extra-pycodestyle-options: ""
-  #         extra-flake8-options: ""
-  #         extra-black-options: ""
-  #         extra-mypy-options: ""
-  #         extra-isort-options: ""
-
-  #     - uses: ricardochaves/python-lint@v1.4.0
-  #       if: always()
-  #       with:
-  #         # python-root-list: ""
-  #         use-pylint: false
-  #         use-pycodestyle: false
-  #         use-flake8: false
-  #         use-black: false
-  #         use-mypy: false
-  #         use-isort: true
-  #         extra-pylint-options: ""
-  #         extra-pycodestyle-options: ""
-  #         extra-flake8-options: ""
-  #         extra-black-options: ""
-  #         extra-mypy-options: ""
-  #         extra-isort-options: ""
-
-
   job-vm:
 
     runs-on: ubuntu-latest
@@ -112,19 +18,27 @@ jobs:
         HASS_SERVER: http://127.0.0.1:8123
         HASS_TOKEN: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmMzI5NmEzYTA0ZDc0NTI3OGUzMDIzN2I5MDlmYmM5MSIsImlhdCI6MTU5ODczMzU5MywiZXhwIjoxOTE0MDkzNTkzfQ.HEGTdkF5tt473J3WktjUIb71x06tZwcZUjp070QzLec
         TERM: xterm
+        MAX_LINE_LENGHT: 127
 
     steps:
     - uses: actions/checkout@v2
 
+    # Setup python
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
 
-    - name: Install dependencies
+    # Get path to python
+    - name: Get path to python
+      run: export PATH_TO_PYTHON=$(which python)
+
+    # Install pip dependencies
+    - name: Install pip dependencies
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install allure-behave
 
     # Copy skill befor HA kicks in
     - name: Mycroft - Copy skill to mycroft
@@ -148,9 +62,8 @@ jobs:
         ls /opt
         cp ${{ github.workspace }}/test/ci/Mycroft/dev_setup.sh /opt/mycroft-core/
         chmod +x /opt/mycroft-core/dev_setup.sh
-        /opt/mycroft-core/dev_setup.sh --allow-root -ci -sm -p /opt/hostedtoolcache/Python/3.7.11/x64/bin/python
+        /opt/mycroft-core/dev_setup.sh --allow-root -ci -sm -p ${{ PATH_TO_PYTHON }}
         source /opt/mycroft-core/.venv/bin/activate
-        pip install allure-behave
         /opt/mycroft-core/bin/mycroft-pip install -r ${{ github.workspace }}/requirements.txt
 
     # Install Home Assistant cli tool
@@ -172,6 +85,9 @@ jobs:
     # Wait for MC to start
     - name: Mycroft - Wait for start
       run: sleep 4m
+
+    #######################################################################################
+    # Section with Linters
 
     # Clear VKtest
     - name: Mycroft - Clear VKtest
@@ -211,23 +127,26 @@ jobs:
         publish_dir: ${{ github.workspace }}/gh-pages
         publish_branch: master
 
-    # GH publish link as status
-    - name: State - publish link to GH
+    # Job status - publish link to VK
+    - name: State - publish VK test
       if: always()
       uses: Sibz/github-status-action@v1
       with:
         authToken: ${{ secrets.GITHUB_TOKEN }}
         context: 'VK Test report generated'
-        state: ${{ steps.allure-report.outcome }}   #'success'
+        state: ${{ steps.allure-report.outcome }}
         sha: ${{github.event.pull_request.head.sha || github.sha}}
         target_url: https://tony763.github.io/skill-homeassistant/allure-history/${{ github.run_number }}/
 
-    - name: Github Pages - publish results
+    #######################################################################################
+    # Section with Linters
+
+    # Linters - pylint
+    - name: pylint
       if: always()
       uses: ricardochaves/python-lint@v1.4.0
       id: pylint
       with:
-        # python-root-list: ""
         use-pylint: true
         use-pycodestyle: false
         use-flake8: false
@@ -236,7 +155,7 @@ jobs:
         use-isort: false
         extra-pylint-options: ""
 
-    # GH publish link as status
+    # Job status - publish pylint
     - name: State - pylint
       if: always()
       uses: Sibz/github-status-action@v1
@@ -246,69 +165,101 @@ jobs:
         state: ${{ steps.pylint.outcome }}
         sha: ${{github.event.pull_request.head.sha || github.sha}}
 
-    - uses: ricardochaves/python-lint@v1.4.0
+    # Linters - pycodestyle
+    - name: State - pycodestyle
       if: always()
+      uses: ricardochaves/python-lint@v1.4.0
+      id: pycodestyle
       with:
-        # python-root-list: ""
         use-pylint: false
         use-pycodestyle: true
         use-flake8: false
         use-black: false
         use-mypy: false
         use-isort: false
-        extra-pycodestyle-options: ""
+        extra-pycodestyle-options: "--max-line-length=${{ MAX_LINE_LENGHT }}"
 
-
-    - uses: ricardochaves/python-lint@v1.4.0
+    # Job status - publish pycodestyle
+    - name: State - pycodestyle
       if: always()
+      uses: Sibz/github-status-action@v1
       with:
-        # python-root-list: ""
+        authToken: ${{ secrets.GITHUB_TOKEN }}
+        context: 'pycodestyle'
+        state: ${{ steps.pycodestyle.outcome }}
+        sha: ${{github.event.pull_request.head.sha || github.sha}}
+
+    # Linters - flake8
+    - name: State - flake8
+      if: always()
+      uses: ricardochaves/python-lint@v1.4.0
+      id: flake8
+      with:
         use-pylint: false
         use-pycodestyle: false
         use-flake8: true
         use-black: false
         use-mypy: false
         use-isort: false
-        extra-pylint-options: ""
-        extra-pycodestyle-options: ""
-        extra-flake8-options: ""
-        extra-black-options: ""
-        extra-mypy-options: ""
-        extra-isort-options: ""
+        extra-flake8-options: "--max-line-length=${{ MAX_LINE_LENGHT }}"
 
-    - uses: ricardochaves/python-lint@v1.4.0
+    # Job status - publish flake8
+    - name: State - flake8
       if: always()
+      uses: Sibz/github-status-action@v1
       with:
-        # python-root-list: ""
+        authToken: ${{ secrets.GITHUB_TOKEN }}
+        context: 'flake8'
+        state: ${{ steps.flake8.outcome }}
+        sha: ${{github.event.pull_request.head.sha || github.sha}}
+
+    # Linters - mypy
+    - name: State - mypy
+      if: always()
+      uses: ricardochaves/python-lint@v1.4.0
+      id: mypy
+      with:
         use-pylint: false
         use-pycodestyle: false
         use-flake8: false
         use-black: false
         use-mypy: true
         use-isort: false
-        extra-pylint-options: ""
-        extra-pycodestyle-options: ""
-        extra-flake8-options: ""
-        extra-black-options: ""
         extra-mypy-options: ""
-        extra-isort-options: ""
 
-    - uses: ricardochaves/python-lint@v1.4.0
+    # Job status - publish mypy
+    - name: State - mypy
       if: always()
+      uses: Sibz/github-status-action@v1
       with:
-        # python-root-list: ""
+        authToken: ${{ secrets.GITHUB_TOKEN }}
+        context: 'mypy'
+        state: ${{ steps.mypy.outcome }}
+        sha: ${{github.event.pull_request.head.sha || github.sha}}
+
+    # Linters - isort
+    - name: State - isort
+      if: always()
+      uses: ricardochaves/python-lint@v1.4.0
+      id: isort
+      with:
         use-pylint: false
         use-pycodestyle: false
         use-flake8: false
         use-black: false
         use-mypy: false
         use-isort: true
-        extra-pylint-options: ""
-        extra-pycodestyle-options: ""
-        extra-flake8-options: ""
-        extra-black-options: ""
-        extra-mypy-options: ""
         extra-isort-options: ""
+
+    # Job status - publish isort
+    - name: State - isort
+      if: always()
+      uses: Sibz/github-status-action@v1
+      with:
+        authToken: ${{ secrets.GITHUB_TOKEN }}
+        context: 'isort'
+        state: ${{ steps.isort.outcome }}
+        sha: ${{github.event.pull_request.head.sha || github.sha}}
 
 
 # TODO: Variable with path to python?
