@@ -29,6 +29,9 @@ jobs:
       with:
         python-version: 3.7
 
+    #######################################################################################
+    # Section with dep. instalations
+
     # Get path to python
     - name: Get path to python
       run: echo "PATH_TO_PYTHON=$(which python)" >> $GITHUB_ENV
@@ -91,7 +94,7 @@ jobs:
       run: source /opt/mycroft-core/.venv/bin/activate
 
     #######################################################################################
-    # Section with Linters
+    # Section with VK tests
 
     # Clear VKtest
     - name: Mycroft - Clear VKtest
@@ -126,10 +129,14 @@ jobs:
       if: always()
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
-        external_repository: Tony763/Tony763.github.io
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ${{ github.workspace }}/gh-pages
-        publish_branch: master
+
+        # External repository
+        # deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY_MS_HA }}
+        # external_repository: Tony763/Tony763.github.io
+        # publish_branch: master
+
 
     # Job status - publish link to VK
     - name: State - publish VK test
