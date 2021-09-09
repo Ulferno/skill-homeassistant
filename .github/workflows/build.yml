@@ -86,6 +86,10 @@ jobs:
     - name: Mycroft - Wait for start
       run: sleep 4m
 
+    # Open MC virtual enviroment
+    - name: MC - open virtual env
+      run: source /opt/mycroft-core/.venv/bin/activate
+
     #######################################################################################
     # Section with Linters
 
