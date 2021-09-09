@@ -211,12 +211,6 @@ jobs:
         publish_dir: ${{ github.workspace }}/gh-pages
         publish_branch: master
 
-    - name: debug
-      if: always()
-      run: |
-        echo ${{ job.steps.allure-report.outcome }}
-        echo ${{ steps.allure-report.outcome }}
-
     # GH publish link as status
     - name: State - publish link to GH
       if: always()
@@ -224,7 +218,7 @@ jobs:
       with:
         authToken: ${{ secrets.GITHUB_TOKEN }}
         context: 'VK Test report generated'
-        state: ${{ job.steps.allure-report.outcome }}   #'success'
+        state: ${{ steps.allure-report.outcome }}   #'success'
         sha: ${{github.event.pull_request.head.sha || github.sha}}
         target_url: https://tony763.github.io/skill-homeassistant/allure-history/${{ github.run_number }}/
 
@@ -249,7 +243,7 @@ jobs:
       with:
         authToken: ${{ secrets.GITHUB_TOKEN }}
         context: 'pylint'
-        state: ${{ job.steps.pylint.outcome }}
+        state: ${{ steps.pylint.outcome }}
         sha: ${{github.event.pull_request.head.sha || github.sha}}
 
     - uses: ricardochaves/python-lint@v1.4.0
