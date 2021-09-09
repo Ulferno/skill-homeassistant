@@ -31,7 +31,7 @@ jobs:
 
     # Get path to python
     - name: Get path to python
-      run: export PATH_TO_PYTHON=$(which python)
+      run: echo "PATH_TO_PYTHON=$(which python)" >> $GITHUB_ENV
 
     # Install pip dependencies
     - name: Install pip dependencies
@@ -62,7 +62,7 @@ jobs:
         ls /opt
         cp ${{ github.workspace }}/test/ci/Mycroft/dev_setup.sh /opt/mycroft-core/
         chmod +x /opt/mycroft-core/dev_setup.sh
-        /opt/mycroft-core/dev_setup.sh --allow-root -ci -sm -p $PATH_TO_PYTHON
+        /opt/mycroft-core/dev_setup.sh --allow-root -ci -sm -p ${{ env.PATH_TO_PYTHON }}
         source /opt/mycroft-core/.venv/bin/activate
         /opt/mycroft-core/bin/mycroft-pip install -r ${{ github.workspace }}/requirements.txt
 
@@ -177,7 +177,7 @@ jobs:
         use-black: false
         use-mypy: false
         use-isort: false
-        extra-pycodestyle-options: "--max-line-length=$MAX_LINE_LENGHT"
+        extra-pycodestyle-options: "--max-line-length=${{ env.MAX_LINE_LENGHT }}"
 
     # Job status - publish pycodestyle
     - name: State - pycodestyle
@@ -201,7 +201,7 @@ jobs:
         use-black: false
         use-mypy: false
         use-isort: false
-        extra-flake8-options: "--max-line-length=$MAX_LINE_LENGHT"
+        extra-flake8-options: "--max-line-length=${{ env.MAX_LINE_LENGHT }}"
 
     # Job status - publish flake8
     - name: State - flake8
