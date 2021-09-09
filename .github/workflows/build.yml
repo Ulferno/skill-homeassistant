@@ -110,9 +110,10 @@ jobs:
       if: always()
       continue-on-error: true
       with:
-        repository:  Tony763/Tony763.github.io
         path: ./gh-pages
-        ref: master
+        ref: gh-pages
+
+        # repository:  Tony763/Tony763.github.io   with external repo
 
     # GH generate VKreport
     - name: Allure - generate report
