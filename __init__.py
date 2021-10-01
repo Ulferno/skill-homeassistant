@@ -160,7 +160,7 @@ class HomeAssistantSkill(FallbackSkill):
     # Intent handlers
     @intent_handler('turn.on.intent')
     def handle_turn_on_intent(self, message):
-        self.log.debug("Turn on intent on entity: "+message.data.get("entity"))
+        self.log.debug("Turn on intent on entity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "on"
         self._handle_turn_actions(message)
@@ -168,7 +168,7 @@ class HomeAssistantSkill(FallbackSkill):
     @intent_handler('turn.off.intent')
     def handle_turn_off_intent(self, message):
         self.log.debug(message.data)
-        self.log.debug("Turn off intent on entity: "+message.data.get("entity"))
+        self.log.debug("Turn off intent on entity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "off"
         self._handle_turn_actions(message)
@@ -182,54 +182,54 @@ class HomeAssistantSkill(FallbackSkill):
 
     @intent_handler('sensor.intent')
     def handle_sensor_intent(self, message):
-        self.log.debug("Turn on intent on entity: "+message.data.get("entity"))
+        self.log.debug("Turn on intent on entity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         self._handle_sensor(message)
 
     @intent_handler('set.light.brightness.intent')
     def handle_light_set_intent(self, message):
-        self.log.debug("Change light intensity: "+message.data.get("entity") \
-            +"to"+message.data.get("brightnessvalue")+"percent")
+        self.log.debug("Change light intensity: " + message.data.get("entity")
+                       + "to"+message.data.get("brightnessvalue") + "percent")
         message.data["Entity"] = message.data.get("entity")
         message.data["Brightnessvalue"] = message.data.get("brightnessvalue")
         self._handle_light_set(message)
 
     @intent_handler('increase.light.brightness.intent')
     def handle_light_increase_intent(self, message):
-        self.log.debug("Increase light intensity: "+message.data.get("entity"))
+        self.log.debug("Increase light intensity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "up"
         self._handle_light_adjust(message)
 
     @intent_handler('decrease.light.brightness.intent')
     def handle_light_decrease_intent(self, message):
-        self.log.debug("Decrease light intensity: "+message.data.get("entity"))
+        self.log.debug("Decrease light intensity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "down"
         self._handle_light_adjust(message)
 
     @intent_handler('automation.intent')
     def handle_automation_intent(self, message):
-        self.log.debug("Automation trigger intent on entity: "+message.data.get("entity"))
+        self.log.debug("Automation trigger intent on entity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         self._handle_automation(message)
 
     @intent_handler('tracker.intent')
     def handle_tracker_intent(self, message):
-        self.log.debug("Turn on intent on entity: "+message.data.get("entity"))
+        self.log.debug("Turn on intent on entity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         self._handle_tracker(message)
 
     @intent_handler('set.climate.intent')
     def handle_set_thermostat_intent(self, message):
-        self.log.debug("Set thermostat intent on entity: "+message.data.get("entity"))
+        self.log.debug("Set thermostat intent on entity: " + message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Temp"] = message.data.get("temp")
         self._handle_set_thermostat(message)
 
     @intent_handler('add.item.shopping.list.intent')
     def handle_shopping_list_intent(self, message):
-        self.log.debug("Add : "+message.data.get("entity")+"to the shoping list")
+        self.log.debug("Add : "+message.data.get("entity") + "to the shoping list")
         message.data["Entity"] = message.data.get("entity")
         self._handle_shopping_list(message)
 
@@ -242,9 +242,9 @@ class HomeAssistantSkill(FallbackSkill):
 
         # Handle turn on/off all intent
         try:
-            if self.voc_match(entity,"all_lights"):
+            if self.voc_match(entity, "all_lights"):
                 domain = "light"
-            elif self.voc_match(entity,"all_switches"):
+            elif self.voc_match(entity, "all_switches"):
                 domain = "switch"
             else:
                 domain = None
@@ -259,8 +259,8 @@ class HomeAssistantSkill(FallbackSkill):
         # TODO: need to figure out, if this indeed throws a KeyError
         except KeyError:
             self.log.debug("Not turn on/off all intent")
-        except:
-            self.log.debug("Unexpected error in turn all intent:", exc_info()[0])
+        except Exception as e:
+            self.log.debug("Unexpected error in turn all intent:%s" % e)
 
         # Hande single entity
 
