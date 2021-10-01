@@ -1,0 +1,102 @@
+homeassistant:
+  name: Home
+  latitude: 48.864716
+  longitude: 2.349014
+  elevation: 430
+  unit_system: metric
+  time_zone: America/Los_Angeles
+  internal_url: "http://127.0.0.1:8123"
+
+default_config:
+
+virtual:
+
+device_tracker:
+  - platform: virtual
+    devices:
+      - "mark"
+
+input_boolean:
+  mycroft_vk_bool:
+    name: "Mycroft bool"
+    initial: off
+
+input_number:
+  mycroft_vk_num:
+    min: 0
+    max: 255
+    initial: 20
+
+binary_sensor:
+  - platform: template
+    sensors:
+      mycroft_vk_tracker_sensor:
+        friendly_name: "Mycroft location"
+        value_template: true
+        device_class: 'presence'
+        attribute_templates:
+          latitude: 48.864716
+          longitude: 2.349014
+
+sensor:
+  - platform: template
+    sensors:
+      mycroft_vk_sensor:
+        friendly_name: "Mycroft sensor"
+        unit_of_measurement: '°C'
+        value_template: 122.00
+
+switch:
+  - platform: template
+    switches:
+      mycroft_vk_switch:
+        friendly_name: "Mycroft sw"
+        value_template: "{{ is_state('input_boolean.mycroft_vk_bool', 'on') }}"
+        turn_on:
+          service: input_boolean.turn_on
+          data:
+            entity_id: input_boolean.mycroft_vk_bool
+        turn_off:
+          service: input_boolean.turn_off
+          data:
+            entity_id: input_boolean.mycroft_vk_bool
+
+light:
+  - platform: template
+    lights:
+      mycroft_vk_light:
+        friendly_name: "Mycroft light"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.mycroft_vk_bool
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.mycroft_vk_bool
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.mycroft_vk_num
+
+climate:
+  - platform: generic_thermostat
+    name: "Mycroft climate"
+    heater: switch.mycroft_vk_switch
+    target_sensor: sensor.mycroft_vk_temp
+    min_temp: 15
+    max_temp: 21
+    ac_mode: false
+    target_temp: 17
+    cold_tolerance: 0.3
+    hot_tolerance: 0
+    min_cycle_duration:
+      seconds: 5
+    keep_alive:
+      minutes: 3
+    initial_hvac_mode: "off"
+    away_temp: 16
+    precision: 0.1
+
+shopping_list:
+
+automation: !include automations.yaml
