@@ -1,0 +1,141 @@
+[ {
+  "uid" : "339ff8245d45f599",
+  "name" : "toggle on switch",
+  "time" : {
+    "start" : 1633121610718,
+    "stop" : 1633121611412,
+    "duration" : 694
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "74eb6e6726dfb473",
+  "name" : "turn on switch",
+  "time" : {
+    "start" : 1633121609992,
+    "stop" : 1633121610377,
+    "duration" : 385
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1ca1b9b8f4d0210b",
+  "name" : "tracker",
+  "time" : {
+    "start" : 1633121628626,
+    "stop" : 1633121649232,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "e686057907396021",
+  "name" : "turn off switch",
+  "time" : {
+    "start" : 1633121611413,
+    "stop" : 1633121618276,
+    "duration" : 6863
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b042974b3c29581a",
+  "name" : "toggle off switch",
+  "time" : {
+    "start" : 1633121610378,
+    "stop" : 1633121610717,
+    "duration" : 339
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f97d62e3db143c59",
+  "name" : "set light brightness",
+  "time" : {
+    "start" : 1633121620017,
+    "stop" : 1633121620432,
+    "duration" : 415
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1ce5728b2e82a22e",
+  "name" : "increase light brightness",
+  "time" : {
+    "start" : 1633121620433,
+    "stop" : 1633121621059,
+    "duration" : 626
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c32435fecb20dace",
+  "name" : "turn off light",
+  "time" : {
+    "start" : 1633121621760,
+    "stop" : 1633121622773,
+    "duration" : 1013
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bc96456cf2fdeb2f",
+  "name" : "turn on light",
+  "time" : {
+    "start" : 1633121618277,
+    "stop" : 1633121620016,
+    "duration" : 1739
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e99a7d0314306d85",
+  "name" : "read sensor",
+  "time" : {
+    "start" : 1633121605588,
+    "stop" : 1633121609991,
+    "duration" : 4403
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a2ed8be82cf04b88",
+  "name" : "add item",
+  "time" : {
+    "start" : 1633121649581,
+    "stop" : 1633121649912,
+    "duration" : 331
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1f398ff89f325af9",
+  "name" : "set climate temperature",
+  "time" : {
+    "start" : 1633121649233,
+    "stop" : 1633121649580,
+    "duration" : 347
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bb45249289fa292d",
+  "name" : "decrease light brightness",
+  "time" : {
+    "start" : 1633121621060,
+    "stop" : 1633121621759,
+    "duration" : 699
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bdd41c670a1db841",
+  "name" : "triger automation",
+  "time" : {
+    "start" : 1633121622774,
+    "stop" : 1633121628625,
+    "duration" : 5851
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
