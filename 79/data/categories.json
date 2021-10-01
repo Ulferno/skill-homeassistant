@@ -1,0 +1,73 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "children" : [ {
+        "name" : "read sensor",
+        "uid" : "40f50e78881dd8ef",
+        "parentUid" : "d8393cdec07e0cb864f25a04e20b1e26",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633126553338,
+          "stop" : 1633126573947,
+          "duration" : 20609
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d8393cdec07e0cb864f25a04e20b1e26"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "children" : [ {
+        "name" : "set light brightness",
+        "uid" : "5275ef6f334d465e",
+        "parentUid" : "d262e3396788e7a1cc57c06eaf5fb855",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633126584366,
+          "stop" : 1633126604972,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d262e3396788e7a1cc57c06eaf5fb855"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.brightness.cantdim.dimmable.dialog(HomeAssistantSkill)\n\"Can not dim Mycroft light. It is not dimmable.\"\n\n",
+      "children" : [ {
+        "name" : "increase light brightness",
+        "uid" : "8d5cc4503a562631",
+        "parentUid" : "afcbdad31ef3d57eee93e00dc2dced77",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633126604973,
+          "stop" : 1633126625579,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "decrease light brightness",
+        "uid" : "6c6d6da7b2031a0f",
+        "parentUid" : "afcbdad31ef3d57eee93e00dc2dced77",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633126625580,
+          "stop" : 1633126646186,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "afcbdad31ef3d57eee93e00dc2dced77"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
