@@ -2,8 +2,6 @@ from mycroft.skills.core import FallbackSkill
 from mycroft.util.format import nice_number
 from mycroft import MycroftSkill, intent_handler
 
-from sys import exc_info
-
 from requests.exceptions import (
     RequestException,
     Timeout,
