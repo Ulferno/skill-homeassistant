@@ -1,18 +1,11 @@
+from mycroft import MycroftSkill, intent_handler
 from mycroft.skills.core import FallbackSkill
 from mycroft.util.format import nice_number
-from mycroft import MycroftSkill, intent_handler
-
-from requests.exceptions import (
-    RequestException,
-    Timeout,
-    InvalidURL,
-    URLRequired,
-    SSLError,
-    HTTPError)
+from requests.exceptions import (HTTPError, InvalidURL, RequestException,
+                                 SSLError, Timeout, URLRequired)
 from requests.packages.urllib3.exceptions import MaxRetryError
 
 from .ha_client import HomeAssistantClient
-
 
 __author__ = 'robconnolly, btotharye, nielstron'
 

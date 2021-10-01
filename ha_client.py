@@ -1,8 +1,8 @@
-from requests import get, post
-from fuzzywuzzy import fuzz
 import json
-from requests.exceptions import Timeout, RequestException
 
+from fuzzywuzzy import fuzz
+from requests import get, post
+from requests.exceptions import RequestException, Timeout
 
 __author__ = 'btotharye'
 
