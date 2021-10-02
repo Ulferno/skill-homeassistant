@@ -1,0 +1,223 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: unknown.dialog(UnknownSkill)\n\"You might have to say that a different way.\"\n\n",
+      "children" : [ {
+        "name" : "read sensor",
+        "uid" : "3ba3c9ba4283218e",
+        "parentUid" : "676ab4e724c886b9046bd639156123f3",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195313754,
+          "stop" : 1633195334364,
+          "duration" : 20610
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "676ab4e724c886b9046bd639156123f3"
+    }, {
+      "name" : "AssertionError: Mycroft didn't respond\n",
+      "children" : [ {
+        "name" : "turn on switch",
+        "uid" : "465986582273059b",
+        "parentUid" : "28eeee5e9419c462c2ed71aeeb354cd7",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195334365,
+          "stop" : 1633195354972,
+          "duration" : 20607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "turn on light",
+        "uid" : "fcb38cea95ff3b2",
+        "parentUid" : "28eeee5e9419c462c2ed71aeeb354cd7",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195416802,
+          "stop" : 1633195437410,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "28eeee5e9419c462c2ed71aeeb354cd7"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: unknown.dialog(UnknownSkill)\n\"Sorry, I don't understand.\"\n\n",
+      "children" : [ {
+        "name" : "toggle off switch",
+        "uid" : "fabb359b144b801c",
+        "parentUid" : "4c3c8f39ba2c4762430999d5ff771768",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195354974,
+          "stop" : 1633195375583,
+          "duration" : 20609
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "turn off switch",
+        "uid" : "d98c8310b25f0072",
+        "parentUid" : "4c3c8f39ba2c4762430999d5ff771768",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195396193,
+          "stop" : 1633195416800,
+          "duration" : 20607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "add item",
+        "uid" : "f95db40dec380191",
+        "parentUid" : "4c3c8f39ba2c4762430999d5ff771768",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195581676,
+          "stop" : 1633195602284,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4c3c8f39ba2c4762430999d5ff771768"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: unknown.dialog(UnknownSkill)\n\"Please rephrase your request.\"\n\n",
+      "children" : [ {
+        "name" : "toggle on switch",
+        "uid" : "922d353d8ed131ba",
+        "parentUid" : "f1cc24433a051ea983099e77a55caece",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195375584,
+          "stop" : 1633195396192,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "decrease light brightness",
+        "uid" : "d8b2e3f75b193d5",
+        "parentUid" : "f1cc24433a051ea983099e77a55caece",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195478629,
+          "stop" : 1633195499237,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "triger automation",
+        "uid" : "1b3122c87b5f057f",
+        "parentUid" : "f1cc24433a051ea983099e77a55caece",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195519848,
+          "stop" : 1633195540456,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f1cc24433a051ea983099e77a55caece"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: precise.devmode.enabled.dialog(ConfigurationSkill)\n\"I am now using the development precise model.\"\nMycroft: pairing.code.dialog(PairingSkill)\n\"Enter the code. 'C' as in Charlie. the number Three. the number Nine. 'L' as in London. 'L' as in London. the number Four.\"\n\n",
+      "children" : [ {
+        "name" : "set light brightness",
+        "uid" : "56031dbbf0e6b81f",
+        "parentUid" : "9ca0cfd4e340b0eebbbb497a69f0699f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195437412,
+          "stop" : 1633195458019,
+          "duration" : 20607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9ca0cfd4e340b0eebbbb497a69f0699f"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: unknown.dialog(UnknownSkill)\n\"I don't understand, but I'm learning new things everyday.\"\n\n",
+      "children" : [ {
+        "name" : "increase light brightness",
+        "uid" : "393f8736793ed243",
+        "parentUid" : "e23dfc54651e361693c90c60d996d032",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195458020,
+          "stop" : 1633195478627,
+          "duration" : 20607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "turn off light",
+        "uid" : "88369b84c819c029",
+        "parentUid" : "e23dfc54651e361693c90c60d996d032",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195499239,
+          "stop" : 1633195519845,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e23dfc54651e361693c90c60d996d032"
+    }, {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: unknown.dialog(UnknownSkill)\n\"I don't understand, but I'm learning new things everyday.\"\n\n",
+      "children" : [ {
+        "name" : "tracker",
+        "uid" : "1c9d7cc600fd77c0",
+        "parentUid" : "65f30bd4a1e96984f95693e845aabe5e",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195540457,
+          "stop" : 1633195561065,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "65f30bd4a1e96984f95693e845aabe5e"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: pairing.code.dialog(PairingSkill)\n\"Register this device with the code. 'C' as in Charlie. the number Three. the number Nine. 'L' as in London. 'L' as in London. the number Four.\"\n\n",
+      "children" : [ {
+        "name" : "set climate temperature",
+        "uid" : "8efc8b09cb50838c",
+        "parentUid" : "8c4c24dc291e468ba1a600448bee8de0",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633195561067,
+          "stop" : 1633195581675,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8c4c24dc291e468ba1a600448bee8de0"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
