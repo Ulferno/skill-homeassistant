@@ -1,0 +1,273 @@
+{
+  "9092840c0bd28e342d307c476bc0c773" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7769fa2801fca8d7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633198492218,
+        "stop" : 1633198492602,
+        "duration" : 384
+      }
+    } ]
+  },
+  "66920015d98317a17fd1a1d2803d37d8" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a7b2d43c80535be9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633198492603,
+        "stop" : 1633198492994,
+        "duration" : 391
+      }
+    } ]
+  },
+  "e9e41719286ec9ac6ca466e5e07183f1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b37168550b700106",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633198586087,
+        "stop" : 1633198586412,
+        "duration" : 325
+      }
+    } ]
+  },
+  "eba64727b331e9cff15d63e920a0676b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8169f9d95fa69d53",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633198492995,
+        "stop" : 1633198493623,
+        "duration" : 628
+      }
+    } ]
+  },
+  "bec0b9ee4648af3b77db73e8070f1736" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1458dfc31ce474a3",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Excuse me, I wasn't able to find mark one.\"\n\n",
+      "time" : {
+        "start" : 1633198565140,
+        "stop" : 1633198585746,
+        "duration" : 20606
+      }
+    } ]
+  },
+  "61181c501dea0dfcb3d306a522b369bd" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a5a56c6ec07b3b24",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "time" : {
+        "start" : 1633198502635,
+        "stop" : 1633198523240,
+        "duration" : 20605
+      }
+    } ]
+  },
+  "bbb22bd1e1e837820a07aa68780e17a1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2d6f96d6c204fea8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633198494638,
+        "stop" : 1633198502634,
+        "duration" : 7996
+      }
+    } ]
+  },
+  "5ddad78667a3f53d49813a7543b282e2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "edf8b3832b834473",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633198493625,
+        "stop" : 1633198494637,
+        "duration" : 1012
+      }
+    } ]
+  },
+  "f34336e406aa49fed9ce16311dbe2192" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "3c51d1816afef9b2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633198564800,
+        "stop" : 1633198565139,
+        "duration" : 339
+      }
+    } ]
+  },
+  "885b1b7b20e3eb71d438163233796e25" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "24c1887cc86c7936",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.brightness.cantdim.dimmable.dialog(HomeAssistantSkill)\n\"Can not dim Mycroft light. It is not dimmable.\"\n\n",
+      "time" : {
+        "start" : 1633198523241,
+        "stop" : 1633198543846,
+        "duration" : 20605
+      }
+    } ]
+  },
+  "88fead54c29dc231d3491543adb9c633" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a91301f4c54628c7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633198564454,
+        "stop" : 1633198564799,
+        "duration" : 345
+      }
+    } ]
+  },
+  "f92935ac2a0644d248ec72417baefff0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8b66da0f5e705bcc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633198585747,
+        "stop" : 1633198586086,
+        "duration" : 339
+      }
+    } ]
+  },
+  "a7e15f762ce2f3d55f0e07b1a16707d0" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "da43bf58609fd2ef",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "time" : {
+        "start" : 1633198471608,
+        "stop" : 1633198492217,
+        "duration" : 20609
+      }
+    } ]
+  },
+  "c083537c88c89adea9828a20adea4854" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e77b5c1912b93db5",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.brightness.cantdim.dimmable.dialog(HomeAssistantSkill)\n\"Can not dim Mycroft light. It is not dimmable.\"\n\n",
+      "time" : {
+        "start" : 1633198543847,
+        "stop" : 1633198564453,
+        "duration" : 20606
+      }
+    } ]
+  }
+}
