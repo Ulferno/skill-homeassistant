@@ -1,0 +1,155 @@
+{
+  "uid" : "40f2ed296c3bab81",
+  "name" : "set light brightness",
+  "historyId" : "61181c501dea0dfcb3d306a522b369bd",
+  "time" : {
+    "start" : 1633187693705,
+    "stop" : 1633187714311,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+  "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+    "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+    "steps" : [ {
+      "name" : "Given an English speaking user",
+      "time" : {
+        "start" : 1633187693706,
+        "stop" : 1633187693706,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When the user says \"set the brightness of Mycroft light to 20 percent\"",
+      "time" : {
+        "start" : 1633187693706,
+        "stop" : 1633187693706,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then \"homeassistant\" should reply with dialog from \"homeassistant.brightness.dimmed\"",
+      "time" : {
+        "start" : 1633187693707,
+        "stop" : 1633187703707,
+        "duration" : 10000
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    }, {
+      "name" : "Given an English speaking user",
+      "time" : {
+        "start" : 1633187704008,
+        "stop" : 1633187704009,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When the user says \"set the brightness of Mycroft light to 20 percent\"",
+      "time" : {
+        "start" : 1633187704009,
+        "stop" : 1633187704009,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then \"homeassistant\" should reply with dialog from \"homeassistant.brightness.dimmed\"",
+      "time" : {
+        "start" : 1633187704009,
+        "stop" : 1633187714010,
+        "duration" : 10001
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "set brightness"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "40f2ed296c3bab81.json",
+  "parameterValues" : [ ]
+}
