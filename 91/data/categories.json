@@ -1,0 +1,90 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\nMycroft: pairing.code.dialog(PairingSkill)\n\"Enter the code. 'J' as in Juliet. 'P' as in Paul. the number Three. 'C' as in Charlie. 'A' as in Apple. 'K' as in Kilogram.\"\n\n",
+      "children" : [ {
+        "name" : "read sensor",
+        "uid" : "7dde718436b2b4f8",
+        "parentUid" : "a7154a22080a67b4acbd5d9acf43f13e",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633198967937,
+          "stop" : 1633198988547,
+          "duration" : 20610
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a7154a22080a67b4acbd5d9acf43f13e"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "children" : [ {
+        "name" : "set light brightness",
+        "uid" : "3439717a11a65f88",
+        "parentUid" : "d262e3396788e7a1cc57c06eaf5fb855",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633198998992,
+          "stop" : 1633199019597,
+          "duration" : 20605
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d262e3396788e7a1cc57c06eaf5fb855"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.brightness.cantdim.dimmable.dialog(HomeAssistantSkill)\n\"Can not dim Mycroft light. It is not dimmable.\"\n\n",
+      "children" : [ {
+        "name" : "increase light brightness",
+        "uid" : "68bea218f092b309",
+        "parentUid" : "afcbdad31ef3d57eee93e00dc2dced77",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633199019598,
+          "stop" : 1633199040204,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "decrease light brightness",
+        "uid" : "95e038d9128e37e",
+        "parentUid" : "afcbdad31ef3d57eee93e00dc2dced77",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633199040205,
+          "stop" : 1633199060811,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "afcbdad31ef3d57eee93e00dc2dced77"
+    }, {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity the mark one could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "tracker",
+        "uid" : "e02d7581020078aa",
+        "parentUid" : "5fa68bb51998abbc5aec60d67e3d3238",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633199064023,
+          "stop" : 1633199084631,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5fa68bb51998abbc5aec60d67e3d3238"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
