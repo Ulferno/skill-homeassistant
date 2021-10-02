@@ -1,3 +1,7 @@
+"""
+Home Assistant Client
+Handle connection between skill and HA instance trough websocket.
+"""
 import json
 
 from fuzzywuzzy import fuzz
@@ -10,17 +14,22 @@ __author__ = 'btotharye'
 TIMEOUT = 10
 
 
-class HomeAssistantClient(object):
+# pylint: disable=R0912, W0105, W0511
+class HomeAssistantClient:
+    """Home Assistant client class"""
 
-    def __init__(self, host, token, portnum, ssl=False, verify=True):
-        self.ssl = ssl
-        self.verify = verify
+    def __init__(self, config):
+        self.ssl = config['ssl'] or False
+        self.verify = config['verify'] or True
+        ip_address = config['ip_address']
+        token = config['token']
+        port_number = config['port_number']
         if self.ssl:
-            self.url = "https://{}".format(host)
+            self.url = "https://{}".format(ip_address)
         else:
-            self.url = "http://{}".format(host)
-        if portnum:
-            self.url = "{}:{}".format(self.url, portnum)
+            self.url = "http://{}".format(ip_address)
+        if port_number:
+            self.url = "{}:{}".format(self.url, port_number)
         self.headers = {
             'Authorization': "Bearer {}".format(token),
             'Content-Type': 'application/json'
@@ -43,6 +52,7 @@ class HomeAssistantClient(object):
         return req.json()
 
     def connected(self):
+        """Get state form HA instance"""
         try:
             self._get_state()
             return True
@@ -92,6 +102,7 @@ class HomeAssistantClient(object):
                 except KeyError:
                     pass
             return best_entity
+        return None
 
     def find_entity_attr(self, entity):
         """checking the entity attributes to be used in the response dialog.
@@ -135,15 +146,15 @@ class HomeAssistantClient(object):
           raises HTTPErrors if non-Ok status code)
         """
         if self.ssl:
-            r = post("{}/api/services/{}/{}".format(self.url, domain, service),
-                     headers=self.headers, data=json.dumps(data),
-                     verify=self.verify, timeout=TIMEOUT)
+            req = post("{}/api/services/{}/{}".format(self.url, domain, service),
+                       headers=self.headers, data=json.dumps(data),
+                       verify=self.verify, timeout=TIMEOUT)
         else:
-            r = post("{}/api/services/{}/{}".format(self.url, domain, service),
-                     headers=self.headers, data=json.dumps(data),
-                     timeout=TIMEOUT)
-        r.raise_for_status()
-        return r
+            req = post("{}/api/services/{}/{}".format(self.url, domain, service),
+                       headers=self.headers, data=json.dumps(data),
+                       timeout=TIMEOUT)
+        req.raise_for_status()
+        return req
 
     def find_component(self, component):
         """Check if a component is loaded at the HA-Server
@@ -180,17 +191,17 @@ class HomeAssistantClient(object):
             "text": utterance
         }
         if self.ssl:
-            r = post("{}/api/conversation/process".format(self.url),
-                     headers=self.headers,
-                     data=json.dumps(data),
-                     verify=self.verify,
-                     timeout=TIMEOUT
-                     )
+            req = post("{}/api/conversation/process".format(self.url),
+                       headers=self.headers,
+                       data=json.dumps(data),
+                       verify=self.verify,
+                       timeout=TIMEOUT
+                       )
         else:
-            r = post("{}/api/conversation/process".format(self.url),
-                     headers=self.headers,
-                     data=json.dumps(data),
-                     timeout=TIMEOUT
-                     )
-        r.raise_for_status()
-        return r.json()['speech']['plain']
+            req = post("{}/api/conversation/process".format(self.url),
+                       headers=self.headers,
+                       data=json.dumps(data),
+                       timeout=TIMEOUT
+                       )
+        req.raise_for_status()
+        return req.json()['speech']['plain']
