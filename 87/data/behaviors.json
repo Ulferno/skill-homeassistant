@@ -1,0 +1,231 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "sensor",
+    "children" : [ {
+      "name" : "read sensor",
+      "uid" : "8a20690e734ee40d",
+      "parentUid" : "0ccf5cb1a4e5e2b975ca1b49635db1d4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193339097,
+        "stop" : 1633193359708,
+        "duration" : 20611
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "0ccf5cb1a4e5e2b975ca1b49635db1d4"
+  }, {
+    "name" : "turn on",
+    "children" : [ {
+      "name" : "turn on switch",
+      "uid" : "c2b52b46f4187a1b",
+      "parentUid" : "92dd12e513804fa0f91bfe264c5b9a92",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193359709,
+        "stop" : 1633193380315,
+        "duration" : 20606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "turn on light",
+      "uid" : "a87874fd5e38e6df",
+      "parentUid" : "92dd12e513804fa0f91bfe264c5b9a92",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193442137,
+        "stop" : 1633193462743,
+        "duration" : 20606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "92dd12e513804fa0f91bfe264c5b9a92"
+  }, {
+    "name" : "toggle",
+    "children" : [ {
+      "name" : "toggle off switch",
+      "uid" : "fa60407d65fffb1",
+      "parentUid" : "6bb93ab1f050afba025b82f728ef8c98",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193380316,
+        "stop" : 1633193400922,
+        "duration" : 20606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "toggle on switch",
+      "uid" : "fab7cc4f94cea787",
+      "parentUid" : "6bb93ab1f050afba025b82f728ef8c98",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193400923,
+        "stop" : 1633193421529,
+        "duration" : 20606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "6bb93ab1f050afba025b82f728ef8c98"
+  }, {
+    "name" : "turn off",
+    "children" : [ {
+      "name" : "turn off switch",
+      "uid" : "e05bc8914be3c781",
+      "parentUid" : "012912793ab04c6a9a54e0a8900ec1b9",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193421530,
+        "stop" : 1633193442136,
+        "duration" : 20606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "turn off light",
+      "uid" : "6da0d8c650922741",
+      "parentUid" : "012912793ab04c6a9a54e0a8900ec1b9",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193524567,
+        "stop" : 1633193545173,
+        "duration" : 20606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "012912793ab04c6a9a54e0a8900ec1b9"
+  }, {
+    "name" : "set brightness",
+    "children" : [ {
+      "name" : "set light brightness",
+      "uid" : "afccf8730325ed5d",
+      "parentUid" : "ddb86ea70419282af60a26d156b64b2b",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193462744,
+        "stop" : 1633193483352,
+        "duration" : 20608
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "ddb86ea70419282af60a26d156b64b2b"
+  }, {
+    "name" : "increase brightness",
+    "children" : [ {
+      "name" : "increase light brightness",
+      "uid" : "bfab430747035ad7",
+      "parentUid" : "4cd1da039c0092d6e9516452a63e5312",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193483353,
+        "stop" : 1633193503959,
+        "duration" : 20606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "4cd1da039c0092d6e9516452a63e5312"
+  }, {
+    "name" : "decrease brightness",
+    "children" : [ {
+      "name" : "decrease light brightness",
+      "uid" : "294040c9ffd1bff7",
+      "parentUid" : "9ead4ffe9cddd2c0a782b31384a0b534",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193503960,
+        "stop" : 1633193524566,
+        "duration" : 20606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "9ead4ffe9cddd2c0a782b31384a0b534"
+  }, {
+    "name" : "automation",
+    "children" : [ {
+      "name" : "triger automation",
+      "uid" : "4895459d4313ee32",
+      "parentUid" : "c33e3464be99d22139e4669de71d42bd",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193545174,
+        "stop" : 1633193565779,
+        "duration" : 20605
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "c33e3464be99d22139e4669de71d42bd"
+  }, {
+    "name" : "tracker",
+    "children" : [ {
+      "name" : "tracker",
+      "uid" : "b2583cc6666debf9",
+      "parentUid" : "35cb3f7a5168669c589e4bdd2df34215",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193565781,
+        "stop" : 1633193586386,
+        "duration" : 20605
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "35cb3f7a5168669c589e4bdd2df34215"
+  }, {
+    "name" : "set climate",
+    "children" : [ {
+      "name" : "set climate temperature",
+      "uid" : "761673d09f0e2f3",
+      "parentUid" : "39fd74d870995f68c00cd82d793cf270",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193586388,
+        "stop" : 1633193606993,
+        "duration" : 20605
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "39fd74d870995f68c00cd82d793cf270"
+  }, {
+    "name" : "shopping list",
+    "children" : [ {
+      "name" : "add item",
+      "uid" : "deed1f0616098a95",
+      "parentUid" : "c5b1731d58c52ca0ad3249b654532d2e",
+      "status" : "failed",
+      "time" : {
+        "start" : 1633193606994,
+        "stop" : 1633193627600,
+        "duration" : 20606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "c5b1731d58c52ca0ad3249b654532d2e"
+  } ],
+  "name" : "behaviors"
+}

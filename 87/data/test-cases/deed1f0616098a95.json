@@ -1,0 +1,155 @@
+{
+  "uid" : "deed1f0616098a95",
+  "name" : "add item",
+  "historyId" : "e9e41719286ec9ac6ca466e5e07183f1",
+  "time" : {
+    "start" : 1633193606994,
+    "stop" : 1633193627600,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: audio.record.start.duration.dialog(AudioRecordSkill)\n\"Starting recording for one hour seven minutes and two seconds\"\nMycroft: (AudioRecordSkill)\n\"An error occurred while processing a request in Audio Record Skill\"\n\n",
+  "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: audio.record.start.duration.dialog(AudioRecordSkill)\n\"Starting recording for one hour seven minutes and two seconds\"\nMycroft: (AudioRecordSkill)\n\"An error occurred while processing a request in Audio Record Skill\"\n\n",
+    "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+    "steps" : [ {
+      "name" : "Given an English speaking user",
+      "time" : {
+        "start" : 1633193606995,
+        "stop" : 1633193606995,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When the user says \"add bread to the shopping list\"",
+      "time" : {
+        "start" : 1633193606995,
+        "stop" : 1633193606995,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then \"homeassistant\" should reply with dialog from \"homeassistant.shopping.list.dialog\"",
+      "time" : {
+        "start" : 1633193606995,
+        "stop" : 1633193616996,
+        "duration" : 10001
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: audio.record.start.duration.dialog(AudioRecordSkill)\n\"Recording for one hour seven minutes and two seconds\"\nMycroft: (AudioRecordSkill)\n\"An error occurred while processing a request in Audio Record Skill\"\n\n",
+      "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    }, {
+      "name" : "Given an English speaking user",
+      "time" : {
+        "start" : 1633193617297,
+        "stop" : 1633193617297,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When the user says \"add bread to the shopping list\"",
+      "time" : {
+        "start" : 1633193617298,
+        "stop" : 1633193617298,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then \"homeassistant\" should reply with dialog from \"homeassistant.shopping.list.dialog\"",
+      "time" : {
+        "start" : 1633193617298,
+        "stop" : 1633193627299,
+        "duration" : 10001
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: audio.record.start.duration.dialog(AudioRecordSkill)\n\"Starting recording for one hour seven minutes and two seconds\"\nMycroft: (AudioRecordSkill)\n\"An error occurred while processing a request in Audio Record Skill\"\n\n",
+      "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "shopping list"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "deed1f0616098a95.json",
+  "parameterValues" : [ ]
+}

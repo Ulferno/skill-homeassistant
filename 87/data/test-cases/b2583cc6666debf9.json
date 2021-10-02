@@ -1,0 +1,155 @@
+{
+  "uid" : "b2583cc6666debf9",
+  "name" : "tracker",
+  "historyId" : "bec0b9ee4648af3b77db73e8070f1736",
+  "time" : {
+    "start" : 1633193565781,
+    "stop" : 1633193586386,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: audio.record.start.duration.dialog(AudioRecordSkill)\n\"Recording for one hour seven minutes and two seconds\"\nMycroft: (AudioRecordSkill)\n\"An error occurred while processing a request in Audio Record Skill\"\n\n",
+  "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 227, in then_contains\n    assert passed, assert_msg\n",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: audio.record.start.duration.dialog(AudioRecordSkill)\n\"Recording for one hour seven minutes and two seconds\"\nMycroft: (AudioRecordSkill)\n\"An error occurred while processing a request in Audio Record Skill\"\n\n",
+    "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 227, in then_contains\n    assert passed, assert_msg\n",
+    "steps" : [ {
+      "name" : "Given an English speaking user",
+      "time" : {
+        "start" : 1633193565781,
+        "stop" : 1633193565781,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When the user says \"give me location of the mark one\"",
+      "time" : {
+        "start" : 1633193565781,
+        "stop" : 1633193565782,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then mycroft reply should contain \" home\"",
+      "time" : {
+        "start" : 1633193565782,
+        "stop" : 1633193575782,
+        "duration" : 10000
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: audio.record.start.duration.dialog(AudioRecordSkill)\n\"Recording audio for one hour seven minutes and thirteen seconds\"\nMycroft: (AudioRecordSkill)\n\"An error occurred while processing a request in Audio Record Skill\"\n\n",
+      "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 227, in then_contains\n    assert passed, assert_msg\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    }, {
+      "name" : "Given an English speaking user",
+      "time" : {
+        "start" : 1633193576084,
+        "stop" : 1633193576084,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When the user says \"give me location of the mark one\"",
+      "time" : {
+        "start" : 1633193576084,
+        "stop" : 1633193576084,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then mycroft reply should contain \" home\"",
+      "time" : {
+        "start" : 1633193576085,
+        "stop" : 1633193586085,
+        "duration" : 10000
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: audio.record.start.duration.dialog(AudioRecordSkill)\n\"Recording for one hour seven minutes and two seconds\"\nMycroft: (AudioRecordSkill)\n\"An error occurred while processing a request in Audio Record Skill\"\n\n",
+      "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 227, in then_contains\n    assert passed, assert_msg\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "tracker"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "b2583cc6666debf9.json",
+  "parameterValues" : [ ]
+}
