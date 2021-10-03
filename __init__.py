@@ -242,8 +242,8 @@ class HomeAssistantSkill(FallbackSkill):
     @intent_handler('add.item.shopping.list.intent')
     def handle_shopping_list_intent(self, message):
         """Handle add item to shopping list intent."""
-        self.log.debug("Add %s to the shoping list", message.data.get("entity"))
-        message.data["Entity"] = message.data.get("entity")
+        self.log.debug("Add %s to the shoping list", message.data.get("item"))
+        message.data["item"] = message.data.get("item")
         self._handle_shopping_list(message)
 
     def _handle_turn_actions(self, message):
@@ -360,8 +360,8 @@ class HomeAssistantSkill(FallbackSkill):
 
     def _handle_shopping_list(self, message):
         """Handler for add item to shopping list action."""
-        entity = message.data["Entity"]
-        ha_data = {'name': entity}
+        item = message.data["item"]
+        ha_data = {'name': item}
         self.ha_client.execute_service("shopping_list", "add_item", ha_data)
         self.speak_dialog("homeassistant.shopping.list")
 
