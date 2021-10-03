@@ -227,8 +227,8 @@ class HomeAssistantSkill(FallbackSkill):
     @intent_handler('tracker.intent')
     def handle_tracker_intent(self, message):
         """Handle tracker intent."""
-        self.log.debug("Turn on intent on entity: %s", message.data.get("entity"))
-        message.data["Entity"] = message.data.get("entity")
+        self.log.debug("Find entity: %s", message.data.get("tracker"))
+        message.data["Entity"] = message.data.get("tracker")
         self._handle_tracker(message)
 
     @intent_handler('set.climate.intent')
