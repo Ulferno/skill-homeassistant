@@ -1,6 +1,8 @@
 """
 Home Assistant skill
 """  # pylint: disable=C0103
+from os.path import join
+
 from mycroft import MycroftSkill, intent_handler
 from mycroft.skills.core import FallbackSkill
 from mycroft.util.format import nice_number
@@ -73,6 +75,20 @@ class HomeAssistantSkill(FallbackSkill):
                 if conversation_activated:
                     self.enable_fallback = \
                         self.settings.get('enable_fallback')
+
+                """List tracker entities.
+                Add them to entity file and registry it so
+                Padatious react only to known entities.
+                Should fix conflict with Where is skill.
+                """
+                types = ['device_tracker']
+                entities = self.ha_client.list_entities(types)
+
+                if entities:
+                    with open(join(self.root_dir, 'vocab', 'tracker.entity'),
+                             'w', encoding="locale") as voc_file:
+                        voc_file.write('\n'.join(entities))
+                    self.register_entity_file('tracker.entity')
 
     def _force_setup(self):
         self.log.debug('Creating a new HomeAssistant-Client')
