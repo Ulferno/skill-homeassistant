@@ -172,7 +172,6 @@ class HomeAssistantSkill(FallbackSkill):
     @intent_handler('turn.off.intent')
     def handle_turn_off_intent(self, message):
         """Handle turn off intent."""
-        self.log.debug(message.data)
         self.log.debug("Turn off intent on entity: %s", message.data.get("entity"))
         message.data["Entity"] = message.data.get("entity")
         message.data["Action"] = "off"

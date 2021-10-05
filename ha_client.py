@@ -50,13 +50,13 @@ class HomeAssistantClient:
         token = config['token']
         port_number = config['port_number']
         if self.ssl:
-            self.url = "https://{}".format(ip_address)
+            self.url = f"https://{ip_address}"
         else:
-            self.url = "http://{}".format(ip_address)
+            self.url = f"http://{ip_address}"
         if port_number:
-            self.url = "{}:{}".format(self.url, port_number)
+            self.url = f"{self.url}:{port_number}"
         self.headers = {
-            'Authorization': "Bearer {}".format(token),
+            'Authorization': f"Bearer {token}",
             'Content-Type': 'application/json'
         }
 
@@ -68,10 +68,10 @@ class HomeAssistantClient:
           raises HTTPErrors if non-Ok status code)
         """
         if self.ssl:
-            req = get("{}/api/states".format(self.url), headers=self.headers,
+            req = get(f"{self.url}/api/states", headers=self.headers,
                       verify=self.verify, timeout=TIMEOUT)
         else:
-            req = get("{}/api/states".format(self.url), headers=self.headers,
+            req = get(f"{self.url}/api/states", headers=self.headers,
                       timeout=TIMEOUT)
         req.raise_for_status()
         return req.json()
@@ -172,11 +172,11 @@ class HomeAssistantClient:
           raises HTTPErrors if non-Ok status code)
         """
         if self.ssl:
-            req = post("{}/api/services/{}/{}".format(self.url, domain, service),
+            req = post(f"{self.url}/api/services/{domain}/{service}",
                        headers=self.headers, data=json.dumps(data),
                        verify=self.verify, timeout=TIMEOUT)
         else:
-            req = post("{}/api/services/{}/{}".format(self.url, domain, service),
+            req = post(f"{self.url}/api/services/{domain}/{service}",
                        headers=self.headers, data=json.dumps(data),
                        timeout=TIMEOUT)
         req.raise_for_status()
@@ -190,11 +190,11 @@ class HomeAssistantClient:
           raises HTTPErrors if non-Ok status code)
         """
         if self.ssl:
-            req = get("{}/api/components".format(self.url),
+            req = get(f"{self.url}/api/components",
                       headers=self.headers, verify=self.verify,
                       timeout=TIMEOUT)
         else:
-            req = get("%s/api/components" % self.url, headers=self.headers,
+            req = get(f"{self.url}/api/components", headers=self.headers,
                       timeout=TIMEOUT)
 
         req.raise_for_status()
@@ -217,14 +217,14 @@ class HomeAssistantClient:
             "text": utterance
         }
         if self.ssl:
-            req = post("{}/api/conversation/process".format(self.url),
+            req = post(f"{self.url}/api/conversation/process",
                        headers=self.headers,
                        data=json.dumps(data),
                        verify=self.verify,
                        timeout=TIMEOUT
                        )
         else:
-            req = post("{}/api/conversation/process".format(self.url),
+            req = post(f"{self.url}/api/conversation/process",
                        headers=self.headers,
                        data=json.dumps(data),
                        timeout=TIMEOUT
