@@ -1,0 +1,43 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, I can't find the Home Assistant entity \"mycroft sensor please\".\"\nMycroft: pairing.code.dialog(PairingSkill)\n\"Register this device with the code. 'N' as in November. 'L' as in London. the number Nine. the number Seven. 'T' as in Tango. 'H' as in Hotel.\"\n\n",
+      "children" : [ {
+        "name" : "read sensor",
+        "uid" : "bd2a22cd767313fb",
+        "parentUid" : "5e9d4839f658c831d5bab8d93f8766c5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633460972118,
+          "stop" : 1633460992733,
+          "duration" : 20615
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5e9d4839f658c831d5bab8d93f8766c5"
+    }, {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity \"the mark one\" wasn't found.\"\n\n",
+      "children" : [ {
+        "name" : "tracker",
+        "uid" : "e771a55d2d13a1e",
+        "parentUid" : "08c5e66b97d06d22dcc14f15feb53e6a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633461004559,
+          "stop" : 1633461025165,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "08c5e66b97d06d22dcc14f15feb53e6a"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
