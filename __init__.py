@@ -13,7 +13,7 @@ from requests.exceptions import (
     HTTPError)
 from requests.packages.urllib3.exceptions import MaxRetryError
 
-from .ha_client import HomeAssistantClient
+from .ha_client import HomeAssistantClient, check_url
 
 
 __author__ = 'robconnolly, btotharye, nielstron'
@@ -24,6 +24,7 @@ TIMEOUT = 10
 
 class HomeAssistantSkill(FallbackSkill):
 
+
     def __init__(self):
         MycroftSkill.__init__(self)
         super().__init__(name="HomeAssistantSkill")
@@ -32,10 +33,11 @@ class HomeAssistantSkill(FallbackSkill):
 
     def _setup(self, force=False):
         if self.settings is not None and (force or self.ha is None):
-            ip = self.settings.get('host')
+            # Check if user filled IP, port and Token in configuration
+            ip = check_url(self.settings.get('host'))
             token = self.settings.get('token')
 
-            # Check if user filled IP, port and Token in configuration
+            """Inform user if ip/url or token not or incorrectly filed"""
             if not ip:
                 self.speak_dialog('homeassistant.error.setup', data={
                               "field": "I.P."})
