@@ -1,0 +1,141 @@
+[ {
+  "uid" : "3be459f8dbd4e2b2",
+  "name" : "increase light brightness",
+  "time" : {
+    "start" : 1633811949023,
+    "stop" : 1633811969629,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "efc6674fa988ddba",
+  "name" : "set light brightness",
+  "time" : {
+    "start" : 1633811928415,
+    "stop" : 1633811949021,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "1b342d177da2c5e1",
+  "name" : "turn on switch",
+  "time" : {
+    "start" : 1633811845627,
+    "stop" : 1633811866234,
+    "duration" : 20607
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "6b3cb7917761644f",
+  "name" : "toggle off switch",
+  "time" : {
+    "start" : 1633811866235,
+    "stop" : 1633811886841,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "6512f101f388be55",
+  "name" : "toggle on switch",
+  "time" : {
+    "start" : 1633811886842,
+    "stop" : 1633811907448,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "8065bf7236cbabd",
+  "name" : "add item",
+  "time" : {
+    "start" : 1633812052416,
+    "stop" : 1633812052753,
+    "duration" : 337
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6294fbf393703bc4",
+  "name" : "tracker",
+  "time" : {
+    "start" : 1633812011201,
+    "stop" : 1633812031807,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "86e8a301569c82f8",
+  "name" : "set climate temperature",
+  "time" : {
+    "start" : 1633812031809,
+    "stop" : 1633812052414,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "5847400c836e85ab",
+  "name" : "read sensor",
+  "time" : {
+    "start" : 1633811840911,
+    "stop" : 1633811845626,
+    "duration" : 4715
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ba1885967c59a221",
+  "name" : "turn off light",
+  "time" : {
+    "start" : 1633811990239,
+    "stop" : 1633812010845,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "ead2f7faa3107e47",
+  "name" : "turn on light",
+  "time" : {
+    "start" : 1633811928059,
+    "stop" : 1633811928414,
+    "duration" : 355
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8ac67b8b6e557984",
+  "name" : "decrease light brightness",
+  "time" : {
+    "start" : 1633811969631,
+    "stop" : 1633811990237,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "3ab8c554a1705158",
+  "name" : "turn off switch",
+  "time" : {
+    "start" : 1633811907450,
+    "stop" : 1633811928058,
+    "duration" : 20608
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "16f774d0d667817e",
+  "name" : "triger automation",
+  "time" : {
+    "start" : 1633812010847,
+    "stop" : 1633812011200,
+    "duration" : 353
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

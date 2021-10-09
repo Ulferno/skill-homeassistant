@@ -1,0 +1,179 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Excuse me, I wasn't able to find blue switch please.\"\n\n",
+      "children" : [ {
+        "name" : "turn on switch",
+        "uid" : "1b342d177da2c5e1",
+        "parentUid" : "3f51b73e9e81b5c0040940494f191ce1",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811845627,
+          "stop" : 1633811866234,
+          "duration" : 20607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3f51b73e9e81b5c0040940494f191ce1"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity green switch could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "toggle off switch",
+        "uid" : "6b3cb7917761644f",
+        "parentUid" : "ecba02886ee300a5c2fa0bad70a88f52",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811866235,
+          "stop" : 1633811886841,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "ecba02886ee300a5c2fa0bad70a88f52"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity pink switch wasn't found.\"\n\n",
+      "children" : [ {
+        "name" : "toggle on switch",
+        "uid" : "6512f101f388be55",
+        "parentUid" : "110512ce01b1e7c8002c157ec638de6c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811886842,
+          "stop" : 1633811907448,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "110512ce01b1e7c8002c157ec638de6c"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity red switch could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "turn off switch",
+        "uid" : "3ab8c554a1705158",
+        "parentUid" : "beca7e541173fcbc16da47087ae69dfa",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811907450,
+          "stop" : 1633811928058,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "beca7e541173fcbc16da47087ae69dfa"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "children" : [ {
+        "name" : "set light brightness",
+        "uid" : "efc6674fa988ddba",
+        "parentUid" : "d262e3396788e7a1cc57c06eaf5fb855",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811928415,
+          "stop" : 1633811949021,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d262e3396788e7a1cc57c06eaf5fb855"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Excuse me, I wasn't able to find table light please.\"\n\n",
+      "children" : [ {
+        "name" : "increase light brightness",
+        "uid" : "3be459f8dbd4e2b2",
+        "parentUid" : "8dfd0551608e2feceeffb9df7cf07491",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811949023,
+          "stop" : 1633811969629,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8dfd0551608e2feceeffb9df7cf07491"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity bathroom light please wasn't found.\"\n\n",
+      "children" : [ {
+        "name" : "decrease light brightness",
+        "uid" : "8ac67b8b6e557984",
+        "parentUid" : "3418c61e8499eadbb141807842867ee4",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811969631,
+          "stop" : 1633811990237,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3418c61e8499eadbb141807842867ee4"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity stairs light wasn't found.\"\n\n",
+      "children" : [ {
+        "name" : "turn off light",
+        "uid" : "ba1885967c59a221",
+        "parentUid" : "d2561a4344fc96c61bf0ca7fe9a11f8d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811990239,
+          "stop" : 1633812010845,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d2561a4344fc96c61bf0ca7fe9a11f8d"
+    }, {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity mark one could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "tracker",
+        "uid" : "6294fbf393703bc4",
+        "parentUid" : "88ee2f545aa843d1e718857ac42eb569",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812011201,
+          "stop" : 1633812031807,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "88ee2f545aa843d1e718857ac42eb569"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity mycroft climate wasn't found.\"\n\n",
+      "children" : [ {
+        "name" : "set climate temperature",
+        "uid" : "86e8a301569c82f8",
+        "parentUid" : "bf5e48ed2c7ccf8b325b498d552ce9ae",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812031809,
+          "stop" : 1633812052414,
+          "duration" : 20605
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "bf5e48ed2c7ccf8b325b498d552ce9ae"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
