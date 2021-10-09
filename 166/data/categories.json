@@ -1,0 +1,162 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity \"blue switch please\" wasn't found.\"\nMycroft: pairing.code.dialog(PairingSkill)\n\"Enter the code. 'T' as in Tango. 'P' as in Paul. 'N' as in November. 'W' as in Whiskey. 'F' as in Fox trot. 'A' as in Apple.\"\n\n",
+      "children" : [ {
+        "name" : "turn on switch",
+        "uid" : "71d0100fee57f90a",
+        "parentUid" : "732e88a35ee270b6f6b9543c81474c49",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812820876,
+          "stop" : 1633812841483,
+          "duration" : 20607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "732e88a35ee270b6f6b9543c81474c49"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity \"green switch\" could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "toggle off switch",
+        "uid" : "fa846990da1cff62",
+        "parentUid" : "9629cbdde8315904802ec3ba8e386635",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812841484,
+          "stop" : 1633812862091,
+          "duration" : 20607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9629cbdde8315904802ec3ba8e386635"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, I can't find the Home Assistant entity \"pink switch\".\"\n\n",
+      "children" : [ {
+        "name" : "toggle on switch",
+        "uid" : "2a98d03efe23b29a",
+        "parentUid" : "a2843aa6f82e77881747d44b6160cfba",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812862092,
+          "stop" : 1633812882698,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a2843aa6f82e77881747d44b6160cfba"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity \"red switch please\" could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "turn off switch",
+        "uid" : "30c1498b66833724",
+        "parentUid" : "3497a13a6e2fda8bf33ec9cd333e4b2a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812882699,
+          "stop" : 1633812903305,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3497a13a6e2fda8bf33ec9cd333e4b2a"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Excuse me, I wasn't able to find \"kitchen light\".\"\n\n",
+      "children" : [ {
+        "name" : "set light brightness",
+        "uid" : "6693dc5840704df4",
+        "parentUid" : "029b5e039e4722e45b9368263a5c8b75",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812903688,
+          "stop" : 1633812924294,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "029b5e039e4722e45b9368263a5c8b75"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity \"table light please\" could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "increase light brightness",
+        "uid" : "2238e8cf967ddb0a",
+        "parentUid" : "07f5740bc7d28ae06142f8af08a4324f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812924296,
+          "stop" : 1633812944905,
+          "duration" : 20609
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "07f5740bc7d28ae06142f8af08a4324f"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity \"bathroom light please\" wasn't found.\"\n\n",
+      "children" : [ {
+        "name" : "decrease light brightness",
+        "uid" : "99fef972dc92b33d",
+        "parentUid" : "52a425958302cc6047d557df282d7941",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812944906,
+          "stop" : 1633812965512,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "52a425958302cc6047d557df282d7941"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, I can't find the Home Assistant entity \"stairs light please\".\"\n\n",
+      "children" : [ {
+        "name" : "turn off light",
+        "uid" : "af0f4c97affa3ceb",
+        "parentUid" : "6b39b9c7c12b72b261196604f1222ecc",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812965513,
+          "stop" : 1633812986120,
+          "duration" : 20607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6b39b9c7c12b72b261196604f1222ecc"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Excuse me, I wasn't able to find \"mycroft climate\".\"\n\n",
+      "children" : [ {
+        "name" : "set climate temperature",
+        "uid" : "f14b38e36c109f82",
+        "parentUid" : "0603c29d3be17dcca50c3adc099a7442",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633812986837,
+          "stop" : 1633813007444,
+          "duration" : 20607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0603c29d3be17dcca50c3adc099a7442"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
