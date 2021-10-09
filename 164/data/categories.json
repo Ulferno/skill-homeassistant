@@ -1,0 +1,162 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, I can't find the Home Assistant entity \"blue switch\".\"\n\n",
+      "children" : [ {
+        "name" : "turn on switch",
+        "uid" : "31b1c5df3e63a942",
+        "parentUid" : "407d65fa80bb5536835a0727a87bbd60",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811596336,
+          "stop" : 1633811616944,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "407d65fa80bb5536835a0727a87bbd60"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, I can't find the Home Assistant entity \"green switch\".\"\n\n",
+      "children" : [ {
+        "name" : "toggle off switch",
+        "uid" : "caf666921fb50bec",
+        "parentUid" : "7e3f962d58b9bbb7e6b39afe4274ed2d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811616945,
+          "stop" : 1633811637551,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7e3f962d58b9bbb7e6b39afe4274ed2d"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity \"pink switch\" wasn't found.\"\n\n",
+      "children" : [ {
+        "name" : "toggle on switch",
+        "uid" : "b4d81b5cf10a8f53",
+        "parentUid" : "c83c59e32df7962257f62a0aeba65b6d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811637552,
+          "stop" : 1633811658158,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c83c59e32df7962257f62a0aeba65b6d"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, I can't find the Home Assistant entity \"red switch please\".\"\n\n",
+      "children" : [ {
+        "name" : "turn off switch",
+        "uid" : "3ba9f05288980e09",
+        "parentUid" : "c4491e90f977f58afee52d64ab0bfc5d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811658160,
+          "stop" : 1633811678765,
+          "duration" : 20605
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c4491e90f977f58afee52d64ab0bfc5d"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, I can't find the Home Assistant entity \"kitchen light\".\"\n\n",
+      "children" : [ {
+        "name" : "set light brightness",
+        "uid" : "c8af433e0c4369ed",
+        "parentUid" : "3463240f96b1b64c9fa63ba6b4d34297",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811679169,
+          "stop" : 1633811699775,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3463240f96b1b64c9fa63ba6b4d34297"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity \"table light please\" could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "increase light brightness",
+        "uid" : "c1e5d1f9ff79a8a6",
+        "parentUid" : "07f5740bc7d28ae06142f8af08a4324f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811699776,
+          "stop" : 1633811720382,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "07f5740bc7d28ae06142f8af08a4324f"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Excuse me, I wasn't able to find \"bathroom light please\".\"\n\n",
+      "children" : [ {
+        "name" : "decrease light brightness",
+        "uid" : "8ea185f567ee457e",
+        "parentUid" : "010e3153e8a08e5b5a4904c5e559392a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811720383,
+          "stop" : 1633811740993,
+          "duration" : 20610
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "010e3153e8a08e5b5a4904c5e559392a"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity \"stairs light please\" wasn't found.\"\n\n",
+      "children" : [ {
+        "name" : "turn off light",
+        "uid" : "ee5cad6d828f18ef",
+        "parentUid" : "c7287597ccaaf2a50c1544e6e960eb7b",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811740994,
+          "stop" : 1633811761600,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c7287597ccaaf2a50c1544e6e960eb7b"
+    }, {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity \"the mark one\" could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "tracker",
+        "uid" : "f14819b77539d9f1",
+        "parentUid" : "0a567cd33e5d4af3d5cc25bdbe6849c5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633811761953,
+          "stop" : 1633811782559,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0a567cd33e5d4af3d5cc25bdbe6849c5"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
