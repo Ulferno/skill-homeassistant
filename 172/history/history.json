@@ -1,0 +1,270 @@
+{
+  "9092840c0bd28e342d307c476bc0c773" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2650b8c46e0b2094",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816314514,
+        "stop" : 1633816314901,
+        "duration" : 387
+      }
+    } ]
+  },
+  "eba64727b331e9cff15d63e920a0676b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "95c292dbe6d47feb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816315289,
+        "stop" : 1633816315922,
+        "duration" : 633
+      }
+    } ]
+  },
+  "e9e41719286ec9ac6ca466e5e07183f1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f77fbd713b91159c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816368255,
+        "stop" : 1633816368582,
+        "duration" : 327
+      }
+    } ]
+  },
+  "66920015d98317a17fd1a1d2803d37d8" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "38b462e7761bed68",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816314902,
+        "stop" : 1633816315288,
+        "duration" : 386
+      }
+    } ]
+  },
+  "bec0b9ee4648af3b77db73e8070f1736" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7a9edf71617366f1",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Sorry, entity mark one wasn't found.\"\n\n",
+      "time" : {
+        "start" : 1633816347309,
+        "stop" : 1633816367914,
+        "duration" : 20605
+      }
+    } ]
+  },
+  "61181c501dea0dfcb3d306a522b369bd" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d040deb20dcaf1a2",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "time" : {
+        "start" : 1633816325295,
+        "stop" : 1633816345901,
+        "duration" : 20606
+      }
+    } ]
+  },
+  "bbb22bd1e1e837820a07aa68780e17a1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1b0c335321fc79d7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816324543,
+        "stop" : 1633816325294,
+        "duration" : 751
+      }
+    } ]
+  },
+  "5ddad78667a3f53d49813a7543b282e2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1ebd357d890982fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816315924,
+        "stop" : 1633816324542,
+        "duration" : 8618
+      }
+    } ]
+  },
+  "f34336e406aa49fed9ce16311dbe2192" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9e807eea8dc86e00",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816346968,
+        "stop" : 1633816347307,
+        "duration" : 339
+      }
+    } ]
+  },
+  "885b1b7b20e3eb71d438163233796e25" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a776cfa156f75563",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816345902,
+        "stop" : 1633816346243,
+        "duration" : 341
+      }
+    } ]
+  },
+  "88fead54c29dc231d3491543adb9c633" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "59cf8f9399169daf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816346585,
+        "stop" : 1633816346966,
+        "duration" : 381
+      }
+    } ]
+  },
+  "f92935ac2a0644d248ec72417baefff0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5b480f033195c2b6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816367915,
+        "stop" : 1633816368254,
+        "duration" : 339
+      }
+    } ]
+  },
+  "a7e15f762ce2f3d55f0e07b1a16707d0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a0b2e6724009482",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816311146,
+        "stop" : 1633816314512,
+        "duration" : 3366
+      }
+    } ]
+  },
+  "c083537c88c89adea9828a20adea4854" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "988619e8c929e573",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633816346245,
+        "stop" : 1633816346584,
+        "duration" : 339
+      }
+    } ]
+  }
+}
