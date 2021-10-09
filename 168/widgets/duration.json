@@ -1,0 +1,141 @@
+[ {
+  "uid" : "e6e177a66dc4a9d6",
+  "name" : "tracker",
+  "time" : {
+    "start" : 1633813945047,
+    "stop" : 1633813951962,
+    "duration" : 6915
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5d0b09ccac85ce29",
+  "name" : "increase light brightness",
+  "time" : {
+    "start" : 1633813942032,
+    "stop" : 1633813942666,
+    "duration" : 634
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "efab53bb78f3c2cc",
+  "name" : "triger automation",
+  "time" : {
+    "start" : 1633813943998,
+    "stop" : 1633813945045,
+    "duration" : 1047
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "27431b230314c68d",
+  "name" : "turn on switch",
+  "time" : {
+    "start" : 1633813931612,
+    "stop" : 1633813931990,
+    "duration" : 378
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "93df006f2e9cef14",
+  "name" : "turn off switch",
+  "time" : {
+    "start" : 1633813932663,
+    "stop" : 1633813933675,
+    "duration" : 1012
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d9f7ccf20a01536",
+  "name" : "read sensor",
+  "time" : {
+    "start" : 1633813928104,
+    "stop" : 1633813931611,
+    "duration" : 3507
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6adea46bba48ec09",
+  "name" : "turn on light",
+  "time" : {
+    "start" : 1633813933676,
+    "stop" : 1633813941633,
+    "duration" : 7957
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ebd133c9bc44f13d",
+  "name" : "turn off light",
+  "time" : {
+    "start" : 1633813943059,
+    "stop" : 1633813943997,
+    "duration" : 938
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5b84af0545f3c06e",
+  "name" : "decrease light brightness",
+  "time" : {
+    "start" : 1633813942667,
+    "stop" : 1633813943058,
+    "duration" : 391
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e29cb62a92a7fc50",
+  "name" : "set climate temperature",
+  "time" : {
+    "start" : 1633813951963,
+    "stop" : 1633813952994,
+    "duration" : 1031
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e97fc0111f5d7853",
+  "name" : "toggle off switch",
+  "time" : {
+    "start" : 1633813931991,
+    "stop" : 1633813932328,
+    "duration" : 337
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9510c6c1b3b37081",
+  "name" : "set light brightness",
+  "time" : {
+    "start" : 1633813941635,
+    "stop" : 1633813942031,
+    "duration" : 396
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e8f22f486d9c8231",
+  "name" : "add item",
+  "time" : {
+    "start" : 1633813952995,
+    "stop" : 1633813953378,
+    "duration" : 383
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7ca8ef2666f8c5a4",
+  "name" : "toggle on switch",
+  "time" : {
+    "start" : 1633813932329,
+    "stop" : 1633813932661,
+    "duration" : 332
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
