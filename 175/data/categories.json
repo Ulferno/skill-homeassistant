@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: (HomeAssistantSkill)\n\"An error occurred while processing a request in Home Assistant Skill\"\n\n",
+      "children" : [ {
+        "name" : "set light brightness",
+        "uid" : "bf5910dff5a5763f",
+        "parentUid" : "d262e3396788e7a1cc57c06eaf5fb855",
+        "status" : "failed",
+        "time" : {
+          "start" : 1633894271151,
+          "stop" : 1633894291757,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d262e3396788e7a1cc57c06eaf5fb855"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
