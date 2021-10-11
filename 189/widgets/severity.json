@@ -1,0 +1,141 @@
+[ {
+  "uid" : "5f80153aa308da0e",
+  "name" : "turn on switch",
+  "time" : {
+    "start" : 1633985512272,
+    "stop" : 1633985512607,
+    "duration" : 335
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "15ec90723469bf34",
+  "name" : "add item",
+  "time" : {
+    "start" : 1633985533043,
+    "stop" : 1633985533643,
+    "duration" : 600
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "65cdb970138c8ef3",
+  "name" : "tracker",
+  "time" : {
+    "start" : 1633985524759,
+    "stop" : 1633985532314,
+    "duration" : 7555
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3c7dcb5920b3ccf",
+  "name" : "set climate temperature",
+  "time" : {
+    "start" : 1633985532315,
+    "stop" : 1633985533042,
+    "duration" : 727
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "db9f12f9730ed9dc",
+  "name" : "turn off light",
+  "time" : {
+    "start" : 1633985523731,
+    "stop" : 1633985524403,
+    "duration" : 672
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9ffd78b70b8132b4",
+  "name" : "toggle on switch",
+  "time" : {
+    "start" : 1633985512991,
+    "stop" : 1633985513371,
+    "duration" : 380
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3bd4f7535ab82c63",
+  "name" : "triger automation",
+  "time" : {
+    "start" : 1633985524404,
+    "stop" : 1633985524757,
+    "duration" : 353
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cb62f43344627d93",
+  "name" : "turn on light",
+  "time" : {
+    "start" : 1633985514384,
+    "stop" : 1633985522611,
+    "duration" : 8227
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1483dd5eb00ffc48",
+  "name" : "set light brightness",
+  "time" : {
+    "start" : 1633985522612,
+    "stop" : 1633985523009,
+    "duration" : 397
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "450b92ebfebefc11",
+  "name" : "decrease light brightness",
+  "time" : {
+    "start" : 1633985523390,
+    "stop" : 1633985523730,
+    "duration" : 340
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b8823be6f812cdca",
+  "name" : "turn off switch",
+  "time" : {
+    "start" : 1633985513372,
+    "stop" : 1633985514383,
+    "duration" : 1011
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7024c2f3629b1077",
+  "name" : "toggle off switch",
+  "time" : {
+    "start" : 1633985512609,
+    "stop" : 1633985512990,
+    "duration" : 381
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dc6c1d59df68ce1b",
+  "name" : "read sensor",
+  "time" : {
+    "start" : 1633985511336,
+    "stop" : 1633985512271,
+    "duration" : 935
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8d8c3a85febebd8",
+  "name" : "increase light brightness",
+  "time" : {
+    "start" : 1633985523010,
+    "stop" : 1633985523389,
+    "duration" : 379
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

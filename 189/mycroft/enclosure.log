@@ -1,0 +1,25 @@
+2021-10-11 20:46:44.781 | INFO     |  5504 | __main__:create_enclosure:55 | Creating generic enclosure, platform='None'
+2021-10-11 20:46:44.791 | INFO     |  5504 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-11 20:46:44.793 | INFO     |  5504 | mycroft.client.enclosure.base:create_gui_service:473 | Starting message bus for GUI...
+2021-10-11 20:46:44.805 | INFO     |  5504 | mycroft.client.enclosure.base:create_gui_service:483 | GUI Message bus started!
+2021-10-11 20:46:44.805 | INFO     |  5504 | mycroft.enclosure.display_manager:init_display_manager_bus_connection:152 | Connecting display manager to messagebus
+2021-10-11 20:46:44.806 | INFO     |  5504 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-11 20:46:44.814 | INFO     |  5504 | mycroft_bus_client.client.client | Connected
+2021-10-11 20:46:44.937 | INFO     |  5504 | mycroft_bus_client.client.client | Connected
+2021-10-11 20:46:44.941 | INFO     |  5504 | mycroft.util.process_utils:start_message_bus_client:155 | Connected to messagebus
+2021-10-11 20:46:44.941 | INFO     |  5504 | __main__:on_ready:26 | Enclosure started!
+2021-10-11 20:48:52.358 | ERROR    |  5504 | concurrent.futures | exception calling callback for <Future at 0x7fb4eeffa850 state=finished raised Exception>
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/concurrent/futures/_base.py", line 324, in _invoke_callbacks
+    callback(self)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/pyee/_executor.py", line 56, in _callback
+    self.emit('error', exc)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/pyee/_base.py", line 116, in emit
+    self._emit_handle_potential_error(event, args[0] if args else None)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/pyee/_base.py", line 86, in _emit_handle_potential_error
+    raise error
+  File "/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/opt/mycroft-core/mycroft/client/enclosure/generic/__init__.py", line 72, in is_device_ready
+    raise Exception('Timeout waiting for services start.')
+Exception: Timeout waiting for services start.
