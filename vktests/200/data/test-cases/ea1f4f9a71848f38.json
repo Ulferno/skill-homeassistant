@@ -1,0 +1,92 @@
+{
+  "uid" : "ea1f4f9a71848f38",
+  "name" : "test_toggle_lights",
+  "fullName" : "unittests.test_haclient.TestHaClient#test_toggle_lights",
+  "historyId" : "9b3be2368973ff3742dc71ae62f6ef34",
+  "time" : {
+    "start" : 1634163727817,
+    "stop" : 1634163727818,
+    "duration" : 1
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: {'id'[56 chars]chen lights', 'max_mireds': 500, 'min_mireds':[82 chars]ff'}} != {'id'[56 chars]chen Lights', 'max_mireds': 500, 'min_mireds':[82 chars]ff'}}\n- {'dev_name': {'attributes': {'friendly_name': 'Kitchen lights',\n?                                                        ^\n\n+ {'dev_name': {'attributes': {'friendly_name': 'Kitchen Lights',\n?                                                        ^\n\n                               'max_mireds': 500,\n                               'min_mireds': 153,\n                               'supported_features': 151},\n                'entity_id': 'light.kitchen_lights',\n                'state': 'off'},\n   'id': '1'}",
+  "statusTrace" : "self = <test_haclient.TestHaClient testMethod=test_toggle_lights>\nmock_get = <MagicMock name='find_entity' id='140668255048208'>\n\n    @mock.patch('ha_client.HomeAssistantClient.find_entity')\n    def test_toggle_lights(self, mock_get):\n        ha = HomeAssistantClient(host='127.0.0.1', token='password', portnum=8123, ssl=True)\n        ha.find_entity = mock.MagicMock()\n        entity = ha.find_entity(kitchen_light['dev_name'], 'light')\n        mock_get.entity = {\n                \"id\": '1',\n                \"dev_name\": {'attributes': {'friendly_name': 'Kitchen lights', 'max_mireds': 500, 'min_mireds': 153, 'supported_features': 151}, 'entity_id': 'light.kitchen_lights', 'state': 'off'}}\n>       self.assertEqual(mock_get.entity, attr_resp)\nE       AssertionError: {'id'[56 chars]chen lights', 'max_mireds': 500, 'min_mireds':[82 chars]ff'}} != {'id'[56 chars]chen Lights', 'max_mireds': 500, 'min_mireds':[82 chars]ff'}}\nE       - {'dev_name': {'attributes': {'friendly_name': 'Kitchen lights',\nE       ?                                                        ^\nE       \nE       + {'dev_name': {'attributes': {'friendly_name': 'Kitchen Lights',\nE       ?                                                        ^\nE       \nE                                      'max_mireds': 500,\nE                                      'min_mireds': 153,\nE                                      'supported_features': 151},\nE                       'entity_id': 'light.kitchen_lights',\nE                       'state': 'off'},\nE          'id': '1'}\n\nunittests/test_haclient.py:115: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_UnitTestCase__pytest_class_setup",
+    "time" : {
+      "start" : 1634163727754,
+      "stop" : 1634163727754,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "_UnitTestCase__pytest_class_setup::0",
+    "time" : {
+      "start" : 1634163727859,
+      "stop" : 1634163727859,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "unittests"
+  }, {
+    "name" : "suite",
+    "value" : "test_haclient"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestHaClient"
+  }, {
+    "name" : "host",
+    "value" : "fv-az39-619"
+  }, {
+    "name" : "thread",
+    "value" : "7382-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "unittests.test_haclient"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "ea1f4f9a71848f38.json",
+  "parameterValues" : [ ]
+}
