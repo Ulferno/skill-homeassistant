@@ -1,0 +1,51 @@
+[ {
+  "uid" : "63a4361b9650f68a",
+  "name" : "test_toggle_lights",
+  "time" : {
+    "start" : 1634163098711,
+    "stop" : 1634163098713,
+    "duration" : 2
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "c0976dacad348049",
+  "name" : "test_broke_entity",
+  "time" : {
+    "start" : 1634163098678,
+    "stop" : 1634163098678,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7fbeb252aa902498",
+  "name" : "test_light_nossl",
+  "time" : {
+    "start" : 1634163098681,
+    "stop" : 1634163098704,
+    "duration" : 23
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ca6609e03b5f5e32",
+  "name" : "test_mock_ssl_no_port",
+  "time" : {
+    "start" : 1634163098709,
+    "stop" : 1634163098710,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "63f72d64909203f9",
+  "name" : "test_mock_ssl",
+  "time" : {
+    "start" : 1634163098706,
+    "stop" : 1634163098707,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

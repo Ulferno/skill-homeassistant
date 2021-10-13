@@ -1,0 +1,98 @@
+{
+  "78cc172bab8fdedf0eda382d72c2a58b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ca6609e03b5f5e32",
+      "status" : "passed",
+      "time" : {
+        "start" : 1634163098709,
+        "stop" : 1634163098710,
+        "duration" : 1
+      }
+    } ]
+  },
+  "88e56a338df752467c83b977e74764c6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7fbeb252aa902498",
+      "status" : "passed",
+      "time" : {
+        "start" : 1634163098681,
+        "stop" : 1634163098704,
+        "duration" : 23
+      }
+    } ]
+  },
+  "47c13517b5b0be276ad6bbf69b9fcac6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "63f72d64909203f9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1634163098706,
+        "stop" : 1634163098707,
+        "duration" : 1
+      }
+    } ]
+  },
+  "e64585408fa642913dcffacb82cb4b13" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c0976dacad348049",
+      "status" : "passed",
+      "time" : {
+        "start" : 1634163098678,
+        "stop" : 1634163098678,
+        "duration" : 0
+      }
+    } ]
+  },
+  "9b3be2368973ff3742dc71ae62f6ef34" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "63a4361b9650f68a",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: {'id'[56 chars]chen lights', 'max_mireds': 500, 'min_mireds':[82 chars]ff'}} != {'id'[56 chars]chen Lights', 'max_mireds': 500, 'min_mireds':[82 chars]ff'}}\n- {'dev_name': {'attributes': {'friendly_name': 'Kitchen lights',\n?                                                        ^\n\n+ {'dev_name': {'attributes': {'friendly_name': 'Kitchen Lights',\n?                                                        ^\n\n                               'max_mireds': 500,\n                               'min_mireds': 153,\n                               'supported_features': 151},\n                'entity_id': 'light.kitchen_lights',\n                'state': 'off'},\n   'id': '1'}",
+      "time" : {
+        "start" : 1634163098711,
+        "stop" : 1634163098713,
+        "duration" : 2
+      }
+    } ]
+  }
+}

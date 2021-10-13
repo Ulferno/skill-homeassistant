@@ -1,0 +1,78 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "fv-az72-631",
+    "children" : [ {
+      "name" : "7475-MainThread",
+      "children" : [ {
+        "name" : "test_light_nossl",
+        "uid" : "7fbeb252aa902498",
+        "parentUid" : "d6af6b8ee91dc7727ffb3fc89ed56020",
+        "status" : "passed",
+        "time" : {
+          "start" : 1634163098681,
+          "stop" : 1634163098704,
+          "duration" : 23
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_mock_ssl",
+        "uid" : "63f72d64909203f9",
+        "parentUid" : "d6af6b8ee91dc7727ffb3fc89ed56020",
+        "status" : "passed",
+        "time" : {
+          "start" : 1634163098706,
+          "stop" : 1634163098707,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_broke_entity",
+        "uid" : "c0976dacad348049",
+        "parentUid" : "d6af6b8ee91dc7727ffb3fc89ed56020",
+        "status" : "passed",
+        "time" : {
+          "start" : 1634163098678,
+          "stop" : 1634163098678,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_mock_ssl_no_port",
+        "uid" : "ca6609e03b5f5e32",
+        "parentUid" : "d6af6b8ee91dc7727ffb3fc89ed56020",
+        "status" : "passed",
+        "time" : {
+          "start" : 1634163098709,
+          "stop" : 1634163098710,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_toggle_lights",
+        "uid" : "63a4361b9650f68a",
+        "parentUid" : "d6af6b8ee91dc7727ffb3fc89ed56020",
+        "status" : "failed",
+        "time" : {
+          "start" : 1634163098711,
+          "stop" : 1634163098713,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d6af6b8ee91dc7727ffb3fc89ed56020"
+    } ],
+    "uid" : "79dd7c679d3f5113f74be656679c0f95"
+  } ],
+  "name" : "timeline"
+}
