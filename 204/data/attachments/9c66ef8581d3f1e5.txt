@@ -1,0 +1,2 @@
+100
+{'id': 'light.mycroft_vk_light', 'dev_name': 'Mycroft light', 'state': 'off', 'best_score': 100}
