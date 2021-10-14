@@ -1,0 +1,43 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: pairing.code.dialog(PairingSkill)\n\"Enter the code. the number Nine. 'F' as in Fox trot. 'R' as in Romeo. 'U' as in Uniform. 'X' as in X-Ray. 'H' as in Hotel.\"\n\n",
+      "children" : [ {
+        "name" : "read sensor",
+        "uid" : "2ea92d2531c4224f",
+        "parentUid" : "96bf839079f7fefc274749b1e4784c9a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1634239690289,
+          "stop" : 1634239710897,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "96bf839079f7fefc274749b1e4784c9a"
+    }, {
+      "name" : "AssertionError: No speech contained the expected contentMycroft responded with:\nMycroft: homeassistant.device.unknown.dialog(HomeAssistantSkill)\n\"Entity \"the mark one\" could not be found.\"\n\n",
+      "children" : [ {
+        "name" : "tracker",
+        "uid" : "7262c1076dd4f7e1",
+        "parentUid" : "0a567cd33e5d4af3d5cc25bdbe6849c5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1634239723376,
+          "stop" : 1634239743982,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0a567cd33e5d4af3d5cc25bdbe6849c5"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
