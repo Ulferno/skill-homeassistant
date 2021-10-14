@@ -1,0 +1,43 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.off.dialog(HomeAssistantSkill)\n\"turned Mycroft sw off.\"\nMycroft: pairing.code.dialog(PairingSkill)\n\"Register this device with the code. 'H' as in Hotel. 'X' as in X-Ray. 'L' as in London. 'C' as in Charlie. 'X' as in X-Ray. 'A' as in Apple.\"\n\n",
+      "children" : [ {
+        "name" : "toggle on switch",
+        "uid" : "4fd9e0a66cb386bb",
+        "parentUid" : "8dcb1dcdcb416d5e993c174c6a43959b",
+        "status" : "failed",
+        "time" : {
+          "start" : 1634238451904,
+          "stop" : 1634238472510,
+          "duration" : 20606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8dcb1dcdcb416d5e993c174c6a43959b"
+    }, {
+      "name" : "AssertionError: Mycroft responded with:\nMycroft: homeassistant.device.already.dialog(HomeAssistantSkill)\n\"No changes made to Mycroft sw.\"\n\n",
+      "children" : [ {
+        "name" : "turn off switch",
+        "uid" : "122d258ba43563c5",
+        "parentUid" : "6dea86fe5c796a455c28ca6645702c7a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1634238472512,
+          "stop" : 1634238493120,
+          "duration" : 20608
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6dea86fe5c796a455c28ca6645702c7a"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
