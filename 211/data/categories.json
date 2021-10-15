@@ -1,0 +1,52 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "TypeError: __init__() got an unexpected keyword argument 'host'",
+      "children" : [ {
+        "name" : "test_broke_entity",
+        "uid" : "337f904a240ff3ee",
+        "parentUid" : "1c0efdd0c7063f8b26c9ce03e0cce448",
+        "status" : "broken",
+        "time" : {
+          "start" : 1634280714301,
+          "stop" : 1634280714301,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_light_nossl",
+        "uid" : "bfb21e05bd7c511c",
+        "parentUid" : "1c0efdd0c7063f8b26c9ce03e0cce448",
+        "status" : "broken",
+        "time" : {
+          "start" : 1634280714336,
+          "stop" : 1634280714336,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_toggle_lights",
+        "uid" : "807996adef7e46f1",
+        "parentUid" : "1c0efdd0c7063f8b26c9ce03e0cce448",
+        "status" : "broken",
+        "time" : {
+          "start" : 1634280714345,
+          "stop" : 1634280714346,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1c0efdd0c7063f8b26c9ce03e0cce448"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
