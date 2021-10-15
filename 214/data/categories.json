@@ -1,0 +1,47 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "requests.exceptions.ConnectionError: HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //127.0.0.1:8123/api/components (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f557abfd550>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))",
+      "children" : [ {
+        "name" : "test_light_nossl",
+        "uid" : "5cde00d40de8926c",
+        "parentUid" : "526df9df69d9ca16c5dbf3390dc7418f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1634320949028,
+          "stop" : 1634320949162,
+          "duration" : 134
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "526df9df69d9ca16c5dbf3390dc7418f"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: 8123 != None",
+      "children" : [ {
+        "name" : "test_mock_ssl_no_port",
+        "uid" : "13489cd2851a7219",
+        "parentUid" : "0191aa818405ece8cae4f4f21c13d171",
+        "status" : "failed",
+        "time" : {
+          "start" : 1634320949414,
+          "stop" : 1634320949415,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0191aa818405ece8cae4f4f21c13d171"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}

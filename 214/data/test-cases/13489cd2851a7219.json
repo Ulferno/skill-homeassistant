@@ -1,0 +1,94 @@
+{
+  "uid" : "13489cd2851a7219",
+  "name" : "test_mock_ssl_no_port",
+  "fullName" : "unittests.test_haclient.TestHaClient#test_mock_ssl_no_port",
+  "historyId" : "78cc172bab8fdedf0eda382d72c2a58b",
+  "time" : {
+    "start" : 1634320949414,
+    "stop" : 1634320949415,
+    "duration" : 1
+  },
+  "description" : "Test with ssl and without port number specified",
+  "descriptionHtml" : "<p>Test with ssl and without port number specified</p>\n",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: 8123 != None",
+  "statusTrace" : "self = <unittests.test_haclient.TestHaClient testMethod=test_mock_ssl_no_port>\n\n    def test_mock_ssl_no_port(self):\n        \"\"\"Test with ssl and without port number specified\"\"\"\n        with mock.patch('requests.get') as mock_request:\n            portnum = config['port_number']\n            ssl = True\n            url = 'https://127.0.0.1'\n    \n            mock_request.return_value.status_code = 200\n            self.assertTrue(url, 'https://127.0.0.1')\n>           self.assertEqual(portnum, None)\nE           AssertionError: 8123 != None\n\nunittests/test_haclient.py:68: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_UnitTestCase__pytest_class_setup",
+    "time" : {
+      "start" : 1634320949015,
+      "stop" : 1634320949015,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "_UnitTestCase__pytest_class_setup::0",
+    "time" : {
+      "start" : 1634320949422,
+      "stop" : 1634320949422,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "unittests"
+  }, {
+    "name" : "suite",
+    "value" : "test_haclient"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestHaClient"
+  }, {
+    "name" : "host",
+    "value" : "fv-az82-24"
+  }, {
+    "name" : "thread",
+    "value" : "7478-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "unittests.test_haclient"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "13489cd2851a7219.json",
+  "parameterValues" : [ ]
+}
