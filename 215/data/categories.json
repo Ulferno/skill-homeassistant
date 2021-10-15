@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "requests.exceptions.ConnectionError: HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //127.0.0.1:8123/api/components (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa6fad8d110>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))",
+      "children" : [ {
+        "name" : "test_light_nossl",
+        "uid" : "10bbb6cc823dd0e4",
+        "parentUid" : "3aaaa901078be8cdb91257e8f2d6ff82",
+        "status" : "broken",
+        "time" : {
+          "start" : 1634324139045,
+          "stop" : 1634324139105,
+          "duration" : 60
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3aaaa901078be8cdb91257e8f2d6ff82"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
