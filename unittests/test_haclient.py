@@ -3,7 +3,7 @@ import sys
 sys.path.append('../')
 for p in sys.path:
     print(p)
-from ha_client import HomeAssistantClient
+from ha_client import HomeAssistantClient, check_url
 import unittest
 from unittest import mock
 
@@ -137,9 +137,41 @@ class TestHaClient(TestCase):
                 if entity['state'] == 'on':
                     self.assertTrue(True)
 
+    def test_check_ip_with_ip_four(self):
+        """Test regex parsing user inputted url as ip v4 address"""
+        test_case = ['http://192.168.1.1/test/',
+                     'https://192.168.1.1/test/',
+                     '192.168.1.1:8123',
+                     '192.168.1.1'
+                     ]
+
+        for address in test_case:
+            parsed = check_url(address)
+            self.assertEqual(parsed, '192.168.1.1')
+
+    def test_check_ip_with_ip_six(self):
+        """Test regex parsing user inputted url as ip v4 address"""
+        test_case = ['http://2001:0db8:0:85a3::ac1f:8001/test',
+                     'https://2001:0db8:0:85a3::ac1f:8001/test/',
+                     '2001:0db8:0:85a3::ac1f:8001:8123',
+                     '2001:0db8:0:85a3::ac1f:8001'
+                     ]
+
+        for address in test_case:
+            parsed = check_url(address)
+            self.assertEqual(parsed, '2001:0db8:0:85a3::ac1f:8001')
+
+    def test_check_ip_with_hostname(self):
+        """Test regex parsing user inputted url as hostname"""
+        test_case = ['http://mycroft.local/test.jpg',
+                     'https://mycroft.local/test.jpg',
+                     'mycroft.local:8123',
+                     'mycroft.local'
+                     ]
+        for address in test_case:
+            parsed = check_url(address)
+            self.assertEqual(parsed, 'mycroft.local')
+
 
 if __name__ == '__main__':
     unittest.main()
-
-
-

@@ -29,9 +29,9 @@ ip_regex=r"".join((r'\b(?:https?://)?((?:(?:www\.)?(?:[\da-z\.-]+)\.(?:[a-z]{2,6
                    r'2}|655[0-2][0-9]|6553[0-5])?(?:/[\w\.-]*)*/?\b'))
 
 def check_url(ip):
-    """Fuction to check if valid url/ip was supplied"""
-    matches = re.search(ip_regex,ip)
-    return matches
+    """Function to check if valid url/ip was supplied"""
+    matches = re.search(ip_regex, ip)
+    return matches.group(1)
 
 class HomeAssistantClient(object):
 
