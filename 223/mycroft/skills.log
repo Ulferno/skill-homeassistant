@@ -1,0 +1,360 @@
+2021-10-19 07:05:12.026 | INFO     |  5331 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-19 07:05:12.028 | INFO     |  5331 | mycroft_bus_client.client.client | Connected
+2021-10-19 07:05:12.029 | INFO     |  5331 | mycroft.util.process_utils:start_message_bus_client:155 | Connected to messagebus
+2021-10-19 07:05:12.036 | INFO     |  5331 | mycroft.skills.msm_wrapper:create_msm:96 | Acquiring lock to instantiate MSM
+2021-10-19 07:05:13.892 | INFO     |  5331 | msm.mycroft_skills_manager | building SkillEntry objects for all skills
+2021-10-19 07:05:14.533 | INFO     |  5331 | mycroft.skills.msm_wrapper:create_msm:112 | Releasing MSM instantiation lock.
+2021-10-19 07:05:14.533 | INFO     |  5331 | mycroft.skills.skill_updater:_log_next_download_time:267 | Next scheduled skill update: 2021-10-19 07:05:13.533222
+2021-10-19 07:05:14.534 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-pairing
+2021-10-19 07:05:15.369 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:15.382 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-pairing
+2021-10-19 07:05:15.382 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:15.384 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-pairing.mycroftai
+2021-10-19 07:05:15.391 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-pairing.mycroftai/settings.json
+2021-10-19 07:05:15.399 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-pairing.mycroftai
+2021-10-19 07:05:15.400 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-pairing.mycroftai/settings.json
+2021-10-19 07:05:15.404 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-pairing.mycroftai loaded successfully
+2021-10-19 07:05:15.404 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-volume
+2021-10-19 07:05:16.201 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:16.212 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-volume
+2021-10-19 07:05:17.116 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-volume
+2021-10-19 07:05:17.116 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:17.117 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-volume.mycroftai
+2021-10-19 07:05:17.126 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-volume.mycroftai/settings.json
+2021-10-19 07:05:17.224 | ERROR    |  5331 | VolumeSkill | Couldn't allocate mixer, ALSAAudioError('No such file or directory [default]')
+2021-10-19 07:05:20.239 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-volume.mycroftai
+2021-10-19 07:05:20.240 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-volume.mycroftai/settings.json
+2021-10-19 07:05:20.241 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-volume.mycroftai loaded successfully
+2021-10-19 07:05:20.241 | INFO     |  5331 | __main__:on_started:177 | Skills service is starting up.
+2021-10-19 07:05:20.359 | INFO     |  5331 | __main__:_update_system:154 | Attempting system update...
+2021-10-19 07:05:23.362 | INFO     |  5331 | mycroft.enclosure.display_manager:_write_data:70 | Display Manager is creating /tmp/mycroft/ipc/managers/disp_info
+2021-10-19 07:05:23.363 | INFO     |  5331 | __main__:_ensure_device_is_paired:133 | Device not paired, invoking the pairing skill
+2021-10-19 07:05:23.364 | INFO     |  5331 | __main__:on_alive:181 | Skills service is alive.
+2021-10-19 07:05:23.366 | INFO     |  5331 | msm.mycroft_skills_manager | building SkillEntry objects for all skills
+2021-10-19 07:05:23.744 | INFO     |  5331 | PairingSkill | Communicating account URL to user
+2021-10-19 07:05:23.851 | WARNING  |  5331 | msm.mycroft_skills_manager | No such default skill: mycroft-pandora
+2021-10-19 07:05:23.852 | INFO     |  5331 | mycroft.skills.skill_manager:run:234 | Not all default skills are installed, performing skill update...
+2021-10-19 07:05:23.852 | INFO     |  5331 | mycroft.skills.skill_updater:update_skills:149 | Beginning skill update...
+2021-10-19 07:05:23.957 | INFO     |  5331 | msm.mycroft_skills_manager | building SkillEntry objects for all skills
+2021-10-19 07:05:24.397 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:24.422 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/fallback-unknown
+2021-10-19 07:05:24.439 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/fallback-wolfram-alpha
+2021-10-19 07:05:24.443 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-audio-record
+2021-10-19 07:05:24.456 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-configuration
+2021-10-19 07:05:24.459 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-date-time
+2021-10-19 07:05:24.470 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/fallback-duckduckgo
+2021-10-19 07:05:24.483 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-hello-world
+2021-10-19 07:05:24.486 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-installer
+2021-10-19 07:05:24.497 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-ip
+2021-10-19 07:05:24.503 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-joke
+2021-10-19 07:05:24.507 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-alarm
+2021-10-19 07:05:24.536 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-naptime
+2021-10-19 07:05:24.545 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-npr-news
+2021-10-19 07:05:24.579 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-personal
+2021-10-19 07:05:24.590 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-singing
+2021-10-19 07:05:24.594 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-reminder
+2021-10-19 07:05:24.603 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-playback-control
+2021-10-19 07:05:25.384 | ERROR    |  5331 | msm.mycroft_skills_manager | Error running install_or_update on homeassistant.mycroftai: MergeConflict
+2021-10-19 07:05:25.385 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-speak
+2021-10-19 07:05:25.558 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:25.617 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for fallback-wolfram-alpha
+2021-10-19 07:05:26.558 | INFO     |  5331 | msm.skill_entry | Nothing new for mycroft-volume
+2021-10-19 07:05:26.559 | INFO     |  5331 | msm.skill_entry | Nothing new for mycroft-pairing
+2021-10-19 07:05:26.628 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:26.642 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:26.702 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-volume
+2021-10-19 07:05:26.709 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-spelling
+2021-10-19 07:05:26.752 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:26.779 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-fallback-duck-duck-go
+2021-10-19 07:05:26.902 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:26.907 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:26.908 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:26.917 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:26.955 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:26.960 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-joke
+2021-10-19 07:05:26.967 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-ip
+2021-10-19 07:05:26.995 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-personal
+2021-10-19 07:05:26.996 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:26.999 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-stop
+2021-10-19 07:05:27.002 | INFO     |  5331 | msm.skill_entry | Successfully installed fallback-unknown
+2021-10-19 07:05:27.003 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-hello-world
+2021-10-19 07:05:27.018 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:27.019 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-support
+2021-10-19 07:05:27.004 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.018 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:27.004 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.022 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/mycroft-timer
+2021-10-19 07:05:27.057 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.069 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.075 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-naptime
+2021-10-19 07:05:27.075 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:27.078 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-weather
+2021-10-19 07:05:27.085 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-npr-news
+2021-10-19 07:05:27.092 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-playback-control
+2021-10-19 07:05:27.092 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:27.093 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-version-checker
+2021-10-19 07:05:27.105 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-audio-record
+2021-10-19 07:05:27.164 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.164 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.166 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.167 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.187 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-installer
+2021-10-19 07:05:27.188 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-date-time
+2021-10-19 07:05:27.229 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-reminder
+2021-10-19 07:05:27.229 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:27.232 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/mycroftai/skill-wiki
+2021-10-19 07:05:27.249 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-alarm
+2021-10-19 07:05:27.258 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.296 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-speak
+2021-10-19 07:05:27.297 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:27.302 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.340 | INFO     |  5331 | msm.skill_entry | Downloading skill: https://github.com/MycroftAI/skill-query
+2021-10-19 07:05:27.424 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-configuration
+2021-10-19 07:05:27.520 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:27.533 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-spelling
+2021-10-19 07:05:27.533 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:27.872 | ERROR    |  5331 | msm.mycroft_skills_manager | Error running install_or_update on homeassistant: MergeConflict
+2021-10-19 07:05:28.188 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:28.231 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:28.283 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:28.303 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-stop
+2021-10-19 07:05:28.303 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:28.320 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:28.332 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:28.344 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-support-helper
+2021-10-19 07:05:28.353 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-version-checker
+2021-10-19 07:05:28.353 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:28.399 | INFO     |  5331 | msm.skill_entry | Successfully installed fallback-query
+2021-10-19 07:05:28.399 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:28.402 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-wiki
+2021-10-19 07:05:28.470 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:28.528 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-singing
+2021-10-19 07:05:28.528 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:28.543 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:28.587 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-timer
+2021-10-19 07:05:28.588 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:28.708 | INFO     |  5331 | msm.skill_entry | Installing system requirements...
+2021-10-19 07:05:28.739 | INFO     |  5331 | msm.skill_entry | Installing requirements.txt for mycroft-weather
+2021-10-19 07:05:31.754 | INFO     |  5331 | msm.skill_entry | Successfully installed fallback-wolfram-alpha
+2021-10-19 07:05:31.754 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:34.010 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-fallback-duck-duck-go
+2021-10-19 07:05:34.010 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:35.100 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-joke
+2021-10-19 07:05:35.100 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:35.928 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-ip
+2021-10-19 07:05:35.928 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:38.930 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-npr-news
+2021-10-19 07:05:38.930 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:39.772 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-audio-record
+2021-10-19 07:05:39.772 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:40.645 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-installer
+2021-10-19 07:05:40.646 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:54.134 | INFO     |  5331 | PairingSkill | Initiating device pairing sequence...
+2021-10-19 07:05:54.134 | INFO     |  5331 | PairingSkill | Retrieving pairing code from device API...
+2021-10-19 07:05:54.416 | INFO     |  5331 | PairingSkill | Pairing code obtained: 9JW3XL
+2021-10-19 07:05:54.416 | INFO     |  5331 | PairingSkill | Communicating pairing URL to user
+2021-10-19 07:05:56.081 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-date-time
+2021-10-19 07:05:56.082 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:56.937 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-alarm
+2021-10-19 07:05:56.938 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:05:59.525 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-configuration
+2021-10-19 07:05:59.525 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:06:02.096 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-support-helper
+2021-10-19 07:06:02.097 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:06:03.890 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-wiki
+2021-10-19 07:06:03.890 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:06:04.834 | INFO     |  5331 | msm.skill_entry | Successfully installed mycroft-weather
+2021-10-19 07:06:04.835 | INFO     |  5331 | msm.mycroft_skills_manager | invalidating skills cache
+2021-10-19 07:06:04.894 | INFO     |  5331 | mycroft.skills.skill_updater:_log_next_download_time:267 | Next scheduled skill update: 2021-10-19 08:06:04.893741
+2021-10-19 07:06:04.894 | INFO     |  5331 | mycroft.skills.skill_updater:update_skills:170 | Skill update complete
+2021-10-19 07:06:04.894 | INFO     |  5331 | mycroft.skills.skill_manager:_load_on_startup:273 | Loading installed skills...
+2021-10-19 07:06:04.896 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-ip.mycroftai
+2021-10-19 07:06:04.927 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-ip.mycroftai/settings.json
+2021-10-19 07:06:04.939 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-ip.mycroftai
+2021-10-19 07:06:04.940 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-ip.mycroftai/settings.json
+2021-10-19 07:06:04.940 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-ip.mycroftai loaded successfully
+2021-10-19 07:06:04.941 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-reminder.mycroftai
+2021-10-19 07:06:04.958 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-reminder.mycroftai/settings.json
+2021-10-19 07:06:04.997 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-reminder.mycroftai
+2021-10-19 07:06:05.005 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-reminder.mycroftai/settings.json
+2021-10-19 07:06:05.010 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-reminder.mycroftai loaded successfully
+2021-10-19 07:06:05.012 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-installer.mycroftai
+2021-10-19 07:06:05.030 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-installer.mycroftai/settings.json
+2021-10-19 07:06:05.061 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-installer.mycroftai
+2021-10-19 07:06:05.064 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-installer.mycroftai/settings.json
+2021-10-19 07:06:05.068 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-installer.mycroftai loaded successfully
+2021-10-19 07:06:05.069 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-version-checker.mycroftai
+2021-10-19 07:06:05.073 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-version-checker.mycroftai/settings.json
+2021-10-19 07:06:05.111 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-version-checker.mycroftai
+2021-10-19 07:06:05.115 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-version-checker.mycroftai/settings.json
+2021-10-19 07:06:05.119 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-version-checker.mycroftai loaded successfully
+2021-10-19 07:06:05.121 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-singing.mycroftai
+2021-10-19 07:06:05.136 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-singing.mycroftai/settings.json
+2021-10-19 07:06:05.157 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-singing.mycroftai
+2021-10-19 07:06:05.158 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-singing.mycroftai/settings.json
+2021-10-19 07:06:05.161 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-singing.mycroftai loaded successfully
+2021-10-19 07:06:05.162 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-joke.mycroftai
+2021-10-19 07:06:05.169 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-joke.mycroftai/settings.json
+2021-10-19 07:06:05.193 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-joke.mycroftai
+2021-10-19 07:06:05.199 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-joke.mycroftai/settings.json
+2021-10-19 07:06:05.201 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-joke.mycroftai loaded successfully
+2021-10-19 07:06:05.201 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-timer.mycroftai
+2021-10-19 07:06:05.220 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-timer.mycroftai/settings.json
+2021-10-19 07:06:05.261 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-timer.mycroftai
+2021-10-19 07:06:05.261 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-timer.mycroftai/settings.json
+2021-10-19 07:06:05.264 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-timer.mycroftai loaded successfully
+2021-10-19 07:06:05.266 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: homeassistant.mycroftai
+2021-10-19 07:06:05.575 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/homeassistant.mycroftai/settings.json
+2021-10-19 07:06:05.576 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/homeassistant.mycroftai/settings.json
+2021-10-19 07:06:05.628 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill homeassistant.mycroftai loaded successfully
+2021-10-19 07:06:05.628 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-alarm.mycroftai
+2021-10-19 07:06:05.650 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-alarm.mycroftai/settings.json
+2021-10-19 07:06:05.650 | ERROR    |  5331 | AlarmSkill | Couldn't allocate mixer, ALSAAudioError('No such file or directory [default]')
+2021-10-19 07:06:05.724 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-alarm.mycroftai
+2021-10-19 07:06:05.724 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-alarm.mycroftai/settings.json
+2021-10-19 07:06:05.725 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-alarm.mycroftai loaded successfully
+2021-10-19 07:06:05.725 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-naptime.mycroftai
+2021-10-19 07:06:05.733 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-naptime.mycroftai/settings.json
+2021-10-19 07:06:05.758 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-naptime.mycroftai
+2021-10-19 07:06:05.759 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-naptime.mycroftai/settings.json
+2021-10-19 07:06:05.762 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-naptime.mycroftai loaded successfully
+2021-10-19 07:06:05.762 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-spelling.mycroftai
+2021-10-19 07:06:05.767 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-spelling.mycroftai/settings.json
+2021-10-19 07:06:05.785 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-spelling.mycroftai
+2021-10-19 07:06:05.787 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-spelling.mycroftai/settings.json
+2021-10-19 07:06:05.789 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-spelling.mycroftai loaded successfully
+2021-10-19 07:06:05.790 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-fallback-duck-duck-go.mycroftai
+2021-10-19 07:06:05.805 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-fallback-duck-duck-go.mycroftai/settings.json
+2021-10-19 07:06:05.837 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-fallback-duck-duck-go.mycroftai
+2021-10-19 07:06:05.837 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-fallback-duck-duck-go.mycroftai/settings.json
+2021-10-19 07:06:05.838 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-fallback-duck-duck-go.mycroftai loaded successfully
+2021-10-19 07:06:05.838 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-npr-news.mycroftai
+2021-10-19 07:06:05.905 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-npr-news.mycroftai/settings.json
+2021-10-19 07:06:06.924 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-npr-news.mycroftai
+2021-10-19 07:06:06.926 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-npr-news.mycroftai/settings.json
+2021-10-19 07:06:06.960 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-npr-news.mycroftai loaded successfully
+2021-10-19 07:06:06.960 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-support-helper.mycroftai
+2021-10-19 07:06:06.969 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-support-helper.mycroftai/settings.json
+2021-10-19 07:06:06.974 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-support-helper.mycroftai
+2021-10-19 07:06:06.976 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-support-helper.mycroftai/settings.json
+2021-10-19 07:06:06.999 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-support-helper.mycroftai loaded successfully
+2021-10-19 07:06:07.000 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-weather.mycroftai
+2021-10-19 07:06:07.017 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-weather.mycroftai/settings.json
+2021-10-19 07:06:07.086 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-weather.mycroftai
+2021-10-19 07:06:07.087 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-weather.mycroftai/settings.json
+2021-10-19 07:06:07.145 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-weather.mycroftai loaded successfully
+2021-10-19 07:06:07.145 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-speak.mycroftai
+2021-10-19 07:06:07.149 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-speak.mycroftai/settings.json
+2021-10-19 07:06:07.169 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-speak.mycroftai
+2021-10-19 07:06:07.174 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-speak.mycroftai/settings.json
+2021-10-19 07:06:07.191 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-speak.mycroftai loaded successfully
+2021-10-19 07:06:07.192 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-audio-record.mycroftai
+2021-10-19 07:06:07.200 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-audio-record.mycroftai/settings.json
+2021-10-19 07:06:07.228 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-audio-record.mycroftai
+2021-10-19 07:06:07.230 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-audio-record.mycroftai/settings.json
+2021-10-19 07:06:07.321 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-audio-record.mycroftai loaded successfully
+2021-10-19 07:06:07.322 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-stop.mycroftai
+2021-10-19 07:06:07.327 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-stop.mycroftai/settings.json
+2021-10-19 07:06:07.365 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-stop.mycroftai
+2021-10-19 07:06:07.366 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-stop.mycroftai/settings.json
+2021-10-19 07:06:07.453 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-stop.mycroftai loaded successfully
+2021-10-19 07:06:07.453 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-hello-world.mycroftai
+2021-10-19 07:06:07.457 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-hello-world.mycroftai/settings.json
+2021-10-19 07:06:07.469 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-hello-world.mycroftai
+2021-10-19 07:06:07.470 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-hello-world.mycroftai/settings.json
+2021-10-19 07:06:07.507 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-hello-world.mycroftai loaded successfully
+2021-10-19 07:06:07.510 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-date-time.mycroftai
+2021-10-19 07:06:07.916 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-date-time.mycroftai/settings.json
+2021-10-19 07:06:07.945 | INFO     |  5331 | TimeSkill | Registering resting screen <bound method TimeSkill.handle_idle of <mycroft-date-time_mycroftai.TimeSkill object at 0x7f470c3a6a90>> for Time and Date.
+2021-10-19 07:06:07.947 | INFO     |  5331 | TimeSkill | Registering resting screen
+2021-10-19 07:06:07.951 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-date-time.mycroftai
+2021-10-19 07:06:07.952 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-date-time.mycroftai/settings.json
+2021-10-19 07:06:07.953 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-date-time.mycroftai loaded successfully
+2021-10-19 07:06:07.953 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-configuration.mycroftai
+2021-10-19 07:06:07.958 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-configuration.mycroftai/settings.json
+2021-10-19 07:06:07.976 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-configuration.mycroftai
+2021-10-19 07:06:07.977 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-configuration.mycroftai/settings.json
+2021-10-19 07:06:08.000 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-configuration.mycroftai loaded successfully
+2021-10-19 07:06:08.001 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: fallback-query.mycroftai
+2021-10-19 07:06:08.013 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/fallback-query.mycroftai/settings.json
+2021-10-19 07:06:08.211 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of fallback-query.mycroftai
+2021-10-19 07:06:08.212 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/fallback-query.mycroftai/settings.json
+2021-10-19 07:06:08.213 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill fallback-query.mycroftai loaded successfully
+2021-10-19 07:06:08.214 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-personal.mycroftai
+2021-10-19 07:06:08.223 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-personal.mycroftai/settings.json
+2021-10-19 07:06:08.236 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-personal.mycroftai
+2021-10-19 07:06:08.237 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-personal.mycroftai/settings.json
+2021-10-19 07:06:08.237 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-personal.mycroftai loaded successfully
+2021-10-19 07:06:08.238 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: fallback-wolfram-alpha.mycroftai
+2021-10-19 07:06:08.275 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/fallback-wolfram-alpha.mycroftai/settings.json
+2021-10-19 07:06:08.295 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of fallback-wolfram-alpha.mycroftai
+2021-10-19 07:06:08.296 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/fallback-wolfram-alpha.mycroftai/settings.json
+2021-10-19 07:06:08.297 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill fallback-wolfram-alpha.mycroftai loaded successfully
+2021-10-19 07:06:08.297 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-wiki.mycroftai
+2021-10-19 07:06:08.304 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-wiki.mycroftai/settings.json
+2021-10-19 07:06:08.315 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-wiki.mycroftai
+2021-10-19 07:06:08.315 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-wiki.mycroftai/settings.json
+2021-10-19 07:06:08.316 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill mycroft-wiki.mycroftai loaded successfully
+2021-10-19 07:06:08.316 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: fallback-unknown.mycroftai
+2021-10-19 07:06:08.322 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/fallback-unknown.mycroftai/settings.json
+2021-10-19 07:06:08.354 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of fallback-unknown.mycroftai
+2021-10-19 07:06:08.355 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/fallback-unknown.mycroftai/settings.json
+2021-10-19 07:06:08.356 | INFO     |  5331 | mycroft.skills.skill_loader:_communicate_load_status:344 | Skill fallback-unknown.mycroftai loaded successfully
+2021-10-19 07:06:08.358 | INFO     |  5331 | mycroft.skills.skill_loader:load:185 | ATTEMPTING TO LOAD SKILL: mycroft-playback-control.mycroftai
+2021-10-19 07:06:08.364 | INFO     |  5331 | mycroft.skills.settings:get_local_settings:83 | /opt/mycroft/skills/mycroft-playback-control.mycroftai/settings.json
+2021-10-19 07:06:08.430 | ERROR    |  5331 | mycroft_bus_client.client.client | === ConnectionResetError(104, 'Connection reset by peer') ===
+Traceback (most recent call last):
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_app.py", line 305, in run_forever
+    dispatcher.read(self.sock.sock, read, check)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_app.py", line 53, in read
+    if not read_callback():
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_app.py", line 271, in read
+    op_code, frame = self.sock.recv_data_frame(True)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_core.py", line 340, in recv_data_frame
+    frame = self.recv_frame()
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_core.py", line 374, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_core.py", line 449, in _recv
+    return recv(self.sock, bufsize)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_socket.py", line 81, in recv
+    bytes_ = sock.recv(bufsize)
+ConnectionResetError: [Errno 104] Connection reset by peer
+2021-10-19 07:06:08.430 | ERROR    |  5331 | mycroft_bus_client.client.client | Exception closing websocket: ConnectionResetError(104, 'Connection reset by peer')
+2021-10-19 07:06:08.430 | WARNING  |  5331 | mycroft_bus_client.client.client | Message Bus Client will reconnect in 5 seconds.
+2021-10-19 07:06:08.432 | INFO     |  5331 | mycroft.skills.skill_loader:_check_for_first_run:324 | First run of mycroft-playback-control.mycroftai
+2021-10-19 07:06:08.432 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-playback-control.mycroftai/settings.json
+2021-10-19 07:06:08.433 | ERROR    |  5331 | mycroft.skills.skill_manager:_load_skill:305 | Load of skill /opt/mycroft/skills/mycroft-playback-control.mycroftai failed!
+Traceback (most recent call last):
+  File "/opt/mycroft-core/mycroft/skills/skill_manager.py", line 303, in _load_skill
+    load_status = skill_loader.load()
+  File "/opt/mycroft-core/mycroft/skills/skill_loader.py", line 186, in load
+    return self._load()
+  File "/opt/mycroft-core/mycroft/skills/skill_loader.py", line 249, in _load
+    self._communicate_load_status()
+  File "/opt/mycroft-core/mycroft/skills/skill_loader.py", line 343, in _communicate_load_status
+    self.bus.emit(message)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/mycroft_bus_client/client/client.py", line 160, in emit
+    self.client.send(message.serialize())
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_app.py", line 153, in send
+    if not self.sock or self.sock.send(data, opcode) == 0:
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_core.py", line 250, in send
+    return self.send_frame(frame)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_core.py", line 275, in send_frame
+    l = self._send(data)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_core.py", line 445, in _send
+    return send(self.sock, data)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/websocket/_socket.py", line 117, in send
+    return sock.send(data)
+BrokenPipeError: [Errno 32] Broken pipe
+2021-10-19 07:06:08.433 | INFO     |  5331 | mycroft.skills.skill_manager:_load_on_startup:275 | Skills all loaded!
+2021-10-19 07:06:13.438 | INFO     |  5331 | mycroft_bus_client.client.client | Connected
+2021-10-19 07:06:24.777 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-pairing.mycroftai/settings.json
+2021-10-19 07:06:25.080 | INFO     |  5331 | mycroft.skills.settings:save_settings:116 | Skill settings successfully saved to /home/runner/.config/mycroft/skills/mycroft-timer.mycroftai/settings.json
+2021-10-19 07:07:07.468 | WARNING  |  5331 | ConfigurationSkill | Impossible to update configuration because device isn't paired
+2021-10-19 07:08:07.547 | WARNING  |  5331 | ConfigurationSkill | Impossible to update configuration because device isn't paired
