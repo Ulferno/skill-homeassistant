@@ -34,8 +34,9 @@ class HomeAssistantSkill(FallbackSkill):
             ip_address = check_url(self.settings.get('host'))
             token = self.settings.get('token')
 
-            # Check if user filled IP, port and Token in configuration
+            """Inform user if ip/url or token not or incorrectly filed"""
             if not ip_address:
+
                 self.speak_dialog('homeassistant.error.setup', data={
                               "field": "I.P."})
                 return
