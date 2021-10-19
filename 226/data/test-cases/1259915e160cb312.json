@@ -1,0 +1,94 @@
+{
+  "uid" : "1259915e160cb312",
+  "name" : "test_check_ip_with_ip_six",
+  "fullName" : "unittests.test_haclient.TestHaClient#test_check_ip_with_ip_six",
+  "historyId" : "ee392b9df1032d8a6fa435ba6b1a57f2",
+  "time" : {
+    "start" : 1634677241457,
+    "stop" : 1634677241458,
+    "duration" : 1
+  },
+  "description" : "Test regex parsing user inputted url as ip v4 address",
+  "descriptionHtml" : "<p>Test regex parsing user inputted url as ip v4 address</p>\n",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: '2001:0db8:0:85a3::' != '2001:0db8:0:85a3::ac1f:8001'\n- 2001:0db8:0:85a3::\n+ 2001:0db8:0:85a3::ac1f:8001\n?                   +++++++++",
+  "statusTrace" : "self = <unittests.test_haclient.TestHaClient testMethod=test_check_ip_with_ip_six>\n\n    def test_check_ip_with_ip_six(self):\n        \"\"\"Test regex parsing user inputted url as ip v4 address\"\"\"\n        test_case = ['http://2001:0db8:0:85a3::ac1f:8001/test',\n                     'https://2001:0db8:0:85a3::ac1f:8001/test/',\n                     '2001:0db8:0:85a3::ac1f:8001:8123',\n                     '2001:0db8:0:85a3::ac1f:8001'\n                     ]\n    \n        for address in test_case:\n            parsed = check_url(address)\n>           self.assertEqual(parsed, '2001:0db8:0:85a3::ac1f:8001')\nE           AssertionError: '2001:0db8:0:85a3::' != '2001:0db8:0:85a3::ac1f:8001'\nE           - 2001:0db8:0:85a3::\nE           + 2001:0db8:0:85a3::ac1f:8001\nE           ?                   +++++++++\n\nunittests/test_haclient.py:241: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_UnitTestCase__pytest_class_setup",
+    "time" : {
+      "start" : 1634677241449,
+      "stop" : 1634677241449,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "_UnitTestCase__pytest_class_setup::0",
+    "time" : {
+      "start" : 1634677241521,
+      "stop" : 1634677241521,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "unittests"
+  }, {
+    "name" : "suite",
+    "value" : "test_haclient"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestHaClient"
+  }, {
+    "name" : "host",
+    "value" : "fv-az131-258"
+  }, {
+    "name" : "thread",
+    "value" : "6802-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "unittests.test_haclient"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "1259915e160cb312.json",
+  "parameterValues" : [ ]
+}
