@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: '2001:0db8:0:85a3::' != '2001:0db8:0:85a3::ac1f:8001'\n- 2001:0db8:0:85a3::\n+ 2001:0db8:0:85a3::ac1f:8001\n?                   +++++++++",
+      "children" : [ {
+        "name" : "test_check_ip_with_ip_six",
+        "uid" : "5acf4e7e927667e0",
+        "parentUid" : "716bae14626fc3835de692eed858d78d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1634627709024,
+          "stop" : 1634627709024,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "716bae14626fc3835de692eed858d78d"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
