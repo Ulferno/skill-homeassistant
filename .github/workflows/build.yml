@@ -37,30 +37,27 @@ jobs:
     #######################################################################################
     # Section with prerequisite installations
 
-    # Get path to python
-    - name: Get path to python
+    - name: Github Actions - Get path to python
       run: echo "PATH_TO_PYTHON=$(which python)" >> $GITHUB_ENV
 
-    # Get repository name
-    - run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+    - name: Github Actions - Get repository name
+      run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
       shell: bash
 
-    # Install pip dependencies HA
-    - name: Install pip dependencies HA
+    - name: Home Assistant - Install pip dependencies
       run: |
         pip install allure-behave
 
-    # Copy skill before HA kicks in
-    - name: Mycroft - Copy skill to mycroft
+    - name: Mycroft - Copy skill to Mycroft
       run: |
         mkdir -p /opt/mycroft/skills/homeassistant.mycroftai
         cp -R ${{ github.workspace }}/* /opt/mycroft/skills/homeassistant.mycroftai
         ls -al /opt/mycroft/skills/homeassistant.mycroftai
         cp ${{ github.workspace }}/test/ci/Mycroft/settings.json /opt/mycroft/skills/homeassistant.mycroftai/
 
-    # Install Mycroft
     - name: Mycroft - install Mycroft
       run: |
+        sudo apt update
         git clone https://github.com/MycroftAI/mycroft-core.git /opt/mycroft-core
         ls /opt
         chmod +x /opt/mycroft-core/dev_setup.sh
@@ -70,50 +67,41 @@ jobs:
         /opt/mycroft-core/bin/mycroft-config set tts.module dummy
         /opt/mycroft-core/bin/mycroft-start all
 
-    # Remove pairing skill if installed
     - name: Mycroft - Remove pairing skill
       run: /opt/mycroft-core/bin/mycroft-msm remove mycroft-pairing
       continue-on-error: true
 
-    # Install workflow dependencies
-    - name: Install workflow dependencies
+    - name: Github Actions - Install workflow dependencies
       run: |
         source ${{ env.MYCROFT_VENV }}
         pip install allure-behave
         pip install allure-pytest
         pip install pylint
 
-    # Get virtual component for HA
-    - name: HA - get hass virtual component
+    - name: Home Assistant - get hass virtual component
       run: git clone --depth 1 --branch ${{ env.HA_VIRTUAL_VERSION }} https://github.com/twrecked/hass-virtual.git /tmp/hass-virtual
 
-    # Start Home Assistant
-    - name: HA - pull and start docker image
+    - name: Home Assistant - pull and start docker image
       run: |
         docker pull homeassistant/home-assistant:${{ env.HA_VERSION }}
         docker run -d -p 127.0.0.1:8123:8123 --name="home-assistant" -v ${{ github.workspace }}/test/ci/HA/:/config -v /tmp/hass-virtual/custom_components:/config/custom_components -v /etc/localtime:/etc/localtime:ro homeassistant/home-assistant:${{ env.HA_VERSION }}
 
-    # Install Home Assistant cli tool
-    - name: HA - install cli
+    - name: Home Assistant - Install cli
       run: pip install homeassistant-cli
 
-    # Set Home Assistant cli tool
-    - name: HA - set cli
+    - name: Home Assistant - Set cli
       run: source <(hass-cli completion bash)
 
-    # Get base info from Home Assistant
-    - name: HA - show base info
+    - name: Home Assistant - Show base info
       run: hass-cli info
 
-    # Get state info from Home Assistant
-    - name: HA - show states
+    - name: Home Assistant - Show states
       run: hass-cli state list
 
     #######################################################################################
     # Section with unittests - bust run before VK tests
 
-    # Run Unitests with output to allure
-    - name: Unittest
+    - name: Unittest - Run with output to Allure report
       id: unittest
       run: |
         source /opt/mycroft-core/.venv/bin/activate
@@ -125,31 +113,26 @@ jobs:
     #######################################################################################
     # Section with VK tests
 
-    # Clear VKtest
     - name: Mycroft - Clear VKtest
       run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest clear
 
-    # Run VKtest
     - name: Mycroft - Run VKtest
       run: /opt/mycroft-core/bin/mycroft-skill-testrunner vktest -t homeassistant.mycroftai -f allure_behave.formatter:AllureFormatter -o ${{ github.workspace }}/allure_results
 
      #######################################################################################
     # Section with Mycroft logs
 
-    # Create directory for Mycroft logs
-    - name: MC - directory for logs
+    - name: Mycroft - Create directory for logs
       run: mkdir -p ${{ github.workspace }}/allure-history/${{ github.run_number }}
       if: always()
 
-    # Copy Mycroft logs
-    - name: MC - copy logs
+    - name: Mycroft - Copy logs
       run: if [[ -d /var/log/mycroft ]]; then cp -r /var/log/mycroft ${{ github.workspace }}/allure-history/${{ github.run_number }}/; fi
       shell: bash
 
     #######################################################################################
     # Section with Allure report
 
-    # GH get history
     - name: Github Pages - Pull GH history
       uses: actions/checkout@v2
       if: always()
@@ -158,8 +141,7 @@ jobs:
         path: ${{ github.workspace }}/gh-pages
         ref: gh-pages
 
-    # GH generate Unit/VK report
-    - name: Allure - generate report
+    - name: Allure - Generate report
       uses: simple-elf/allure-report-action@master
       id: allure-report
       if: always()
@@ -169,7 +151,6 @@ jobs:
         allure_report: allure-report
         allure_history: allure-history
 
-    # GH publish results
     - name: Github Pages - publish results
       if: always()
       uses: peaceiris/actions-gh-pages@v3
@@ -181,8 +162,7 @@ jobs:
     #######################################################################################
     # Section with publish status links
 
-    # Job status - publish link to Unit/VK
-    - name: State - publish Unit/VK test
+    - name: State - Publish Unit/VK test
       if: always()
       uses: Sibz/github-status-action@v1
       with:
@@ -192,8 +172,7 @@ jobs:
         sha: ${{github.event.pull_request.head.sha || github.sha}}
         target_url: https://${{ github.repository_owner	}}.github.io/${{ env.REPOSITORY_NAME }}/${{ github.run_number }}/
 
-    # Job status - publish link to Mycroft logs
-    - name: State - publish Mycroft logs
+    - name: State - Publish Mycroft logs
       if: always()
       uses: Sibz/github-status-action@v1
       with:
@@ -204,9 +183,8 @@ jobs:
         target_url: https://github.com/${{ github.repository }}/tree/gh-pages/${{ github.run_number }}/mycroft/
 
     #######################################################################################
-    # Section with Linters
+    # Section with Linters - keep short names
 
-    # Linters - pylint
     - name: pylint
       if: always()
       id: pylint
@@ -214,7 +192,6 @@ jobs:
         source $MYCROFT_VENV
         pylint .
 
-    # Linters - pycodestyle
     - name: pycodestyle
       if: always()
       uses: ricardochaves/python-lint@v1.4.0
@@ -228,7 +205,6 @@ jobs:
         use-isort: false
         extra-pycodestyle-options: "--max-line-length=${{ env.MAX_LINE_LENGTH }}"
 
-    # Linters - flake8
     - name: flake8
       if: always()
       uses: ricardochaves/python-lint@v1.4.0
@@ -242,7 +218,6 @@ jobs:
         use-isort: false
         extra-flake8-options: "--max-line-length=${{ env.MAX_LINE_LENGTH }}"
 
-    # Linters - isort
     - name: isort
       if: always()
       uses: ricardochaves/python-lint@v1.4.0
@@ -259,8 +234,7 @@ jobs:
     #######################################################################################
     # Section with Publish state of Linters
 
-    # Get id for accessing logs
-    - name: Get step id for accessing step status logs
+    - name: State - Get step id for accessing step status logs
       id: linters_status
       if: always()
       run: |
@@ -281,7 +255,6 @@ jobs:
             fi
         done
 
-    # Job status - publish pylint
     - name: State - pylint
       if: always()
       uses: Sibz/github-status-action@v1
@@ -292,7 +265,6 @@ jobs:
         sha: ${{github.event.pull_request.head.sha || github.sha}}
         target_url: https://github.com/${{ github.repository }}/runs/${{ env.LOG_ID }}#step:${{ steps.linters_status.outputs.pylint }}:1
 
-    # Job status - publish pycodestyle
     - name: State - pycodestyle
       if: always()
       uses: Sibz/github-status-action@v1
@@ -303,7 +275,6 @@ jobs:
         sha: ${{github.event.pull_request.head.sha || github.sha}}
         target_url: https://github.com/${{ github.repository }}/runs/${{ env.LOG_ID }}#step:${{ steps.linters_status.outputs.pycodestyle }}:1
 
-    # Job status - publish flake8
     - name: State - flake8
       if: always()
       uses: Sibz/github-status-action@v1
@@ -314,7 +285,6 @@ jobs:
         sha: ${{github.event.pull_request.head.sha || github.sha}}
         target_url: https://github.com/${{ github.repository }}/runs/${{ env.LOG_ID }}#step:${{ steps.linters_status.outputs.flake8 }}:1
 
-    # Job status - publish isort
     - name: State - isort
       if: always()
       uses: Sibz/github-status-action@v1
@@ -324,4 +294,3 @@ jobs:
         state: ${{ steps.isort.outcome }}
         sha: ${{github.event.pull_request.head.sha || github.sha}}
         target_url: https://github.com/${{ github.repository }}/runs/${{ env.LOG_ID }}#step:${{ steps.linters_status.outputs.isort }}:1
-
