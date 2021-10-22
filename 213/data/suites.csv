@@ -1,8 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri Oct 15 17:08:56 GMT 2021","Fri Oct 15 17:08:56 GMT 2021","1","unittests","test_haclient","TestHaClient","","","test_toggle_lights","Test toggle functionality"
-"passed","Fri Oct 15 17:08:55 GMT 2021","Fri Oct 15 17:08:55 GMT 2021","0","unittests","test_haclient","TestHaClient","","","test_broke_entity","Test behavior with non-exist entity"
-"passed","Fri Oct 15 17:08:56 GMT 2021","Fri Oct 15 17:08:56 GMT 2021","1","unittests","test_haclient","TestHaClient","","","test_mock_ssl","Test with ssl"
-"failed","Fri Oct 15 17:08:56 GMT 2021","Fri Oct 15 17:08:56 GMT 2021","1","unittests","test_haclient","TestHaClient","","","test_mock_ssl_no_port","Test with ssl and without port number specified"
-"broken","Fri Oct 15 17:08:55 GMT 2021","Fri Oct 15 17:08:55 GMT 2021","78","unittests","test_haclient","TestHaClient","","","test_light_nossl","Test base turn on/off behavior.
-         This need running HA session!
-        "
