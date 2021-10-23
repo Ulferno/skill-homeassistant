@@ -1,2 +1,0 @@
-97
-{'id': 'light.unitttest_light', 'dev_name': 'unitttest light', 'state': 'on', 'best_score': 97, 'attributes': {'supported_color_modes': ['brightness'], 'color_mode': 'brightness', 'brightness': 80, 'friendly_name': 'unitttest light', 'supported_features': 1}}
