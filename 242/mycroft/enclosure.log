@@ -1,0 +1,13 @@
+2021-10-23 09:20:15.112 | INFO     |  5688 | __main__:create_enclosure:55 | Creating generic enclosure, platform='None'
+2021-10-23 09:20:15.118 | INFO     |  5688 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-23 09:20:15.120 | INFO     |  5688 | mycroft.client.enclosure.base:create_gui_service:473 | Starting message bus for GUI...
+2021-10-23 09:20:15.122 | INFO     |  5688 | mycroft.client.enclosure.base:create_gui_service:483 | GUI Message bus started!
+2021-10-23 09:20:15.123 | INFO     |  5688 | mycroft.enclosure.display_manager:init_display_manager_bus_connection:152 | Connecting display manager to messagebus
+2021-10-23 09:20:15.123 | INFO     |  5688 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-23 09:20:15.127 | INFO     |  5688 | mycroft_bus_client.client.client | Connected
+2021-10-23 09:20:15.261 | INFO     |  5688 | mycroft_bus_client.client.client | Connected
+2021-10-23 09:20:15.268 | INFO     |  5688 | mycroft.util.process_utils:start_message_bus_client:155 | Connected to messagebus
+2021-10-23 09:20:15.268 | INFO     |  5688 | __main__:on_ready:26 | Enclosure started!
+2021-10-23 09:22:01.830 | INFO     |  5688 | __main__:on_stopping:30 | Enclosure is shutting down...
+2021-10-23 09:22:03.117 | ERROR    |  5688 | websocket | error from callback <bound method MessageBusClient.on_message of <mycroft.messagebus.client.client.MessageBusClient object at 0x7fd5fda20750>>: cannot schedule new futures after shutdown
+2021-10-23 09:22:06.118 | ERROR    |  5688 | websocket | error from callback <bound method MessageBusClient.on_message of <mycroft.messagebus.client.client.MessageBusClient object at 0x7fd5fda20750>>: cannot schedule new futures after shutdown
