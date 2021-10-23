@@ -1,0 +1,221 @@
+[ {
+  "uid" : "a14716fd55cb9364",
+  "name" : "test_check_ip_with_hostname",
+  "time" : {
+    "start" : 1634980939499,
+    "stop" : 1634980939503,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8d9c56e829b0a9db",
+  "name" : "triger automation",
+  "time" : {
+    "start" : 1634980956616,
+    "stop" : 1634980956961,
+    "duration" : 345
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ca1698433b36ab97",
+  "name" : "test_check_ip_with_ip_six",
+  "time" : {
+    "start" : 1634980939506,
+    "stop" : 1634980939506,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7bbddc4b85efae5a",
+  "name" : "test_check_ip_with_ip_four",
+  "time" : {
+    "start" : 1634980939504,
+    "stop" : 1634980939505,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9cf169135ca6a9f7",
+  "name" : "turn on switch",
+  "time" : {
+    "start" : 1634980944161,
+    "stop" : 1634980944546,
+    "duration" : 385
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "382641ddad5b390e",
+  "name" : "turn off light",
+  "time" : {
+    "start" : 1634980955922,
+    "stop" : 1634980956614,
+    "duration" : 692
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4a704a805de75e5a",
+  "name" : "test_mock_ssl",
+  "time" : {
+    "start" : 1634980939538,
+    "stop" : 1634980939539,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "86d8c50eff44b30e",
+  "name" : "read sensor",
+  "time" : {
+    "start" : 1634980942930,
+    "stop" : 1634980944159,
+    "duration" : 1229
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "17db8266662c2526",
+  "name" : "turn off switch",
+  "time" : {
+    "start" : 1634980945572,
+    "stop" : 1634980946608,
+    "duration" : 1036
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "58e90c375deb78b2",
+  "name" : "test_light_nossl",
+  "time" : {
+    "start" : 1634980939508,
+    "stop" : 1634980939536,
+    "duration" : 28
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c614f098f47480a9",
+  "name" : "turn on light",
+  "time" : {
+    "start" : 1634980946610,
+    "stop" : 1634980954557,
+    "duration" : 7947
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cf15f8f74e0e9ea7",
+  "name" : "tracker",
+  "time" : {
+    "start" : 1634980956962,
+    "stop" : 1634980964210,
+    "duration" : 7248
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2822d90f58828129",
+  "name" : "test_toggle_lights",
+  "time" : {
+    "start" : 1634980939543,
+    "stop" : 1634980939545,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3b4dc1cff32ab8b5",
+  "name" : "test_mock_ssl_no_port",
+  "time" : {
+    "start" : 1634980939540,
+    "stop" : 1634980939541,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8e5cf968ed223054",
+  "name" : "add item",
+  "time" : {
+    "start" : 1634980965062,
+    "stop" : 1634980965597,
+    "duration" : 535
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c9bb1b09fa98623b",
+  "name" : "test_broke_entity",
+  "time" : {
+    "start" : 1634980939497,
+    "stop" : 1634980939497,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8d8bdd55cec8f136",
+  "name" : "set light brightness",
+  "time" : {
+    "start" : 1634980954558,
+    "stop" : 1634980954974,
+    "duration" : 416
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4b08d16ca0d2d34e",
+  "name" : "toggle on switch",
+  "time" : {
+    "start" : 1634980944937,
+    "stop" : 1634980945570,
+    "duration" : 633
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f85dce8d5fac89",
+  "name" : "increase light brightness",
+  "time" : {
+    "start" : 1634980954975,
+    "stop" : 1634980955349,
+    "duration" : 374
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a10f3b948883605d",
+  "name" : "set climate temperature",
+  "time" : {
+    "start" : 1634980964211,
+    "stop" : 1634980965061,
+    "duration" : 850
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a2cc9c2d9de05556",
+  "name" : "toggle off switch",
+  "time" : {
+    "start" : 1634980944547,
+    "stop" : 1634980944935,
+    "duration" : 388
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b78077b296577c55",
+  "name" : "decrease light brightness",
+  "time" : {
+    "start" : 1634980955351,
+    "stop" : 1634980955920,
+    "duration" : 569
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
