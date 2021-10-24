@@ -199,6 +199,34 @@ class HomeAssistantClient:
                     return entity_attr
         return None
 
+    def list_entities(self, types):
+        """List all entities matching domains used within our skill
+        and return them as list.
+
+        Throws request Exceptions
+        (Subclasses of ConnectionError or RequestException,
+          raises HTTPErrors if non-Ok status code)
+        """
+
+        json_data = self._get_state()
+        entities = []
+        if json_data:
+            for state in json_data:
+                try:
+                    entity_id = state['entity_id'].split(".")
+                    domain = entity_id[0]
+                    entity = entity_id[1]
+                    if domain in types:
+                        """Domain of Entity is in handled types.
+                        Add Entity and its friendly name to list.
+                        """
+                        entities.append(entity)
+                        entities.append(state['attributes']
+                                        ['friendly_name'].lower())
+                except KeyError:
+                    pass
+        return entities
+
     def execute_service(self, domain, service, data):
         """Execute service at HAServer
 

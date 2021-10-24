@@ -1,6 +1,8 @@
 """
 Home Assistant skill
 """  # pylint: disable=C0103
+from os.path import join as pth_join
+
 from mycroft import MycroftSkill, intent_handler
 from mycroft.skills.core import FallbackSkill
 from mycroft.util.format import nice_number
@@ -76,9 +78,28 @@ class HomeAssistantSkill(FallbackSkill):
                     self.enable_fallback = \
                         self.settings.get('enable_fallback')
 
+                # Register tracker entities
+                self._list_tracker_entities()
+
     def _force_setup(self):
         self.log.debug('Creating a new HomeAssistant-Client')
         self._setup(True)
+
+    def _list_tracker_entities(self):
+        """List tracker entities.
+
+        Add them to entity file and registry it so
+        Padatious react only to known entities.
+        Should fix conflict with Where is skill.
+        """
+        types = ['device_tracker']
+        entities = self.ha_client.list_entities(types)
+
+        if entities:
+            entity_file = pth_join(self.root_dir, 'vocab', 'tracker.entity')
+            with open(entity_file, 'w', encoding='utf8') as voc_file:
+                voc_file.write('\n'.join(entities))
+            self.register_entity_file('tracker.entity')
 
     def initialize(self):
         """Initialize skill, set language and priority."""
@@ -249,8 +270,8 @@ class HomeAssistantSkill(FallbackSkill):
     @intent_handler('tracker.intent')
     def handle_tracker_intent(self, message):
         """Handle tracker intent."""
-        self.log.debug("Turn on intent on entity: %s", message.data.get("entity"))
-        message.data["Entity"] = message.data.get("entity")
+        self.log.debug("Turn on intent on entity: %s", message.data.get("tracker"))
+        message.data["Entity"] = message.data.get("tracker")
         self._handle_tracker(message)
 
     @intent_handler('set.climate.intent')
