@@ -6,13 +6,13 @@
       "name" : "AssertionError: None != 'fe80::7:8%eth0'",
       "children" : [ {
         "name" : "test_ip_six_all",
-        "uid" : "f2dd564331789ce9",
+        "uid" : "36199995be97cf36",
         "parentUid" : "fd20b1c02f36c9a2f766d200238b92b3",
         "status" : "failed",
         "time" : {
-          "start" : 1635096465984,
-          "stop" : 1635096465986,
-          "duration" : 2
+          "start" : 1635097199481,
+          "stop" : 1635097199482,
+          "duration" : 1
         },
         "flaky" : false,
         "newFailed" : false,
