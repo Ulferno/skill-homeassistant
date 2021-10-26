@@ -8,25 +8,25 @@
         "name" : "TestHaClient",
         "children" : [ {
           "name" : "test_broke_entity",
-          "uid" : "9d3006b0cca6237e",
+          "uid" : "a40c828b7d1b4ea1",
           "parentUid" : "6a5db4e4f5d87d0893c65bd9757583a6",
           "status" : "passed",
           "time" : {
-            "start" : 1634983379020,
-            "stop" : 1634983379021,
-            "duration" : 1
+            "start" : 1635242430227,
+            "stop" : 1635242430227,
+            "duration" : 0
           },
           "flaky" : false,
           "newFailed" : false,
           "parameters" : [ ]
         }, {
           "name" : "test_check_ip_with_hostname",
-          "uid" : "91bf946ef1799122",
+          "uid" : "2ad03cbcc193ff30",
           "parentUid" : "6a5db4e4f5d87d0893c65bd9757583a6",
           "status" : "passed",
           "time" : {
-            "start" : 1634983379022,
-            "stop" : 1634983379025,
+            "start" : 1635242430229,
+            "stop" : 1635242430232,
             "duration" : 3
           },
           "flaky" : false,
@@ -34,12 +34,12 @@
           "parameters" : [ ]
         }, {
           "name" : "test_check_ip_with_ip_four",
-          "uid" : "852390369b9bfeb2",
+          "uid" : "42d641428d4daf8d",
           "parentUid" : "6a5db4e4f5d87d0893c65bd9757583a6",
           "status" : "passed",
           "time" : {
-            "start" : 1634983379027,
-            "stop" : 1634983379027,
+            "start" : 1635242430234,
+            "stop" : 1635242430234,
             "duration" : 0
           },
           "flaky" : false,
@@ -47,38 +47,38 @@
           "parameters" : [ ]
         }, {
           "name" : "test_check_ip_with_ip_six",
-          "uid" : "5fff2b428c4d7d73",
+          "uid" : "bc6bff86ac7e7bdc",
           "parentUid" : "6a5db4e4f5d87d0893c65bd9757583a6",
           "status" : "passed",
           "time" : {
-            "start" : 1634983379028,
-            "stop" : 1634983379029,
-            "duration" : 1
+            "start" : 1635242430235,
+            "stop" : 1635242430235,
+            "duration" : 0
           },
           "flaky" : false,
           "newFailed" : false,
           "parameters" : [ ]
         }, {
           "name" : "test_light_nossl",
-          "uid" : "f5ee916d01266a8f",
+          "uid" : "53c0554de568bb10",
           "parentUid" : "6a5db4e4f5d87d0893c65bd9757583a6",
           "status" : "passed",
           "time" : {
-            "start" : 1634983379030,
-            "stop" : 1634983379055,
-            "duration" : 25
+            "start" : 1635242430237,
+            "stop" : 1635242430261,
+            "duration" : 24
           },
           "flaky" : false,
           "newFailed" : false,
           "parameters" : [ ]
         }, {
           "name" : "test_mock_ssl",
-          "uid" : "33106175580ddc10",
+          "uid" : "577880298972526a",
           "parentUid" : "6a5db4e4f5d87d0893c65bd9757583a6",
           "status" : "passed",
           "time" : {
-            "start" : 1634983379057,
-            "stop" : 1634983379058,
+            "start" : 1635242430263,
+            "stop" : 1635242430264,
             "duration" : 1
           },
           "flaky" : false,
@@ -86,12 +86,12 @@
           "parameters" : [ ]
         }, {
           "name" : "test_mock_ssl_no_port",
-          "uid" : "756f188a5f696d1e",
+          "uid" : "50e2b8b943f3c5ad",
           "parentUid" : "6a5db4e4f5d87d0893c65bd9757583a6",
           "status" : "passed",
           "time" : {
-            "start" : 1634983379059,
-            "stop" : 1634983379060,
+            "start" : 1635242430265,
+            "stop" : 1635242430266,
             "duration" : 1
           },
           "flaky" : false,
@@ -99,12 +99,12 @@
           "parameters" : [ ]
         }, {
           "name" : "test_toggle_lights",
-          "uid" : "99a9214894f96a3e",
+          "uid" : "8005042050359907",
           "parentUid" : "6a5db4e4f5d87d0893c65bd9757583a6",
           "status" : "passed",
           "time" : {
-            "start" : 1634983379062,
-            "stop" : 1634983379063,
+            "start" : 1635242430268,
+            "stop" : 1635242430269,
             "duration" : 1
           },
           "flaky" : false,
@@ -120,182 +120,182 @@
     "name" : "behave",
     "children" : [ {
       "name" : "read sensor",
-      "uid" : "6531df99fe86fdc6",
+      "uid" : "ab99a418786bda43",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983382866,
-        "stop" : 1634983384481,
-        "duration" : 1615
+        "start" : 1635242434212,
+        "stop" : 1635242435171,
+        "duration" : 959
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "turn on switch",
-      "uid" : "7647206d4299a71c",
+      "uid" : "45d75de59909fe7a",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983384486,
-        "stop" : 1634983384944,
-        "duration" : 458
+        "start" : 1635242435172,
+        "stop" : 1635242435553,
+        "duration" : 381
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "toggle off switch",
-      "uid" : "7e1ef4bb452c8c86",
+      "uid" : "cff7aab5bafc0b8e",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983384947,
-        "stop" : 1634983385313,
-        "duration" : 366
+        "start" : 1635242435554,
+        "stop" : 1635242435939,
+        "duration" : 385
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "toggle on switch",
-      "uid" : "a4a4f1249ceb9199",
+      "uid" : "1c663b537aa9734",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983385315,
-        "stop" : 1634983385971,
-        "duration" : 656
+        "start" : 1635242435940,
+        "stop" : 1635242436573,
+        "duration" : 633
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "turn off switch",
-      "uid" : "19bd88056fb8f39b",
+      "uid" : "b897efa9604e3174",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983385972,
-        "stop" : 1634983391585,
-        "duration" : 5613
+        "start" : 1635242436574,
+        "stop" : 1635242443727,
+        "duration" : 7153
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "turn on light",
-      "uid" : "e6ad9cdf07848c7",
+      "uid" : "1c44b689d18a8b0f",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983391586,
-        "stop" : 1634983394925,
-        "duration" : 3339
+        "start" : 1635242443728,
+        "stop" : 1635242445563,
+        "duration" : 1835
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "set light brightness",
-      "uid" : "a174ffb4b0489405",
+      "uid" : "7d9f2c46cd62ff9",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983394926,
-        "stop" : 1634983395319,
-        "duration" : 393
+        "start" : 1635242445564,
+        "stop" : 1635242445964,
+        "duration" : 400
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "increase light brightness",
-      "uid" : "a926e76bf63631c6",
+      "uid" : "2bf4d8276b1f4200",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983395320,
-        "stop" : 1634983395729,
-        "duration" : 409
+        "start" : 1635242445965,
+        "stop" : 1635242446341,
+        "duration" : 376
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "decrease light brightness",
-      "uid" : "c0ab24061523577b",
+      "uid" : "57a082f2850405e5",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983395731,
-        "stop" : 1634983396318,
-        "duration" : 587
+        "start" : 1635242446342,
+        "stop" : 1635242446917,
+        "duration" : 575
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "turn off light",
-      "uid" : "6b0f9a5af7dd632b",
+      "uid" : "978653acb5345bc8",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983396319,
-        "stop" : 1634983397055,
-        "duration" : 736
+        "start" : 1635242446918,
+        "stop" : 1635242447655,
+        "duration" : 737
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "triger automation",
-      "uid" : "2c0bf62651940695",
+      "uid" : "1fc8935adfe833f6",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983397056,
-        "stop" : 1634983398086,
-        "duration" : 1030
+        "start" : 1635242447656,
+        "stop" : 1635242448687,
+        "duration" : 1031
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "tracker",
-      "uid" : "458a4e65e535e70c",
+      "uid" : "e9ffa4b895cfa3dc",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983398087,
-        "stop" : 1634983404582,
-        "duration" : 6495
+        "start" : 1635242448688,
+        "stop" : 1635242455267,
+        "duration" : 6579
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "set climate temperature",
-      "uid" : "2f44c93f010ea553",
+      "uid" : "b2b224aba81332d4",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983404583,
-        "stop" : 1634983405398,
-        "duration" : 815
+        "start" : 1635242455268,
+        "stop" : 1635242456008,
+        "duration" : 740
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "add item",
-      "uid" : "23d8e01c4f4ceec9",
+      "uid" : "8dddcff104ce6d20",
       "parentUid" : "bf0a5b53b63c35fccb9af88cbe00a7da",
       "status" : "passed",
       "time" : {
-        "start" : 1634983405399,
-        "stop" : 1634983405958,
-        "duration" : 559
+        "start" : 1635242456010,
+        "stop" : 1635242456596,
+        "duration" : 586
       },
       "flaky" : false,
       "newFailed" : false,
