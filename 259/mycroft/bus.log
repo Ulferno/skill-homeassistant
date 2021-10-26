@@ -1,0 +1,35 @@
+2021-10-26 09:42:41.053 | INFO     |  5790 | __main__:main:50 | Starting message bus service...
+2021-10-26 09:42:41.070 | INFO     |  5790 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-26 09:42:41.079 | INFO     |  5790 | __main__:on_ready:37 | Message bus service started!
+2021-10-26 09:42:41.104 | INFO     |  5790 | tornado.access | 101 GET /core (127.0.0.1) 0.67ms
+2021-10-26 09:42:41.120 | INFO     |  5790 | tornado.access | 101 GET /core (127.0.0.1) 0.43ms
+2021-10-26 09:42:41.247 | INFO     |  5790 | tornado.access | 101 GET /core (127.0.0.1) 0.47ms
+2021-10-26 09:42:41.251 | INFO     |  5790 | tornado.access | 101 GET /core (127.0.0.1) 0.50ms
+2021-10-26 09:42:41.302 | INFO     |  5790 | tornado.access | 101 GET /core (127.0.0.1) 0.54ms
+2021-10-26 09:43:37.398 | ERROR    |  5790 | tornado.application | Uncaught exception GET /core (127.0.0.1)
+HTTPServerRequest(protocol='http', host='0.0.0.0:8181', method='GET', uri='/core', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/tornado/websocket.py", line 649, in _run_callback
+    result = callback(*args, **kwargs)
+  File "/opt/mycroft-core/mycroft/messagebus/service/event_handler.py", line 53, in on_message
+    client.write_message(message)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/tornado/websocket.py", line 339, in write_message
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
+2021-10-26 09:43:37.399 | ERROR    |  5790 | asyncio | Task exception was never retrieved
+future: <Task finished coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at /opt/mycroft-core/.venv/lib/python3.7/site-packages/tornado/websocket.py:1102> exception=WebSocketClosedError()>
+Traceback (most recent call last):
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/tornado/websocket.py", line 1104, in wrapper
+    await fut
+tornado.iostream.StreamClosedError: Stream is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/tornado/websocket.py", line 1106, in wrapper
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
+2021-10-26 09:43:42.407 | INFO     |  5790 | tornado.access | 101 GET /core (127.0.0.1) 0.56ms
+2021-10-26 09:43:50.987 | INFO     |  5790 | tornado.access | 101 GET /core (127.0.0.1) 0.55ms
+2021-10-26 09:43:50.994 | INFO     |  5790 | tornado.access | 101 GET /core (127.0.0.1) 0.40ms
+2021-10-26 09:46:03.936 | INFO     |  5790 | __main__:on_stopping:45 | Message bus is shutting down...
