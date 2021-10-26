@@ -1,0 +1,11 @@
+2021-10-26 14:57:23.473 | INFO     |  5340 | __main__:create_enclosure:55 | Creating generic enclosure, platform='None'
+2021-10-26 14:57:23.486 | INFO     |  5340 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-26 14:57:23.488 | INFO     |  5340 | mycroft.client.enclosure.base:create_gui_service:473 | Starting message bus for GUI...
+2021-10-26 14:57:23.490 | INFO     |  5340 | mycroft.client.enclosure.base:create_gui_service:483 | GUI Message bus started!
+2021-10-26 14:57:23.491 | INFO     |  5340 | mycroft.enclosure.display_manager:init_display_manager_bus_connection:152 | Connecting display manager to messagebus
+2021-10-26 14:57:23.491 | INFO     |  5340 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-26 14:57:23.495 | INFO     |  5340 | mycroft_bus_client.client.client | Connected
+2021-10-26 14:57:23.611 | INFO     |  5340 | mycroft_bus_client.client.client | Connected
+2021-10-26 14:57:23.613 | INFO     |  5340 | mycroft.util.process_utils:start_message_bus_client:155 | Connected to messagebus
+2021-10-26 14:57:23.613 | INFO     |  5340 | __main__:on_ready:26 | Enclosure started!
+2021-10-26 15:00:46.972 | INFO     |  5340 | __main__:on_stopping:30 | Enclosure is shutting down...
