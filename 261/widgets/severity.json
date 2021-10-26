@@ -1,0 +1,81 @@
+[ {
+  "uid" : "2892ed71fd39822b",
+  "name" : "test_mock_ssl_no_port",
+  "time" : {
+    "start" : 1635244045446,
+    "stop" : 1635244045446,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f22cbe551ab37a33",
+  "name" : "test_light_nossl",
+  "time" : {
+    "start" : 1635244045419,
+    "stop" : 1635244045442,
+    "duration" : 23
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "62f11fc8171df877",
+  "name" : "test_check_ip_with_ip_six",
+  "time" : {
+    "start" : 1635244045418,
+    "stop" : 1635244045418,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a3ff9a5129c38f99",
+  "name" : "test_broke_entity",
+  "time" : {
+    "start" : 1635244045410,
+    "stop" : 1635244045410,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "62446ce3918b201d",
+  "name" : "test_mock_ssl",
+  "time" : {
+    "start" : 1635244045444,
+    "stop" : 1635244045444,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "43032b3263d5df2d",
+  "name" : "test_check_ip_with_ip_four",
+  "time" : {
+    "start" : 1635244045416,
+    "stop" : 1635244045416,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d2732aa8f19434d2",
+  "name" : "test_check_ip_with_hostname",
+  "time" : {
+    "start" : 1635244045412,
+    "stop" : 1635244045414,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "83b581328461c926",
+  "name" : "test_toggle_lights",
+  "time" : {
+    "start" : 1635244045448,
+    "stop" : 1635244045449,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
