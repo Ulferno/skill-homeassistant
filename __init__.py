@@ -22,6 +22,16 @@ __author__ = 'robconnolly, btotharye, nielstron'
 TIMEOUT = 10
 
 
+def _get_nice_number(number: str) -> str:
+    """Convert number to nice formated number"""
+    try:
+        return nice_number(float(number))
+    except TypeError:
+        return number
+    except ValueError:
+        return number
+
+
 # pylint: disable=R0912, W0105, W0511, W0233
 class HomeAssistantSkill(FallbackSkill):
     """Main skill class"""
@@ -471,7 +481,7 @@ class HomeAssistantSkill(FallbackSkill):
             return
 
         ha_entity = self._find_entity(entity, ['cover'])
-        # Exit if entity not found or is unavailabe
+        # Exit if entity not found or is unavailable
         if not ha_entity or not self._check_availability(ha_entity):
             return
 
@@ -626,7 +636,23 @@ class HomeAssistantSkill(FallbackSkill):
             self.ha_client.execute_service("scene", "turn_on",
                                            data=ha_data)
 
-    def _handle_sensor(self, message: Message) -> None:
+    def _dialog_sensor_climate(self, name: str, state: str, attr: dict) -> None:
+        """Handle dialogs for sensor climate."""
+        current_temp = _get_nice_number(attr['current_temperature'])
+        target_temp = _get_nice_number(attr['temperature'])
+        if current_temp:
+            self.speak_dialog('homeassistant.sensor.thermostat.current', data={
+                "dev_name": name,
+                "value": state,
+                "current_temp": current_temp,
+                "targeted_temp": target_temp})
+        else:
+            self.speak_dialog('homeassistant.sensor.thermostat', data={
+                "dev_name": name,
+                "value": state,
+                "targeted_temp": target_temp})
+
+    def _handle_sensor(self, message) -> None:
         """Handler sensors reading"""
         entity = message.data["Entity"]
         self.log.debug("Entity: %s", entity)
@@ -670,20 +696,10 @@ class HomeAssistantSkill(FallbackSkill):
                     sensor_unit = quantity.unit.name
                     sensor_state = quantity.value
 
-        try:
-            value = float(sensor_state)
-            sensor_state = nice_number(value, lang=self.language)
-        except ValueError:
-            pass
+        sensor_state = _get_nice_number(sensor_state)
 
         if domain == "climate" and sensor_state != '':
-            current_temp = nice_number((float(attributes['current_temperature'])))
-            target_temp = nice_number((float(attributes['temperature'])))
-            self.speak_dialog('homeassistant.sensor.thermostat', data={
-                "dev_name": sensor_name,
-                "value": sensor_state,
-                "current_temp": current_temp,
-                "targeted_temp": target_temp})
+            self._dialog_sensor_climate(sensor_name, sensor_state, attributes)
 
             self._display_sensor_dialog(
                 sensor_name,
