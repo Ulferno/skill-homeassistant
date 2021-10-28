@@ -1,0 +1,49 @@
+2021-10-28 21:51:56.622 | INFO     |  5339 | __main__:create_enclosure:55 | Creating generic enclosure, platform='None'
+2021-10-28 21:51:56.651 | INFO     |  5339 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-28 21:51:56.653 | INFO     |  5339 | mycroft.client.enclosure.base:create_gui_service:473 | Starting message bus for GUI...
+2021-10-28 21:51:56.660 | INFO     |  5339 | mycroft.client.enclosure.base:create_gui_service:483 | GUI Message bus started!
+2021-10-28 21:51:56.661 | INFO     |  5339 | mycroft.enclosure.display_manager:init_display_manager_bus_connection:152 | Connecting display manager to messagebus
+2021-10-28 21:51:56.662 | INFO     |  5339 | mycroft.messagebus.load_config:load_message_bus_config:33 | Loading message bus configs
+2021-10-28 21:51:56.664 | INFO     |  5339 | mycroft_bus_client.client.client | Connected
+2021-10-28 21:51:56.730 | INFO     |  5339 | mycroft_bus_client.client.client | Connected
+2021-10-28 21:51:56.732 | INFO     |  5339 | mycroft.util.process_utils:start_message_bus_client:155 | Connected to messagebus
+2021-10-28 21:51:56.733 | INFO     |  5339 | __main__:on_ready:26 | Enclosure started!
+2021-10-28 21:52:54.063 | ERROR    |  5339 | concurrent.futures | exception calling callback for <Future at 0x7fd5cb66cd90 state=finished raised FileExistsError>
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/concurrent/futures/_base.py", line 324, in _invoke_callbacks
+    callback(self)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/pyee/_executor.py", line 56, in _callback
+    self.emit('error', exc)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/pyee/_base.py", line 116, in emit
+    self._emit_handle_potential_error(event, args[0] if args else None)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/pyee/_base.py", line 86, in _emit_handle_potential_error
+    raise error
+  File "/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/opt/mycroft-core/mycroft/configuration/config.py", line 289, in updated
+    Configuration.load_config_stack(cache=True)
+  File "/opt/mycroft-core/mycroft/configuration/config.py", line 241, in load_config_stack
+    configs.append(RemoteConf())
+  File "/opt/mycroft-core/mycroft/configuration/config.py", line 132, in __init__
+    cache = cache or join(xdg.BaseDirectory.save_cache_path('mycroft'),
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/xdg/BaseDirectory.py", line 81, in save_cache_path
+    os.makedirs(path)
+  File "/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/os.py", line 223, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: '/home/runner/.cache/mycroft'
+2021-10-28 21:54:07.323 | ERROR    |  5339 | concurrent.futures | exception calling callback for <Future at 0x7fd5cb699bd0 state=finished raised Exception>
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/concurrent/futures/_base.py", line 324, in _invoke_callbacks
+    callback(self)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/pyee/_executor.py", line 56, in _callback
+    self.emit('error', exc)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/pyee/_base.py", line 116, in emit
+    self._emit_handle_potential_error(event, args[0] if args else None)
+  File "/opt/mycroft-core/.venv/lib/python3.7/site-packages/pyee/_base.py", line 86, in _emit_handle_potential_error
+    raise error
+  File "/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/opt/mycroft-core/mycroft/client/enclosure/generic/__init__.py", line 72, in is_device_ready
+    raise Exception('Timeout waiting for services start.')
+Exception: Timeout waiting for services start.
+2021-10-28 21:54:11.639 | INFO     |  5339 | __main__:on_stopping:30 | Enclosure is shutting down...
