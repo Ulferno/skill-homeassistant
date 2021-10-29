@@ -31,7 +31,10 @@ class HomeAssistantSkill(FallbackSkill):
     def _setup(self, force=False):
         if self.settings is not None and (force or self.ha_client is None):
             # Check if user filled IP, port and Token in configuration
-            ip_address = check_url(self.settings.get('host'))
+            ip_debug = self.settings.get('host')
+            self.log.error(f"type: {type(ip_debug)}")
+            self.log.error(f"content: {ip_debug}")
+            ip_address = check_url(ip_debug)
             token = self.settings.get('token')
 
             """Inform user if ip/url or token not or incorrectly filed"""
