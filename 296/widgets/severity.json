@@ -1,0 +1,171 @@
+[ {
+  "uid" : "f2cb97e55df14744",
+  "name" : "read sensor",
+  "time" : {
+    "start" : 1638917008572,
+    "stop" : 1638917029178,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "f0ee283d481345dd",
+  "name" : "turn off light",
+  "time" : {
+    "start" : 1638917194024,
+    "stop" : 1638917214629,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "d6c2aa9d3af0c8e4",
+  "name" : "where skill conflict> -- @1.3 where skill conflict",
+  "time" : {
+    "start" : 1638917257048,
+    "stop" : 1638917257651,
+    "duration" : 603
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "a315fcf337e8610e",
+  "name" : "turn on switch",
+  "time" : {
+    "start" : 1638917029179,
+    "stop" : 1638917049784,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "66935d919f3a7497",
+  "name" : "tracker",
+  "time" : {
+    "start" : 1638917235236,
+    "stop" : 1638917255841,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "60e0a91059bab480",
+  "name" : "triger automation",
+  "time" : {
+    "start" : 1638917214630,
+    "stop" : 1638917235234,
+    "duration" : 20604
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "13a6cda550b0b1f",
+  "name" : "set light brightness",
+  "time" : {
+    "start" : 1638917132207,
+    "stop" : 1638917152812,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "be987895f10ab8f6",
+  "name" : "increase light brightness",
+  "time" : {
+    "start" : 1638917152813,
+    "stop" : 1638917173417,
+    "duration" : 20604
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "e772968a1cda379b",
+  "name" : "where skill conflict> -- @1.2 where skill conflict",
+  "time" : {
+    "start" : 1638917256445,
+    "stop" : 1638917257048,
+    "duration" : 603
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9cd9782f35d50134",
+  "name" : "where skill conflict> -- @1.1 where skill conflict",
+  "time" : {
+    "start" : 1638917255842,
+    "stop" : 1638917256444,
+    "duration" : 602
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "af22e7ff57123461",
+  "name" : "set climate temperature",
+  "time" : {
+    "start" : 1638917257652,
+    "stop" : 1638917278257,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "645c0a332388d91d",
+  "name" : "toggle on switch",
+  "time" : {
+    "start" : 1638917070390,
+    "stop" : 1638917090995,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "3cc10524accf89b",
+  "name" : "toggle off switch",
+  "time" : {
+    "start" : 1638917049785,
+    "stop" : 1638917070389,
+    "duration" : 20604
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "4b0b14142b62213c",
+  "name" : "turn on light",
+  "time" : {
+    "start" : 1638917111602,
+    "stop" : 1638917132206,
+    "duration" : 20604
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "4a407849fbbdd635",
+  "name" : "turn off switch",
+  "time" : {
+    "start" : 1638917090996,
+    "stop" : 1638917111601,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "e58a2c056eb8d4e0",
+  "name" : "decrease light brightness",
+  "time" : {
+    "start" : 1638917173418,
+    "stop" : 1638917194023,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "fe4971fb23a3a6c1",
+  "name" : "add item",
+  "time" : {
+    "start" : 1638917278258,
+    "stop" : 1638917298863,
+    "duration" : 20605
+  },
+  "status" : "failed",
+  "severity" : "normal"
+} ]
