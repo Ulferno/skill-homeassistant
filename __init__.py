@@ -5,6 +5,7 @@ from os.path import join as pth_join
 
 from mycroft import MycroftSkill, intent_handler
 from mycroft.skills.core import FallbackSkill
+from mycroft.util import get_cache_directory
 from mycroft.util.format import nice_number
 from quantulum3 import parser
 from requests.exceptions import (HTTPError, InvalidURL, RequestException,
@@ -79,13 +80,13 @@ class HomeAssistantSkill(FallbackSkill):
                         self.settings.get('enable_fallback')
 
                 # Register tracker entities
-                self._list_tracker_entities()
+                self._register_tracker_entities()
 
     def _force_setup(self):
         self.log.debug('Creating a new HomeAssistant-Client')
         self._setup(True)
 
-    def _list_tracker_entities(self):
+    def _register_tracker_entities(self):
         """List tracker entities.
 
         Add them to entity file and registry it so
@@ -96,10 +97,13 @@ class HomeAssistantSkill(FallbackSkill):
         entities = self.ha_client.list_entities(types)
 
         if entities:
-            entity_file = pth_join(self.root_dir, 'vocab', 'tracker.entity')
-            with open(entity_file, 'w', encoding='utf8') as voc_file:
+            cache_dir = get_cache_directory(type(self).__name__)
+            self.tracker_file = pth_join(cache_dir, "tracker.entity")
+            self.cache_data()
+
+            with open(self.tracker_file, 'w', encoding='utf8') as voc_file:
                 voc_file.write('\n'.join(entities))
-            self.register_entity_file('tracker.entity')
+            self.register_entity_file(self.tracker_file)
 
     def initialize(self):
         """Initialize skill, set language and priority."""
