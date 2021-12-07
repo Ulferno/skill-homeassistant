@@ -5,13 +5,13 @@ Handle connection between skill and HA instance trough websocket.
 import ipaddress
 import json
 import re
-
+from typing import List
 
 from fuzzywuzzy import fuzz
 from requests import get, post
 from requests.exceptions import RequestException, Timeout
 from requests.models import Response
-from typing import Dict, List
+
 
 __author__ = 'btotharye'
 

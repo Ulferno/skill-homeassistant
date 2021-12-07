@@ -4,8 +4,8 @@ Home Assistant skill
 from os.path import join as pth_join
 
 from mycroft import MycroftSkill, intent_handler
-from mycroft.skills.core import FallbackSkill
 from mycroft.messagebus.message import Message
+from mycroft.skills.core import FallbackSkill
 from mycroft.util import get_cache_directory
 from mycroft.util.format import nice_number
 from quantulum3 import parser
