@@ -12,7 +12,6 @@ from requests import get, post
 from requests.exceptions import RequestException, Timeout
 from requests.models import Response
 
-
 __author__ = 'btotharye'
 
 # Timeout time for HA requests

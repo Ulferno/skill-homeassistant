@@ -31,6 +31,7 @@ class HomeAssistantSkill(FallbackSkill):
         super().__init__(name="HomeAssistantSkill")
         self.ha_client = None
         self.enable_fallback = False
+        self.tracker_file = ""
 
     def _setup(self, force: bool = False) -> None:
         if self.settings is not None and (force or self.ha_client is None):
@@ -100,7 +101,6 @@ class HomeAssistantSkill(FallbackSkill):
         if entities:
             cache_dir = get_cache_directory(type(self).__name__)
             self.tracker_file = pth_join(cache_dir, "tracker.entity")
-            self.cache_data()
 
             with open(self.tracker_file, 'w', encoding='utf8') as voc_file:
                 voc_file.write('\n'.join(entities))
