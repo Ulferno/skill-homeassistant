@@ -6,9 +6,12 @@ import ipaddress
 import json
 import re
 
+
 from fuzzywuzzy import fuzz
 from requests import get, post
 from requests.exceptions import RequestException, Timeout
+from requests.models import Response
+from typing import Dict, List
 
 __author__ = 'btotharye'
 
@@ -48,6 +51,12 @@ def check_url(ip_address: str) -> str:
 
     First regex check for IPv6.
     If nothing found, second regex try to find IPv4 and domains names.
+
+    Args:
+        ip_address: String with ip address set by user.
+
+    Returns:
+        Ip address found by regex.
     """
     if not ip_address:
         return
@@ -95,12 +104,15 @@ class HomeAssistantClient:
             'Content-Type': 'application/json'
         }
 
-    def _get_state(self):
+    def _get_state(self) -> json:
         """Get state object
 
         Throws request Exceptions
         (Subclasses of ConnectionError or RequestException,
           raises HTTPErrors if non-Ok status code)
+
+        Returns:
+            Json containing response from HA.
         """
         if self.ssl:
             req = get(f"{self.url}/api/states", headers=self.headers,
@@ -111,20 +123,27 @@ class HomeAssistantClient:
         req.raise_for_status()
         return req.json()
 
-    def connected(self):
-        """Get state form HA instance"""
+    def connected(self) -> bool:
+        """Simple connection test to HA instance
+
+        Returns:
+            Return false if any of errors occur
+        """
         try:
             self._get_state()
             return True
         except (Timeout, ConnectionError, RequestException):
             return False
 
-    def find_entity(self, entity, types):
+    def find_entity(self, entity: str, types: list(str)) -> dict:
         """Find entity with specified name, fuzzy matching
 
         Throws request Exceptions
         (Subclasses of ConnectionError or RequestException,
           raises HTTPErrors if non-Ok status code)
+
+        Returns:
+            Dict represeting entity
         """
         json_data = self._get_state()
         # require a score above 50%
@@ -165,12 +184,15 @@ class HomeAssistantClient:
                     pass
         return best_entity
 
-    def find_entity_attr(self, entity):
-        """checking the entity attributes to be used in the response dialog.
+    def find_entity_attr(self, entity: str) -> dict:
+        """Get the entity attributes to be used in the response dialog.
 
         Throws request Exceptions
         (Subclasses of ConnectionError or RequestException,
           raises HTTPErrors if non-Ok status code)
+
+        Returns:
+            Dict with entity's attributes
         """
         json_data = self._get_state()
 
@@ -199,13 +221,15 @@ class HomeAssistantClient:
                     return entity_attr
         return None
 
-    def list_entities(self, types):
+    def list_entities(self, types: List[str]) -> List[str, str]:
         """List all entities matching domains used within our skill
-        and return them as list.
 
         Throws request Exceptions
         (Subclasses of ConnectionError or RequestException,
           raises HTTPErrors if non-Ok status code)
+
+        Returns:
+            List with entity and it's friendly name
         """
 
         json_data = self._get_state()
@@ -227,12 +251,15 @@ class HomeAssistantClient:
                     pass
         return entities
 
-    def execute_service(self, domain, service, data):
+    def execute_service(self, domain: str, service: str, data: dict) -> Response:
         """Execute service at HAServer
 
         Throws request Exceptions
         (Subclasses of ConnectionError or RequestException,
           raises HTTPErrors if non-Ok status code)
+
+        Returns:
+            HA response
         """
         if self.ssl:
             req = post(f"{self.url}/api/services/{domain}/{service}",
@@ -245,12 +272,15 @@ class HomeAssistantClient:
         req.raise_for_status()
         return req
 
-    def find_component(self, component):
+    def find_component(self, component: str) -> bool:
         """Check if a component is loaded at the HA-Server
 
         Throws request Exceptions
         (Subclasses of ConnectionError or RequestException,
           raises HTTPErrors if non-Ok status code)
+
+        Returns:
+            True/False if component found in response
         """
         if self.ssl:
             req = get(f"{self.url}/api/components",
@@ -263,7 +293,7 @@ class HomeAssistantClient:
         req.raise_for_status()
         return component in req.json()
 
-    def engage_conversation(self, utterance):
+    def engage_conversation(self, utterance: str) -> dict:
         """Engage the conversation component at the Home Assistant server
 
         Throws request Exceptions
@@ -271,7 +301,8 @@ class HomeAssistantClient:
           raises HTTPErrors if non-Ok status code)
         Attributes:
             utterance    raw text message to be processed
-        Return:
+
+        Returns:
             Dict answer by Home Assistant server
             { 'speech': textual answer,
               'extra_data': ...}
