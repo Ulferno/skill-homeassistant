@@ -1,0 +1,158 @@
+{
+  "uid" : "f4cd71b223245d9b",
+  "name" : "decrease light brightness",
+  "historyId" : "c083537c88c89adea9828a20adea4854",
+  "time" : {
+    "start" : 1638950635366,
+    "stop" : 1638950655972,
+    "duration" : 20606
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: unknown.dialog(UnknownSkill)\n\"I'm sorry, I don't understand.\"\n\n",
+  "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: unknown.dialog(UnknownSkill)\n\"I'm sorry, I don't understand.\"\n\n",
+    "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+    "steps" : [ {
+      "name" : "Given an English speaking user",
+      "time" : {
+        "start" : 1638950635367,
+        "stop" : 1638950635367,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When the user says \"decrease the brightness of bathroom light please\"",
+      "time" : {
+        "start" : 1638950635367,
+        "stop" : 1638950635367,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then \"homeassistant\" should reply with dialog from \"homeassistant.brightness.decreased\"",
+      "time" : {
+        "start" : 1638950635367,
+        "stop" : 1638950645368,
+        "duration" : 10001
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: unknown.dialog(UnknownSkill)\n\"Please rephrase your request.\"\n\n",
+      "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    }, {
+      "name" : "Given an English speaking user",
+      "time" : {
+        "start" : 1638950645670,
+        "stop" : 1638950645670,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When the user says \"decrease the brightness of bathroom light please\"",
+      "time" : {
+        "start" : 1638950645670,
+        "stop" : 1638950645670,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then \"homeassistant\" should reply with dialog from \"homeassistant.brightness.decreased\"",
+      "time" : {
+        "start" : 1638950645670,
+        "stop" : 1638950655671,
+        "duration" : 10001
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Mycroft responded with:\nMycroft: unknown.dialog(UnknownSkill)\n\"I'm sorry, I don't understand.\"\n\n",
+      "statusTrace" : "  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/model.py\", line 1806, in run\n    match.run(runner.context)\n  File \"/opt/mycroft-core/.venv/lib/python3.7/site-packages/behave/matchers.py\", line 97, in run\n    self.func(context, *args, **kwargs)\n  File \"features/steps/utterance_responses.py\", line 157, in then_dialog\n    assert passed, assert_msg or 'Mycroft didn\\'t respond'\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite",
+    "value" : "behave"
+  }, {
+    "name" : "feature",
+    "value" : "decrease brightness"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "f4cd71b223245d9b.json",
+  "parameterValues" : [ ]
+}
