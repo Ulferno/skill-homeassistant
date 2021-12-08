@@ -5,7 +5,6 @@ Handle connection between skill and HA instance trough websocket.
 import ipaddress
 import json
 import re
-from typing import List
 
 from fuzzywuzzy import fuzz
 from requests import get, post
@@ -134,7 +133,7 @@ class HomeAssistantClient:
         except (Timeout, ConnectionError, RequestException):
             return False
 
-    def find_entity(self, entity: str, types: list(str)) -> dict:
+    def find_entity(self, entity: str, types: list) -> dict:
         """Find entity with specified name, fuzzy matching
 
         Throws request Exceptions
@@ -220,7 +219,7 @@ class HomeAssistantClient:
                     return entity_attr
         return None
 
-    def list_entities(self, types: List[str]) -> List[str, str]:
+    def list_entities(self, types: list) -> list:
         """List all entities matching domains used within our skill
 
         Throws request Exceptions

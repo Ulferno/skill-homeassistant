@@ -129,7 +129,7 @@ class HomeAssistantSkill(FallbackSkill):
     # Creates dialogs for errors and speaks them
     # Returns None if nothing was found
     # Else returns entity that was found
-    def _find_entity(self, entity: str, domains: list(str)) -> dict:
+    def _find_entity(self, entity: str, domains: list) -> dict:
         """Handle communication with HA client for entity finding
 
         Returns:
