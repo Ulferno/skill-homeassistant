@@ -8,10 +8,11 @@ Feature: tracker
   # Intent conflict when asking where something is
   Scenario Outline: where is skill conflict
     Given an English speaking user
-    When the user says  "<where is skill conflict>"
+    When the user says "<cases>"
 	  Then "skill-homeassistant" should not reply
 
   Examples: where is skill conflict
+        | cases |
         | give me location of the Czech Republic |
         | where is France                        |
         | where is the golden gate bridge        |
