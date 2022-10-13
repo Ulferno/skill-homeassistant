@@ -87,9 +87,11 @@ jobs:
           git clone https://github.com/MycroftAI/mycroft-core.git /opt/mycroft-core
           ls /opt
           chmod +x /opt/mycroft-core/dev_setup.sh
-          /opt/mycroft-core/dev_setup.sh --allow-root -ci -sm
+          /opt/mycroft-core/dev_setup.sh --allow-root -sm
           source ${{ env.MYCROFT_VENV }}
           /opt/mycroft-core/bin/mycroft-pip install -r ${{ github.workspace }}/requirements.txt
+          mkdir -p /home/runner/.config/mycroft/
+          touch /home/runner/.config/mycroft/mycroft.conf
           /opt/mycroft-core/bin/mycroft-config set tts.module dummy
           /opt/mycroft-core/bin/mycroft-start all
 
