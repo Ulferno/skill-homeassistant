@@ -104,7 +104,12 @@ class HomeAssistantSkill(FallbackSkill):
 
             with open(self.tracker_file, 'w', encoding='utf8') as voc_file:
                 voc_file.write('\n'.join(entities))
-            self.register_entity_file(self.tracker_file)
+
+            # Workaround: If https://github.com/MycroftAI/mycroft-core/pull/3101
+            # will be merged, next two lines could be changed to proper usage
+            # self.register_entity_file(self.tracker_file)
+            name = '{}:tracker'.format(self.skill_id)
+            self.intent_service.register_padatious_entity(name, self.tracker_file)
 
     def initialize(self) -> None:
         """Initialize skill, set language and priority."""
