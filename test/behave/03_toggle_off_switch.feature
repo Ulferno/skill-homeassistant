@@ -1,5 +1,6 @@
 @allure.suite:behave
 Feature: toggle
+  @xfail
   Scenario: toggle off switch
     Given an English speaking user
     When the user says "can you toggle green switch"

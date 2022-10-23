@@ -1,5 +1,6 @@
 @allure.suite:behave
 Feature: turn off
+  @xfail
   Scenario: turn off switch
     Given an English speaking user
     When the user says "can you turn off red switch please"

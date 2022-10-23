@@ -1,15 +1,17 @@
 @allure.suite:behave
 Feature: tracker
+  @xfail
   Scenario: tracker
     Given an English speaking user
     When the user says "give me location of the mark"
 	  Then mycroft reply should contain "home"
 
   # Intent conflict when asking where something is
+  @xfail
   Scenario Outline: where is skill conflict
     Given an English speaking user
     When the user says "<cases>"
-	  Then "skill-homeassistant" should not reply
+	  Then "homeassistant" should not reply
 
   Examples: where is skill conflict
         | cases |

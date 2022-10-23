@@ -1,5 +1,6 @@
 @allure.suite:behave
 Feature: increase brightness
+  @xfail
   Scenario: increase light brightness
     Given an English speaking user
     When the user says "increase the brightness of table light please"

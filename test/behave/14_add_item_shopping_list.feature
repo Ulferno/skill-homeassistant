@@ -1,5 +1,6 @@
 @allure.suite:behave
 Feature: shopping list
+  @xfail
   Scenario: add item
     Given an English speaking user
     When the user says "add bread to the shopping list"

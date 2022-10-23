@@ -1,5 +1,6 @@
 @allure.suite:behave
 Feature: set climate
+  @xfail
   Scenario: set climate temperature
     Given an English speaking user
     When the user says "change the mycroft climate temperature to 24 degrees"
