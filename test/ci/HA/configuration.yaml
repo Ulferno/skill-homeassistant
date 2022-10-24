@@ -77,6 +77,10 @@ light:
   - platform: virtual
     name: "!stairs light"
     initial_value: 'on'
+  # 11_automation.feature (script)
+  - platform: virtual
+    name: "!roof light"
+    initial_value: 'off'
   # Unittest
   - platform: virtual
     name: "!unittest light"
@@ -119,3 +123,12 @@ camera:
     entity_picture: /image.jpg
 
 automation: !include automations.yaml
+
+script:
+  # 11_automation.feature (script)
+  roof:
+    sequence:
+      - alias: "Turn on roof light"
+        service: light.turn_on
+        target:
+          entity_id: light.roof_light
